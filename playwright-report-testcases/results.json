@@ -1,0 +1,3601 @@
+{
+  "config": {
+    "configFile": "C:\\Other\\Demo ecommerce project\\playwright.testcases.config.ts",
+    "rootDir": "C:/Other/Demo ecommerce project/Test_cases",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Other/Demo ecommerce project/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Other/Demo ecommerce project/Test_cases",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*_automation.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report-testcases",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "playwright-report-testcases/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "1. LOGIN PAGE\\login_automation.spec.ts",
+      "file": "1. LOGIN PAGE/login_automation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Login Module Automation - LGN",
+          "file": "1. LOGIN PAGE/login_automation.spec.ts",
+          "line": 41,
+          "column": 6,
+          "specs": [
+            {
+              "title": "LGN-001: Login page UI elements are visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3270,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:12:05.063Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0def83f4ec072d3d9478-ea879a4453d56929b96e",
+              "file": "1. LOGIN PAGE/login_automation.spec.ts",
+              "line": 42,
+              "column": 7
+            },
+            {
+              "title": "LGN-006: Password show/hide toggle works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2270,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:12:08.635Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0def83f4ec072d3d9478-4fed64b206d7c92c1153",
+              "file": "1. LOGIN PAGE/login_automation.spec.ts",
+              "line": 51,
+              "column": 7
+            },
+            {
+              "title": "LGN-003/LGN-004/LGN-005: Basic validation errors appear for invalid input",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2499,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:12:10.942Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0def83f4ec072d3d9478-56eaefe77178a14304ef",
+              "file": "1. LOGIN PAGE/login_automation.spec.ts",
+              "line": 68,
+              "column": 7
+            },
+            {
+              "title": "LGN-007: Invalid credentials show generic error",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3331,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:12:13.483Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0def83f4ec072d3d9478-4451b8ad86acefd533ce",
+              "file": "1. LOGIN PAGE/login_automation.spec.ts",
+              "line": 78,
+              "column": 7
+            },
+            {
+              "title": "LGN-008: Successful login redirects to home",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4209,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:12:16.850Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0def83f4ec072d3d9478-35c4a96f3b5a52bd3931",
+              "file": "1. LOGIN PAGE/login_automation.spec.ts",
+              "line": 84,
+              "column": 7
+            },
+            {
+              "title": "LGN-009: Enter key submits login form",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2309,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:12:21.099Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0def83f4ec072d3d9478-f4a725c5d17ca91967fb",
+              "file": "1. LOGIN PAGE/login_automation.spec.ts",
+              "line": 89,
+              "column": 7
+            },
+            {
+              "title": "LGN-002: Logo click navigates to app landing route",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2879,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:12:23.465Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0def83f4ec072d3d9478-3a0c376a14ab97e287f3",
+              "file": "1. LOGIN PAGE/login_automation.spec.ts",
+              "line": 105,
+              "column": 7
+            },
+            {
+              "title": "LGN-010: Keyboard tab order reaches interactive controls",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2928,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:12:26.383Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0def83f4ec072d3d9478-2d04a771177724f700e4",
+              "file": "1. LOGIN PAGE/login_automation.spec.ts",
+              "line": 115,
+              "column": 7
+            },
+            {
+              "title": "LGN-011: Login API failure shows guarded behavior",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2592,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:12:29.345Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0def83f4ec072d3d9478-55e5cb960592e0213984",
+              "file": "1. LOGIN PAGE/login_automation.spec.ts",
+              "line": 128,
+              "column": 7
+            },
+            {
+              "title": "LGN-012: Long email and password values are handled safely",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2308,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:12:31.968Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0def83f4ec072d3d9478-302ec031af4bc097d9c7",
+              "file": "1. LOGIN PAGE/login_automation.spec.ts",
+              "line": 147,
+              "column": 7
+            },
+            {
+              "title": "LGN-001-S: @smoke Login page loads with all key elements",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2063,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:12:34.305Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0def83f4ec072d3d9478-a7e7aa030c7599fc534f",
+              "file": "1. LOGIN PAGE/login_automation.spec.ts",
+              "line": 168,
+              "column": 7
+            },
+            {
+              "title": "LGN-008-S: @smoke Successful login with valid credentials",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7055,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:12:36.401Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0def83f4ec072d3d9478-680c50ea1ba905db7d62",
+              "file": "1. LOGIN PAGE/login_automation.spec.ts",
+              "line": 176,
+              "column": 7
+            },
+            {
+              "title": "LGN-013: @regression Empty email field shows validation error",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3226,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:12:43.485Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0def83f4ec072d3d9478-7d86f1b47b2bad5bbd5b",
+              "file": "1. LOGIN PAGE/login_automation.spec.ts",
+              "line": 181,
+              "column": 7
+            },
+            {
+              "title": "LGN-014: @regression Empty password field shows validation error",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2354,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:12:46.741Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0def83f4ec072d3d9478-2f85a669d055a1e9908c",
+              "file": "1. LOGIN PAGE/login_automation.spec.ts",
+              "line": 188,
+              "column": 7
+            },
+            {
+              "title": "LGN-015: @regression Whitespace-only credentials are rejected",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2325,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:12:49.132Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0def83f4ec072d3d9478-89250f6ae031e80c3e50",
+              "file": "1. LOGIN PAGE/login_automation.spec.ts",
+              "line": 195,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "2. HOME PAGE\\home_automation.spec.ts",
+      "file": "2. HOME PAGE/home_automation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Home Module Automation - HOME",
+          "file": "2. HOME PAGE/home_automation.spec.ts",
+          "line": 44,
+          "column": 6,
+          "specs": [
+            {
+              "title": "HOME-001/HOME-002: Home loads and cart button navigates to cart",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7696,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:12:51.515Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41a50e028c785b807b2b-85e6e8da9eee44bf849d",
+              "file": "2. HOME PAGE/home_automation.spec.ts",
+              "line": 49,
+              "column": 7
+            },
+            {
+              "title": "HOME-003: Profile dropdown shows menu options",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10537,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:12:59.240Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41a50e028c785b807b2b-a6a073da7a59b2fed34b",
+              "file": "2. HOME PAGE/home_automation.spec.ts",
+              "line": 56,
+              "column": 7
+            },
+            {
+              "title": "HOME-005: Sorting dropdown contains expected options",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4483,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:13:09.810Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41a50e028c785b807b2b-ce8b589547b52e312b32",
+              "file": "2. HOME PAGE/home_automation.spec.ts",
+              "line": 65,
+              "column": 7
+            },
+            {
+              "title": "HOME-008: Price sort low to high behaves correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5604,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:13:14.321Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41a50e028c785b807b2b-4fc5851ee3026a959aa5",
+              "file": "2. HOME PAGE/home_automation.spec.ts",
+              "line": 77,
+              "column": 7
+            },
+            {
+              "title": "HOME-010: Add to cart updates badge",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3866,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:13:19.955Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41a50e028c785b807b2b-310795a19b397b81677e",
+              "file": "2. HOME PAGE/home_automation.spec.ts",
+              "line": 91,
+              "column": 7
+            },
+            {
+              "title": "HOME-004: Logout clears session and protects home route",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5359,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:13:23.852Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41a50e028c785b807b2b-3ad357a655a482d2f443",
+              "file": "2. HOME PAGE/home_automation.spec.ts",
+              "line": 100,
+              "column": 7
+            },
+            {
+              "title": "HOME-006: A to Z sort orders product names ascending",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5470,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:13:29.247Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41a50e028c785b807b2b-943e27e8483bb52685e1",
+              "file": "2. HOME PAGE/home_automation.spec.ts",
+              "line": 109,
+              "column": 7
+            },
+            {
+              "title": "HOME-007: Z to A sort orders product names descending",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4367,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:13:34.750Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41a50e028c785b807b2b-b7bafee44f73ca92cad2",
+              "file": "2. HOME PAGE/home_automation.spec.ts",
+              "line": 116,
+              "column": 7
+            },
+            {
+              "title": "HOME-009: Search option is discoverable and usable when available",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5114,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:13:39.152Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41a50e028c785b807b2b-4ef4548eb6d919401437",
+              "file": "2. HOME PAGE/home_automation.spec.ts",
+              "line": 123,
+              "column": 7
+            },
+            {
+              "title": "HOME-011: Favourite toggle control is clickable on product cards",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5911,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:13:44.299Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41a50e028c785b807b2b-c2c9b98e5d62d9d2ff0e",
+              "file": "2. HOME PAGE/home_automation.spec.ts",
+              "line": 142,
+              "column": 7
+            },
+            {
+              "title": "HOME-012: Footer links are visible and at least one is navigable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10146,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:13:50.245Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41a50e028c785b807b2b-8be2f702f3c580c53a9b",
+              "file": "2. HOME PAGE/home_automation.spec.ts",
+              "line": 151,
+              "column": 7
+            },
+            {
+              "title": "HOME-013: Product API failure keeps UI in guarded state",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5973,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:14:00.445Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41a50e028c785b807b2b-ca221c44c001a47c6f20",
+              "file": "2. HOME PAGE/home_automation.spec.ts",
+              "line": 162,
+              "column": 7
+            },
+            {
+              "title": "HOME-001-S: @smoke Home page loads with product listing after login",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4674,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:14:06.477Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41a50e028c785b807b2b-5f65c67857231ca9b710",
+              "file": "2. HOME PAGE/home_automation.spec.ts",
+              "line": 176,
+              "column": 7
+            },
+            {
+              "title": "HOME-010-S: @smoke Add to cart increments the cart badge",
+              "ok": false,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2504,
+                      "error": {
+                        "message": "Error: page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at https://practice.qabrains.com/ecommerce/login\nCall log:\n\u001b[2m  - navigating to \"https://practice.qabrains.com/ecommerce/login\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at https://practice.qabrains.com/ecommerce/login\nCall log:\n\u001b[2m  - navigating to \"https://practice.qabrains.com/ecommerce/login\", waiting until \"load\"\u001b[22m\n\n    at login (C:\\Other\\Demo ecommerce project\\Test_cases\\2. HOME PAGE\\home_automation.spec.ts:13:16)\n    at C:\\Other\\Demo ecommerce project\\Test_cases\\2. HOME PAGE\\home_automation.spec.ts:46:11",
+                        "location": {
+                          "file": "C:\\Other\\Demo ecommerce project\\Test_cases\\2. HOME PAGE\\home_automation.spec.ts",
+                          "column": 16,
+                          "line": 13
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m   \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m email \u001b[36mof\u001b[39m emails) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[33mLOGIN_URL\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#email'\u001b[39m)\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#email'\u001b[39m)\u001b[33m.\u001b[39mfill(email)\u001b[33m;\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#password'\u001b[39m)\u001b[33m.\u001b[39mfill(password)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Other\\Demo ecommerce project\\Test_cases\\2. HOME PAGE\\home_automation.spec.ts",
+                            "column": 16,
+                            "line": 13
+                          },
+                          "message": "Error: page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at https://practice.qabrains.com/ecommerce/login\nCall log:\n\u001b[2m  - navigating to \"https://practice.qabrains.com/ecommerce/login\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m   \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m email \u001b[36mof\u001b[39m emails) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[33mLOGIN_URL\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#email'\u001b[39m)\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#email'\u001b[39m)\u001b[33m.\u001b[39mfill(email)\u001b[33m;\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#password'\u001b[39m)\u001b[33m.\u001b[39mfill(password)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at login (C:\\Other\\Demo ecommerce project\\Test_cases\\2. HOME PAGE\\home_automation.spec.ts:13:16)\u001b[22m\n\u001b[2m    at C:\\Other\\Demo ecommerce project\\Test_cases\\2. HOME PAGE\\home_automation.spec.ts:46:11\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:14:11.201Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Other\\Demo ecommerce project\\test-results\\2. HOME PAGE-home_automati-33a2d-t-increments-the-cart-badge-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Other\\Demo ecommerce project\\test-results\\2. HOME PAGE-home_automati-33a2d-t-increments-the-cart-badge-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Other\\Demo ecommerce project\\test-results\\2. HOME PAGE-home_automati-33a2d-t-increments-the-cart-badge-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Other\\Demo ecommerce project\\Test_cases\\2. HOME PAGE\\home_automation.spec.ts",
+                        "column": 16,
+                        "line": 13
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "41a50e028c785b807b2b-2706b35615d7606f7f32",
+              "file": "2. HOME PAGE/home_automation.spec.ts",
+              "line": 181,
+              "column": 7
+            },
+            {
+              "title": "HOME-014: @regression High-to-low sort mode is applied correctly",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5522,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:14:14.869Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41a50e028c785b807b2b-0164247566a1f395fbd5",
+              "file": "2. HOME PAGE/home_automation.spec.ts",
+              "line": 187,
+              "column": 7
+            },
+            {
+              "title": "HOME-015: @regression Multiple add-to-cart updates badge count",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4435,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:14:20.725Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41a50e028c785b807b2b-1f9bf7fae54857f3a2ff",
+              "file": "2. HOME PAGE/home_automation.spec.ts",
+              "line": 197,
+              "column": 7
+            },
+            {
+              "title": "HOME-016: @regression Unauthenticated access redirects to login",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6511,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:14:25.225Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "41a50e028c785b807b2b-995e43ec7cfe8754d706",
+              "file": "2. HOME PAGE/home_automation.spec.ts",
+              "line": 213,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "3. PRODUCT DETAILS PAGE\\product_details_automation.spec.ts",
+      "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Product Details Module Automation - PDP",
+          "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+          "line": 37,
+          "column": 6,
+          "specs": [
+            {
+              "title": "PDP-001/PDP-004: Product details page renders name and price",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7058,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:14:31.793Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "649147ab1db928356764-994f27fa0144b88e5dd8",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 42,
+              "column": 7
+            },
+            {
+              "title": "PDP-005/PDP-006/PDP-007: Quantity control plus/minus behavior",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5068,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:14:38.893Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "649147ab1db928356764-49916c435451b6096ae3",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 50,
+              "column": 7
+            },
+            {
+              "title": "PDP-009: Add to cart from PDP",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13517,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:14:44.018Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "649147ab1db928356764-9ab1b0f36961007902be",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 65,
+              "column": 7
+            },
+            {
+              "title": "PDP-010: Invalid product id shows guard behavior",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8396,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:14:57.579Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "649147ab1db928356764-b92e88dd67e4742fae5a",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 73,
+              "column": 7
+            },
+            {
+              "title": "PDP-002: Back button navigates away from PDP",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6555,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:15:06.010Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "649147ab1db928356764-70f7d077f1bd61c4377b",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 78,
+              "column": 7
+            },
+            {
+              "title": "PDP-003: Product image renders with alt text",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7397,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:15:12.609Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "649147ab1db928356764-5470e1a0c79d7f61ddb5",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 86,
+              "column": 7
+            },
+            {
+              "title": "PDP-008: Favourite toggle on product details is clickable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5798,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:15:20.043Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "649147ab1db928356764-3d2b3af92644bae5fc14",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 94,
+              "column": 7
+            },
+            {
+              "title": "PDP-011: Direct access without authenticated state is guarded",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12404,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:15:25.877Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "649147ab1db928356764-f039d6939e0a7f53e739",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 107,
+              "column": 7
+            },
+            {
+              "title": "PDP-001-S: @smoke Product details page loads with name and price",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11375,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:15:38.314Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "649147ab1db928356764-c95e8537c374e11f62f7",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 124,
+              "column": 7
+            },
+            {
+              "title": "PDP-009-S: @smoke Add to cart from PDP updates badge",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7958,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:15:49.719Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "649147ab1db928356764-45ef9a1d92e489f64423",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 131,
+              "column": 7
+            },
+            {
+              "title": "PDP-012: @regression Product id=0 shows guard or empty state",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8215,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:15:57.727Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "649147ab1db928356764-75000856f4e665e691c4",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 138,
+              "column": 7
+            },
+            {
+              "title": "PDP-013: @regression Quantity cannot go below 1 via minus button",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6075,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:16:05.976Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "649147ab1db928356764-463f841fa4665c4d1b2b",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 143,
+              "column": 7
+            },
+            {
+              "title": "PDP-014: @regression Page renders correctly for a second product",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6550,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:16:12.083Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "649147ab1db928356764-3e34eb37daa22baed917",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 160,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "4. CART PAGE\\cart_automation.spec.ts",
+      "file": "4. CART PAGE/cart_automation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Cart Module Automation - CART",
+          "file": "4. CART PAGE/cart_automation.spec.ts",
+          "line": 37,
+          "column": 6,
+          "specs": [
+            {
+              "title": "CART-001: Cart page and heading are visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6231,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:16:18.672Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a6835578aa2ced5748ea-4e4145d1461ee11345cd",
+              "file": "4. CART PAGE/cart_automation.spec.ts",
+              "line": 44,
+              "column": 7
+            },
+            {
+              "title": "CART-003/CART-004: Quantity controls update cart",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6437,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:16:24.940Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a6835578aa2ced5748ea-eadfac59737737a4d778",
+              "file": "4. CART PAGE/cart_automation.spec.ts",
+              "line": 48,
+              "column": 7
+            },
+            {
+              "title": "CART-005: Remove item from cart",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6657,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:16:31.407Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a6835578aa2ced5748ea-aa1bbd8e9db36971ced1",
+              "file": "4. CART PAGE/cart_automation.spec.ts",
+              "line": 64,
+              "column": 7
+            },
+            {
+              "title": "CART-007: Continue shopping navigates to home",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6314,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:16:38.099Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a6835578aa2ced5748ea-a28eda8311188914473b",
+              "file": "4. CART PAGE/cart_automation.spec.ts",
+              "line": 72,
+              "column": 7
+            },
+            {
+              "title": "CART-008: Checkout button navigates to checkout info",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8390,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:16:44.446Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a6835578aa2ced5748ea-5d76d67f8e74866782c3",
+              "file": "4. CART PAGE/cart_automation.spec.ts",
+              "line": 77,
+              "column": 7
+            },
+            {
+              "title": "CART-002: Cart row shows image name quantity controls and price",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4756,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:16:52.867Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a6835578aa2ced5748ea-fc533b330ae0174abceb",
+              "file": "4. CART PAGE/cart_automation.spec.ts",
+              "line": 83,
+              "column": 7
+            },
+            {
+              "title": "CART-006: Empty cart state is visible when all items removed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10555,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:16:57.656Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a6835578aa2ced5748ea-f14cc1873b0b6ccbea84",
+              "file": "4. CART PAGE/cart_automation.spec.ts",
+              "line": 94,
+              "column": 7
+            },
+            {
+              "title": "CART-009: Total formula remains non-decreasing when quantity increases",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4635,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:17:08.252Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a6835578aa2ced5748ea-913d7f110b261c8dace1",
+              "file": "4. CART PAGE/cart_automation.spec.ts",
+              "line": 107,
+              "column": 7
+            },
+            {
+              "title": "CART-011: Rapid quantity clicks keep cart interaction stable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11994,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:17:12.916Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a6835578aa2ced5748ea-2f6f54128e29c489658a",
+              "file": "4. CART PAGE/cart_automation.spec.ts",
+              "line": 125,
+              "column": 7
+            },
+            {
+              "title": "CART-010: Cart route enforces access guard for unauthenticated state",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12391,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:17:24.948Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a6835578aa2ced5748ea-0bea8eb2b06fdf51b661",
+              "file": "4. CART PAGE/cart_automation.spec.ts",
+              "line": 133,
+              "column": 7
+            },
+            {
+              "title": "CART-001-S: @smoke Cart page loads with items and heading",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10781,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:17:37.392Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a6835578aa2ced5748ea-14aa2596eaa401ad7f61",
+              "file": "4. CART PAGE/cart_automation.spec.ts",
+              "line": 150,
+              "column": 7
+            },
+            {
+              "title": "CART-008-S: @smoke Checkout button navigates to checkout-info",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8269,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:17:48.211Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a6835578aa2ced5748ea-0a9413c16abbca4591b7",
+              "file": "4. CART PAGE/cart_automation.spec.ts",
+              "line": 155,
+              "column": 7
+            },
+            {
+              "title": "CART-012: @regression Cart persists item after page reload",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 17241,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:17:56.513Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a6835578aa2ced5748ea-046988eb3f79b233e458",
+              "file": "4. CART PAGE/cart_automation.spec.ts",
+              "line": 161,
+              "column": 7
+            },
+            {
+              "title": "CART-013: @regression Cart item row shows correct price format",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9311,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:18:13.782Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a6835578aa2ced5748ea-c7dc205bdf9f48287327",
+              "file": "4. CART PAGE/cart_automation.spec.ts",
+              "line": 169,
+              "column": 7
+            },
+            {
+              "title": "CART-014: @regression Continue shopping from empty cart goes to home",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9621,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:18:23.120Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a6835578aa2ced5748ea-4768f65e030015317e22",
+              "file": "4. CART PAGE/cart_automation.spec.ts",
+              "line": 179,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "5. CHECKOUT YOUR INFO PAGE\\checkout_info_automation.spec.ts",
+      "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Checkout Info Module Automation - CI",
+          "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
+          "line": 37,
+          "column": 6,
+          "specs": [
+            {
+              "title": "CI-001/CI-002: Checkout info page and fields are visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5885,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:18:32.791Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dd7cd07d186a5ea661a2-d7e5df70aaa67985ba5b",
+              "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
+              "line": 44,
+              "column": 7
+            },
+            {
+              "title": "CI-003: Valid form continues to checkout overview",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7475,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:18:38.715Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dd7cd07d186a5ea661a2-b97e5b860ddaf91e94aa",
+              "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
+              "line": 54,
+              "column": 7
+            },
+            {
+              "title": "CI-004/CI-005/CI-006/CI-007/CI-008: Invalid inputs show validation messages",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10106,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:18:46.230Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dd7cd07d186a5ea661a2-93e2df92622ba98019cc",
+              "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
+              "line": 64,
+              "column": 7
+            },
+            {
+              "title": "CI-009: Cancel returns to cart",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9618,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:18:56.367Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dd7cd07d186a5ea661a2-a7ff78ab5196c2627a99",
+              "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
+              "line": 74,
+              "column": 7
+            },
+            {
+              "title": "CI-010: Empty-cart flow guard prevents invalid checkout-info progression",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8526,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:19:06.013Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dd7cd07d186a5ea661a2-8b1167503d24b3b9e319",
+              "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
+              "line": 80,
+              "column": 7
+            },
+            {
+              "title": "CI-011: Validation errors appear in accessible error container",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16678,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:19:14.569Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dd7cd07d186a5ea661a2-e1d89bd5ba373ef15c13",
+              "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
+              "line": 95,
+              "column": 7
+            },
+            {
+              "title": "CI-001-S: @smoke Checkout info page loads with all required fields",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6644,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:19:31.277Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dd7cd07d186a5ea661a2-2a648407eec1f9bb2040",
+              "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
+              "line": 104,
+              "column": 7
+            },
+            {
+              "title": "CI-003-S: @smoke Valid checkout info continues to overview",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4552,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:19:37.952Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dd7cd07d186a5ea661a2-e353b68fea59f12e53bc",
+              "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
+              "line": 110,
+              "column": 7
+            },
+            {
+              "title": "CI-012: @regression Numeric-only zip code is accepted",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11211,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:19:42.532Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dd7cd07d186a5ea661a2-aecea447a9edcf23b16b",
+              "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
+              "line": 118,
+              "column": 7
+            },
+            {
+              "title": "CI-013: @regression Single character names are handled gracefully",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8634,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:19:53.773Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dd7cd07d186a5ea661a2-538b62779649ee0d2a86",
+              "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
+              "line": 126,
+              "column": 7
+            },
+            {
+              "title": "CI-014: @regression Special characters in name field are handled",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10244,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:20:02.445Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dd7cd07d186a5ea661a2-5687674a58791482d6b8",
+              "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
+              "line": 135,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "6. CHECKOUT OVERVIEW PAGE\\checkout_overview_automation.spec.ts",
+      "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Checkout Overview Module Automation - CO",
+          "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
+          "line": 52,
+          "column": 6,
+          "specs": [
+            {
+              "title": "CO-001/CO-002: Overview page renders product summary",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10525,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:20:12.740Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b21ded7cb4656e4c6db-800a98a8c98a6d662bed",
+              "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
+              "line": 58,
+              "column": 7
+            },
+            {
+              "title": "CO-003/CO-004/CO-005: Payment, shipping and totals sections are visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9342,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:20:23.303Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b21ded7cb4656e4c6db-2b498a95255632d6a56e",
+              "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
+              "line": 65,
+              "column": 7
+            },
+            {
+              "title": "CO-008: Cancel exits overview flow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10858,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:20:32.679Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b21ded7cb4656e4c6db-b7ce5dc2a4e31204fa3b",
+              "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
+              "line": 71,
+              "column": 7
+            },
+            {
+              "title": "CO-009: Finish completes order and opens completion page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10521,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:20:43.579Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b21ded7cb4656e4c6db-f48d29c5baaa81296c04",
+              "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
+              "line": 76,
+              "column": 7
+            },
+            {
+              "title": "CO-006: Grand total follows item total plus tax formula",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7342,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:20:54.149Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b21ded7cb4656e4c6db-6ac7589ca49333003876",
+              "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
+              "line": 81,
+              "column": 7
+            },
+            {
+              "title": "CO-007: Overview page displays read-only order data",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10546,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:21:01.529Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b21ded7cb4656e4c6db-f454f87afc6e106d1cc8",
+              "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
+              "line": 99,
+              "column": 7
+            },
+            {
+              "title": "CO-010: Overview remains stable when backend fetch fails",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10817,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:21:12.108Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b21ded7cb4656e4c6db-4b0be4ad8948c5c68623",
+              "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
+              "line": 104,
+              "column": 7
+            },
+            {
+              "title": "CO-011: Unauthorized direct access is guarded",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10237,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:21:22.965Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b21ded7cb4656e4c6db-288058bc6a00068296d1",
+              "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
+              "line": 118,
+              "column": 7
+            },
+            {
+              "title": "CO-001-S: @smoke Overview page renders product summary with price",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11119,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:21:33.235Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b21ded7cb4656e4c6db-b2fb987fea507ffc7084",
+              "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
+              "line": 135,
+              "column": 7
+            },
+            {
+              "title": "CO-009-S: @smoke Finish button completes order and shows completion page",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11547,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:21:44.390Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b21ded7cb4656e4c6db-8a0480537db14db3323a",
+              "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
+              "line": 141,
+              "column": 7
+            },
+            {
+              "title": "CO-012: @regression Payment section shows required info labels",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15886,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:21:55.976Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b21ded7cb4656e4c6db-a532ba52585d06f0c2d9",
+              "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
+              "line": 146,
+              "column": 7
+            },
+            {
+              "title": "CO-013: @regression Item count in overview matches cart item count",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8006,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:22:11.897Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b21ded7cb4656e4c6db-bb100c5545ff7d37c149",
+              "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
+              "line": 151,
+              "column": 7
+            },
+            {
+              "title": "CO-014: @regression Overview page title and breadcrumb is correct",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14711,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:22:19.945Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4b21ded7cb4656e4c6db-35491e083ce7b0c95ce2",
+              "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
+              "line": 162,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "7. CHECKOUT COMPLETE PAGE\\checkout_complete_automation.spec.ts",
+      "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Checkout Complete Module Automation - CC",
+          "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
+          "line": 49,
+          "column": 6,
+          "specs": [
+            {
+              "title": "CC-001/CC-003/CC-004: Completion heading and confirmation texts are visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 17775,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:22:34.857Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "607760572962719f88c8-5e2620dcd4e5dd1c6481",
+              "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
+              "line": 55,
+              "column": 7
+            },
+            {
+              "title": "CC-002: Success icon is displayed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11194,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:22:52.718Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "607760572962719f88c8-22d942c3263c3f7d905b",
+              "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
+              "line": 62,
+              "column": 7
+            },
+            {
+              "title": "CC-006: Continue Shopping navigates to home page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11522,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:23:03.957Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "607760572962719f88c8-17dac23c6594f1afc454",
+              "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
+              "line": 66,
+              "column": 7
+            },
+            {
+              "title": "CC-005: Cart is empty after order completion",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9435,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:23:15.514Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "607760572962719f88c8-fd8b0b7fdf1097417040",
+              "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
+              "line": 71,
+              "column": 7
+            },
+            {
+              "title": "CC-007: Direct access without finishing flow is guarded",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12728,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:23:24.984Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "607760572962719f88c8-0f50e240b4d080ca8241",
+              "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
+              "line": 76,
+              "column": 7
+            },
+            {
+              "title": "CC-008: Completion page has no editable transactional inputs",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12244,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:23:37.739Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "607760572962719f88c8-26701732b735b1f499ba",
+              "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
+              "line": 93,
+              "column": 7
+            },
+            {
+              "title": "CC-009: Completion CTA is keyboard accessible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13342,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:23:50.028Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "607760572962719f88c8-7e82a2c6edd6a0e5dbfc",
+              "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
+              "line": 98,
+              "column": 7
+            },
+            {
+              "title": "CC-010: Completion page renders in mobile and desktop viewports",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8715,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:24:03.416Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "607760572962719f88c8-3191f61fbf13151fdb4f",
+              "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
+              "line": 107,
+              "column": 7
+            },
+            {
+              "title": "CC-001-S: @smoke Completion page shows thank-you confirmation",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10190,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:24:12.170Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "607760572962719f88c8-c3d9758b1cff26051015",
+              "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
+              "line": 117,
+              "column": 7
+            },
+            {
+              "title": "CC-006-S: @smoke Continue Shopping from completion goes to home",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9315,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:24:22.398Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "607760572962719f88c8-ecb10aad8c217a8baeaa",
+              "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
+              "line": 122,
+              "column": 7
+            },
+            {
+              "title": "CC-011: @regression Order confirmation details are visible",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7472,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:24:31.752Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "607760572962719f88c8-7fa51cfd5e3ae7b08c1a",
+              "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
+              "line": 127,
+              "column": 7
+            },
+            {
+              "title": "CC-012: @regression Cart is cleared after order completion",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8255,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:24:39.260Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "607760572962719f88c8-74ee4438134af0135b33",
+              "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
+              "line": 132,
+              "column": 7
+            },
+            {
+              "title": "CC-013: @regression Completion page has no stale checkout inputs",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8919,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-12T10:24:47.550Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "607760572962719f88c8-e95d15d27e467c85cc9a",
+              "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
+              "line": 137,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-05-12T10:12:04.217Z",
+    "duration": 772625.559,
+    "expected": 96,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

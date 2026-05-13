@@ -1,0 +1,29 @@
+{
+  "name": "demo-ecommerce-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:testcases": "playwright test --config=playwright.testcases.config.ts",
+    "test:testcases:chromium": "playwright test --config=playwright.testcases.config.ts --project=chromium",
+    "test:testcases:headed": "playwright test --config=playwright.testcases.config.ts --project=chromium --headed",
+    "test:testcases:ui": "playwright test --config=playwright.testcases.config.ts --ui",
+    "test:smoke": "playwright test --config=playwright.testcases.config.ts --grep @smoke",
+    "test:regression": "playwright test --config=playwright.testcases.config.ts --grep @regression",
+    "show-report:testcases": "playwright show-report playwright-report-testcases",
+    "report:testcases:csv": "node scripts/generate-execution-csv-report.mjs",
+    "report:testcases:html": "node scripts/generate-html-report.mjs",
+    "master:automation": "node scripts/run-master-automation.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0"
+  }
+}

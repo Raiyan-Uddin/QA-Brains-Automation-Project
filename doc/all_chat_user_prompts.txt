@@ -1,0 +1,233 @@
+All user prompts from chat transcript (prompt text only, in order)
+Generated on: 2026-05-12 12:27:09
+
+Prompt #1
+- analyze the srs file first. 
+-The url for the website is: https://practice.qabrains.com/ecommerce/login
+- Create a folder named Agent inside path: [C:\Other\Demo ecommerce project\.github\workflows]. Inside the folder, now create a master agent first who will control the project. Under the master agent create 3 different agents named Test_Case_Writer_Agent, Test_Execute_Agent, Test_Report_Agent.
+- Create a folder named Prompt inside path: [C:\Other\Demo ecommerce project\.github\workflows] which will contain the necessary prompt files for the agent.
+
+========================================
+
+Prompt #2
+Test_Case_Writer_Agent.agent.md
+	You have already analyze the srs of all the Modules.
+	1. Write the updated test cases for the modules and store in Test_cases folder modulewise and the file format should be csv.
+
+========================================
+
+Prompt #3
+create another agent named automate-test-case-author.agent.md
+	> This will write the automated test case based on srs and url found from the doc folder.
+    > Write the test cases inside the Test cases folder which has modulewise testcase folders.
+    > crete a prompt file inside the prompt folder for this agent.
+
+========================================
+
+Prompt #4
+now write the automation test scripts for the modules inside the test case folder modulewise.
+
+========================================
+
+Prompt #5
+ok
+
+========================================
+
+Prompt #6
+>Test_Execute_Agent.agent.md
+   This agent will be only responsible always for the automated test executions.
+
+after the execution
+>Test_Report_Agent.agent.md
+   This agent will be only responsible for generating the reports of the test execution.
+
+========================================
+
+Prompt #7
+Create a report folder which will follow the structure of Test_cases folder which has all the modules. This report folder will contain only the report of the test execution and report should be generated on csv format. also create a master folder in the report section which will contain the overall test execution summary report.
+
+========================================
+
+Prompt #8
+I want to execute all the test cases in the Test_cases folder and generate report in the report folder. what to do?
+
+========================================
+
+Prompt #9
+ok and give me the line so that i can run it next time
+
+========================================
+
+Prompt #10
+Accepted email:
+test@qabrains.com
+practice@qabrains.com
+student@qabrains.com
+Password:
+Password123
+Password123
+Password123
+
+this are the valid credentials for login. update accordingly
+
+========================================
+
+Prompt #11
+I want to run all the automation test scripts and generate report. what will the terminal command?
+
+========================================
+
+Prompt #12
+I want to run only one master automation file which will run all the automation test cases and generate reports in the report file
+
+========================================
+
+Prompt #13
+solve the problems of terminal problems
+
+========================================
+
+Prompt #14
+The test case folder path: C:\Other\Demo ecommerce project\Test_cases
+contains automation test scripts and a csv test case file. Include the csv test cases in the automation test files for each module and update the automation test scripts so that no test cases remain
+
+========================================
+
+Prompt #15
+just execute 1 and 2. do not Re-run and iterate until npm run test:testcases passes.
+
+========================================
+
+Prompt #16
+Now update all the necessary files, organize and connect where needed to run the master automation file.
+
+========================================
+
+Prompt #17
+In the path: C:\Other\Demo ecommerce project\report\master
+make a new csv file which which will contain all the reports of every module in this file
+
+========================================
+
+Prompt #18
+run the automation master file
+
+========================================
+
+Prompt #19
+Update the code so that whenever I run the master automation file, it will run in only Chromium and in headed mode for visibility.
+
+========================================
+
+Prompt #20
+ok
+
+========================================
+
+Prompt #21
+Solve all the problems
+
+========================================
+
+Prompt #22
+In the path: C:\Other\Demo ecommerce project\report\master
+make a overall test report in html format. whenever master automation file will run the html report will be updated automatically.
+
+========================================
+
+Prompt #23
+- Carefully go through the project and remove anything unnecessary without any impact on project.
+- Organize the project.
+- Rate the automation project.
+
+========================================
+
+Prompt #24
+where are the agent files
+
+========================================
+
+Prompt #25
+retrive the agent files and prompt files and folder
+
+========================================
+
+Prompt #26
+Carefully go through the project and remove anything unnecessary without any impact on project.
+Organize the project.
+Rate the automation project.
+
+-> revert this command
+
+========================================
+
+Prompt #27
+Please recreate the agent and prompt folder including the agent files and prompt files.
+
+========================================
+
+Prompt #28
+Create agents along with prompts according to below-
+1. master_agent.agent.md [Purpose- Orchestrates the 3 phases: generation 竊・execution 竊・reporting. Defines gates, decision rules, and project structure]
+2. Test_Case_Writer_Agent.agent.md [Purpose- Reads the SRS and writes Playwright TypeScript tests for all 7 pages (83 total test cases mapped to FR-* requirements)]
+3. Test_Execute_Agent.agent.md [Purpose- Runs the test suite, triages failures into App Bug / Test Bug / Flaky / Environment categories, collects artifacts]
+4. Test_Report_Agent.agent.md [Purpose- Parses results.json, maps results back to SRS requirements, generates test-results/summary_report.md with severity ratings]
+
+========================================
+
+Prompt #29
+Test_Case_Writer_Agent.agent.md - This agent will only write test cases for the project and will always be responsible for writing test cases in the txt and automation files. Test case folder Path: C:\Other\Demo ecommerce project\Test_cases . Analyse the test case folder
+
+Test_Execute_Agent.agent.md - This agent will execute the test cases only
+
+Test_Report_Agent.agent.md - This agent will only work for reporting after test execution. Report path: C:\Other\Demo ecommerce project\report
+
+Now update the agents and their prompt files according to the project. Always call the agents when needed. Update the project accordingly
+
+========================================
+
+Prompt #30
+ok
+
+========================================
+
+Prompt #31
+Create a overall html report in the path: C:\Other\Demo ecommerce project\report\master
+after execution of the main master file and update always whenever master automation file is run
+
+update the codes accordingly
+
+========================================
+
+Prompt #32
+- Do not remove any file. Always use agents for specific works assigned.
+- Improve the agents and prompts
+- Organize and improve code quality
+- Improve the code link up in the project
+
+========================================
+
+Prompt #33
+Rate this playwright automation test project
+
+========================================
+
+Prompt #34
+In the path: C:\Other\Demo ecommerce project\doc
+- Create a txt file and include all my prompts given in the chat into the txt file.
+- Also create another txt file and include necessary commands with change directory commands to run the project into the txt file
+
+========================================
+
+Prompt #35
+ok
+
+========================================
+
+Prompt #36
+all_chat_user_prompts.txt
+In this file include all the prompts I have given in chat one by one
+
+========================================
+

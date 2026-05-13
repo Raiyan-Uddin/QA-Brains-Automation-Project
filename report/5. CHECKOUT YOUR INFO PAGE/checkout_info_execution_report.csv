@@ -1,0 +1,12 @@
+Execution_ID,Execution_Date,Module,Test_Case_ID,Test_Title,Browser,Status,Duration_ms,Error_Message,Screenshot_Path,Trace_Path,Executed_By,Notes
+RUN-20260512102457,2026-05-12T10:24:57.421Z,5. CHECKOUT YOUR INFO PAGE,CI-001,CI-001/CI-002: Checkout info page and fields are visible,chromium,passed,5885,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,5. CHECKOUT YOUR INFO PAGE,CI-003,CI-003: Valid form continues to checkout overview,chromium,passed,7475,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,5. CHECKOUT YOUR INFO PAGE,CI-004,CI-004/CI-005/CI-006/CI-007/CI-008: Invalid inputs show validation messages,chromium,passed,10106,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,5. CHECKOUT YOUR INFO PAGE,CI-009,CI-009: Cancel returns to cart,chromium,passed,9618,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,5. CHECKOUT YOUR INFO PAGE,CI-010,CI-010: Empty-cart flow guard prevents invalid checkout-info progression,chromium,passed,8526,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,5. CHECKOUT YOUR INFO PAGE,CI-011,CI-011: Validation errors appear in accessible error container,chromium,passed,16678,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,5. CHECKOUT YOUR INFO PAGE,CI-001,CI-001-S: @smoke Checkout info page loads with all required fields,chromium,passed,6644,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,5. CHECKOUT YOUR INFO PAGE,CI-003,CI-003-S: @smoke Valid checkout info continues to overview,chromium,passed,4552,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,5. CHECKOUT YOUR INFO PAGE,CI-012,CI-012: @regression Numeric-only zip code is accepted,chromium,passed,11211,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,5. CHECKOUT YOUR INFO PAGE,CI-013,CI-013: @regression Single character names are handled gracefully,chromium,passed,8634,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,5. CHECKOUT YOUR INFO PAGE,CI-014,CI-014: @regression Special characters in name field are handled,chromium,passed,10244,,,,Test_Execute_Agent,

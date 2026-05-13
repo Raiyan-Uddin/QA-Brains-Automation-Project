@@ -1,0 +1,21 @@
+Execution_ID,Execution_Date,Module,Test_Case_ID,Test_Title,Browser,Status,Duration_ms,Error_Message,Screenshot_Path,Trace_Path,Executed_By,Notes
+RUN-20260512102457,2026-05-12T10:24:57.421Z,2. HOME PAGE,HOME-001,HOME-001/HOME-002: Home loads and cart button navigates to cart,chromium,passed,7696,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,2. HOME PAGE,HOME-003,HOME-003: Profile dropdown shows menu options,chromium,passed,10537,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,2. HOME PAGE,HOME-005,HOME-005: Sorting dropdown contains expected options,chromium,passed,4483,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,2. HOME PAGE,HOME-008,HOME-008: Price sort low to high behaves correctly,chromium,passed,5604,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,2. HOME PAGE,HOME-010,HOME-010: Add to cart updates badge,chromium,passed,3866,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,2. HOME PAGE,HOME-004,HOME-004: Logout clears session and protects home route,chromium,passed,5359,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,2. HOME PAGE,HOME-006,HOME-006: A to Z sort orders product names ascending,chromium,passed,5470,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,2. HOME PAGE,HOME-007,HOME-007: Z to A sort orders product names descending,chromium,passed,4367,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,2. HOME PAGE,HOME-009,HOME-009: Search option is discoverable and usable when available,chromium,passed,5114,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,2. HOME PAGE,HOME-011,HOME-011: Favourite toggle control is clickable on product cards,chromium,passed,5911,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,2. HOME PAGE,HOME-012,HOME-012: Footer links are visible and at least one is navigable,chromium,passed,10146,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,2. HOME PAGE,HOME-013,HOME-013: Product API failure keeps UI in guarded state,chromium,passed,5973,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,2. HOME PAGE,HOME-001,HOME-001-S: @smoke Home page loads with product listing after login,chromium,passed,4674,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,2. HOME PAGE,HOME-010,HOME-010-S: @smoke Add to cart increments the cart badge,chromium,failed,2504,"Error: page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at https://practice.qabrains.com/ecommerce/login
+Call log:
+[2m  - navigating to ""https://practice.qabrains.com/ecommerce/login"", waiting until ""load""[22m
+",C:\Other\Demo ecommerce project\test-results\2. HOME PAGE-home_automati-33a2d-t-increments-the-cart-badge-chromium\test-failed-1.png,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,2. HOME PAGE,HOME-014,HOME-014: @regression High-to-low sort mode is applied correctly,chromium,passed,5522,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,2. HOME PAGE,HOME-015,HOME-015: @regression Multiple add-to-cart updates badge count,chromium,passed,4435,,,,Test_Execute_Agent,
+RUN-20260512102457,2026-05-12T10:24:57.421Z,2. HOME PAGE,HOME-016,HOME-016: @regression Unauthenticated access redirects to login,chromium,passed,6511,,,,Test_Execute_Agent,

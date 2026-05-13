@@ -1,0 +1,3507 @@
+================================================================================
+            SOFTWARE REQUIREMENTS SPECIFICATION (SRS)
+            QA BRAINS E-COMMERCE WEB APPLICATION
+            COMPLETE SYSTEM DOCUMENTATION
+================================================================================
+
+Document Information
+================================================================================
+Document Title   : SRS — QA Brains E-Commerce Web Application (Complete)
+Application URL  : https://practice.qabrains.com/ecommerce
+Version          : 1.0
+Date             : July 2025
+Prepared By      : QA Engineer
+Status           : Final
+Total Pages      : Login, Home, Product Details, Cart, Checkout: Your
+                   Information, Checkout: Overview, Checkout: Complete
+
+================================================================================
+                        TABLE OF CONTENTS
+================================================================================
+
+PART A — SYSTEM OVERVIEW & WEBSITE FLOW
+    A.1  System Introduction
+    A.2  Complete Website Flow
+    A.3  Page Inventory
+    A.4  User Roles
+    A.5  System Architecture
+    A.6  Global Non-Functional Requirements
+
+PART B — LOGIN PAGE SRS
+    B.1  Page Overview
+    B.2  Functional Requirements
+    B.3  Validation & Error Handling
+    B.4  UI/UX Requirements
+    B.5  Non-Functional Requirements
+
+PART C — HOME PAGE SRS
+    C.1  Page Overview
+    C.2  Header Section — Functional Requirements
+    C.3  Main Section — Functional Requirements
+    C.4  Footer Section — Functional Requirements
+    C.5  UI/UX Requirements
+    C.6  Non-Functional Requirements
+
+PART D — PRODUCT DETAILS PAGE SRS
+    D.1  Page Overview
+    D.2  Functional Requirements
+    D.3  Validation & Error Handling
+    D.4  UI/UX Requirements
+    D.5  Non-Functional Requirements
+
+PART E — CART PAGE SRS
+    E.1  Page Overview
+    E.2  Page-Level Functional Requirements
+    E.3  Cart Item — Functional Requirements
+    E.4  Cart Summary & Action Buttons
+    E.5  Empty Cart State
+    E.6  Validation & Error Handling
+    E.7  UI/UX Requirements
+    E.8  Non-Functional Requirements
+
+PART F — CHECKOUT: YOUR INFORMATION PAGE SRS
+    F.1  Page Overview
+    F.2  Page-Level Functional Requirements
+    F.3  Form Fields — Functional Requirements
+    F.4  Action Buttons — Functional Requirements
+    F.5  Form Submission Logic
+    F.6  Validation & Error Handling
+    F.7  UI/UX Requirements
+    F.8  Non-Functional Requirements
+
+PART G — CHECKOUT: OVERVIEW PAGE SRS
+    G.1  Page Overview
+    G.2  Page-Level Functional Requirements
+    G.3  Product Details Section
+    G.4  Payment Information Section
+    G.5  Shipping Information Section
+    G.6  Price Total Section
+    G.7  Action Buttons
+    G.8  Validation & Error Handling
+    G.9  UI/UX Requirements
+    G.10 Non-Functional Requirements
+
+PART H — CHECKOUT: COMPLETE PAGE SRS
+    H.1  Page Overview
+    H.2  Page-Level Functional Requirements
+    H.3  Order Confirmation Content
+    H.4  Action Button
+    H.5  UI/UX Requirements
+    H.6  Non-Functional Requirements
+
+PART I — GLOBAL TRACEABILITY MATRIX
+
+PART J — APPENDIX
+
+
+================================================================================
+================================================================================
+        PART A — SYSTEM OVERVIEW & WEBSITE FLOW
+================================================================================
+================================================================================
+
+A.1 SYSTEM INTRODUCTION
+================================================================================
+
+The QA Brains E-Commerce Web Application is a practice e-commerce platform
+designed for quality assurance testing purposes. It provides a complete online
+shopping experience, including user authentication, product browsing, product
+detail viewing, cart management, and a multi-step checkout process.
+
+Base URL: https://practice.qabrains.com/ecommerce
+
+The application consists of 7 distinct pages, each serving a specific purpose
+in the user journey from login to order completion.
+
+--------------------------------------------------------------------------------
+
+A.2 COMPLETE WEBSITE FLOW
+================================================================================
+
+A.2.1 HIGH-LEVEL USER JOURNEY FLOW
+--------------------------------------------------------------------------------
+
+  ┌──────────────┐
+  │              │
+  │  LOGIN PAGE  │  (Authentication Entry Point)
+  │              │
+  └──────┬───────┘
+         │ Successful Login
+         ▼
+  ┌──────────────┐
+  │              │◄──────────────────────────────────────────────────┐
+  │  HOME PAGE   │  (Product Browsing, Sorting, Favourites, Cart)   │
+  │              │──────────────────────────────────────────────┐    │
+  └──────┬───────┘                                             │    │
+         │ Click Product                                       │    │
+         ▼                                                     │    │
+  ┌──────────────────┐                                         │    │
+  │                  │  (View Details, Qty Select, Fav, Cart)   │    │
+  │  PRODUCT DETAILS │─────────────────────────────────────────►│    │
+  │  PAGE            │  Back Button                             │    │
+  │                  │                                          │    │
+  └──────┬───────────┘                                         │    │
+         │ Add to Cart                                         │    │
+         ▼                                                     │    │
+  ┌──────────────┐                                             │    │
+  │              │  (Review Items, Modify Qty, Remove, Total)   │    │
+  │  CART PAGE   │─────────────────────────────────────────────►│    │
+  │              │  Continue Shopping                           │    │
+  └──────┬───────┘                                                  │
+         │ Checkout                                                 │
+         ▼                                                          │
+  ┌──────────────────────────┐                                      │
+  │                          │                                      │
+  │  CHECKOUT: YOUR INFO     │  (Email, First Name, Last Name, Zip) │
+  │  PAGE                    │──────────────────────────────────────►│
+  │                          │  Cancel                              │
+  └──────┬───────────────────┘                                      │
+         │ Continue                                                 │
+         ▼                                                          │
+  ┌──────────────────────────┐                                      │
+  │                          │                                      │
+  │  CHECKOUT: OVERVIEW      │  (Review All: Products, Payment,     │
+  │  PAGE                    │   Shipping, Price Total)              │
+  │                          │──────────────────────────────────────►│
+  └──────┬───────────────────┘  Cancel                              │
+         │ Finish                                                   │
+         ▼                                                          │
+  ┌──────────────────────────┐                                      │
+  │                          │                                      │
+  │  CHECKOUT: COMPLETE      │  (Thank You, Order Confirmation)     │
+  │  PAGE                    │──────────────────────────────────────►┘
+  │                          │  Continue Shopping
+  └──────────────────────────┘
+
+
+A.2.2 DETAILED FLOW DESCRIPTIONS
+--------------------------------------------------------------------------------
+
+FLOW 1: USER AUTHENTICATION
+  1. User navigates to https://practice.qabrains.com/ecommerce/login
+  2. User enters email and password
+  3. User clicks "Login" button
+  4. System validates credentials
+  5. On success: User is redirected to Home Page
+  6. On failure: Error message displayed, user remains on Login Page
+
+FLOW 2: PRODUCT BROWSING
+  1. User lands on Home Page after login
+  2. User sees all products in a grid layout
+  3. User can sort products using the sorting dropdown:
+     a. Search — filter by keyword
+     b. A to Z — alphabetical ascending
+     c. Z to A — alphabetical descending
+     d. Low to High Price — price ascending
+     e. High to Low Price — price descending
+  4. User can click favourite button on any product card
+  5. User can click "Add to Cart" on any product card
+  6. User can click on a product to view its details
+
+FLOW 3: PRODUCT DETAIL VIEWING
+  1. User clicks a product on the Home Page
+  2. User is navigated to Product Details Page
+     (URL: /product-details?id={product_id})
+  3. User sees product image, name, price
+  4. User can toggle favourite status
+  5. User can adjust quantity using + and - buttons
+  6. User can click "Add to Cart"
+  7. User can click "Back" button to return to Home Page
+
+FLOW 4: CART MANAGEMENT
+  1. User clicks cart icon in header (from any page)
+  2. User is navigated to Cart Page
+  3. User sees all items with image, name, quantity, price
+  4. User can adjust quantity per item using + and - buttons
+  5. User can remove items using the remove button
+  6. User sees dynamically calculated total price
+  7. User can click "Continue Shopping" to return to Home Page
+  8. User can click "Checkout" to proceed to checkout flow
+
+FLOW 5: CHECKOUT — INFORMATION ENTRY
+  1. User clicks "Checkout" on Cart Page
+  2. User is navigated to Checkout: Your Information Page
+  3. User enters: Email, First Name, Last Name, Zip Code
+  4. User can click "Cancel" to return to Cart Page
+  5. User can click "Continue" to proceed
+  6. System validates all fields before proceeding
+  7. On validation success: User proceeds to Overview Page
+  8. On validation failure: Error messages displayed
+
+FLOW 6: CHECKOUT — ORDER REVIEW
+  1. User arrives at Checkout: Overview Page
+  2. User reviews all order details (read-only):
+     a. Product details (image, name, quantity, price, total price)
+     b. Payment information
+     c. Shipping information
+     d. Price total (item total, tax, grand total)
+  3. User can click "Cancel" to abort checkout
+  4. User can click "Finish" to place the order
+
+FLOW 7: ORDER COMPLETION
+  1. User clicks "Finish" on Overview Page
+  2. System processes the order
+  3. User is redirected to Checkout: Complete Page
+  4. User sees success confirmation:
+     a. "Checkout: Complete" heading
+     b. Green tick icon
+     c. "Thank you for your order" message
+     d. Dispatch description message
+  5. User's cart is cleared
+  6. User can click "Continue Shopping" to return to Home Page
+
+FLOW 8: PROFILE ACTIONS (FROM ANY PAGE WITH HEADER)
+  1. User clicks Profile dropdown in header
+  2. Dropdown shows: Favourites, Logout
+  3. Favourites: Navigates to Favourites Page
+  4. Logout: Clears session, redirects to Login Page
+
+FLOW 9: LOGOUT
+  1. User clicks Profile dropdown → Logout
+  2. System invalidates session/token
+  3. System clears client-side stored data
+  4. User is redirected to Login Page
+  5. Browser back button does not grant re-access
+
+
+A.2.3 PAGE NAVIGATION MAP
+--------------------------------------------------------------------------------
+
+  Login Page ──────────────► Home Page
+                               │
+                   ┌───────────┼───────────────┐
+                   │           │               │
+                   ▼           ▼               ▼
+              Product      Cart Page      Favourites
+              Details         │             Page
+              Page            │
+                │             ▼
+                │        Checkout: Info
+                │             │
+                │             ▼
+                │        Checkout: Overview
+                │             │
+                │             ▼
+                │        Checkout: Complete
+                │             │
+                └─────────────┘
+                  (All paths can return to Home Page)
+
+  Logout (from any authenticated page) ──────► Login Page
+
+
+A.3 PAGE INVENTORY
+================================================================================
+
+  Page #  Page Name                     URL Path                    Auth Required
+  ------  ----------------------------  --------------------------  -------------
+  1       Login Page                    /ecommerce/login            No
+  2       Home Page                     /ecommerce                  Yes
+  3       Product Details Page          /ecommerce/product-details  Yes
+                                        ?id={product_id}
+  4       Cart Page                     /ecommerce/cart             Yes
+  5       Checkout: Your Information    /ecommerce/checkout-info    Yes
+  6       Checkout: Overview            /ecommerce/checkout-overview Yes
+  7       Checkout: Complete            /ecommerce/checkout-complete Yes
+
+
+A.4 USER ROLES
+================================================================================
+
+  Role                    Description
+  ----------------------  ----------------------------------------------------
+  Unauthenticated User    Can only access the Login Page. All other pages
+                          redirect to Login.
+  Authenticated Customer  Logged-in user with full access to all pages.
+                          Can browse, favourite, add to cart, checkout.
+  QA Tester               Uses the application for validation and testing.
+
+
+A.5 SYSTEM ARCHITECTURE (HIGH LEVEL)
+================================================================================
+
+  ┌────────────────────────────────────────────────────────────────────┐
+  │                        CLIENT (BROWSER)                           │
+  │                                                                    │
+  │   ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐            │
+  │   │  Login   │ │  Home    │ │ Product  │ │  Cart    │            │
+  │   │  Page    │ │  Page    │ │ Details  │ │  Page    │            │
+  │   └──────────┘ └──────────┘ └──────────┘ └──────────┘            │
+  │   ┌──────────┐ ┌──────────┐ ┌──────────┐                        │
+  │   │ Checkout │ │ Checkout │ │ Checkout │                        │
+  │   │  Info    │ │ Overview │ │ Complete │                        │
+  │   └──────────┘ └──────────┘ └──────────┘                        │
+  │                                                                    │
+  └──────────────────────────┬─────────────────────────────────────────┘
+                             │ HTTPS / REST API
+                             ▼
+  ┌────────────────────────────────────────────────────────────────────┐
+  │                      BACKEND SERVER                                │
+  │                                                                    │
+  │   ┌──────────────┐ ┌──────────────┐ ┌──────────────┐              │
+  │   │ Auth Service  │ │ Product      │ │ Cart Service │              │
+  │   │              │ │ Service      │ │              │              │
+  │   └──────────────┘ └──────────────┘ └──────────────┘              │
+  │   ┌──────────────┐ ┌──────────────┐ ┌──────────────┐              │
+  │   │ Favourites   │ │ Checkout     │ │ Order        │              │
+  │   │ Service      │ │ Service      │ │ Service      │              │
+  │   └──────────────┘ └──────────────┘ └──────────────┘              │
+  │                                                                    │
+  └──────────────────────────┬─────────────────────────────────────────┘
+                             │
+                             ▼
+  ┌────────────────────────────────────────────────────────────────────┐
+  │                        DATABASE                                    │
+  │                                                                    │
+  │   Users │ Products │ Cart │ Favourites │ Orders │ Sessions         │
+  │                                                                    │
+  └────────────────────────────────────────────────────────────────────┘
+
+
+A.6 GLOBAL NON-FUNCTIONAL REQUIREMENTS
+================================================================================
+
+These requirements apply across ALL pages of the application.
+
+A.6.1 PERFORMANCE
+  NFR-G-01  All pages shall load completely within 3 seconds on a standard
+            broadband connection (>= 5 Mbps).
+  NFR-G-02  API responses shall be received within 5 seconds under normal
+            server load.
+  NFR-G-03  UI interactions (clicks, hovers, toggles) shall respond within
+            100 milliseconds.
+  NFR-G-04  No page shall have a Largest Contentful Paint (LCP) greater
+            than 2.5 seconds.
+  NFR-G-05  No page shall have a Cumulative Layout Shift (CLS) greater
+            than 0.1.
+
+A.6.2 SECURITY
+  NFR-G-06  All data transmission shall use HTTPS/TLS encryption.
+  NFR-G-07  All pages shall be protected against XSS — user inputs shall
+            be sanitized.
+  NFR-G-08  All pages shall be protected against CSRF using tokens or
+            equivalent mechanisms.
+  NFR-G-09  All pages shall be protected against SQL Injection.
+  NFR-G-10  Authentication tokens shall be stored securely (HTTP-only
+            cookies or secure storage).
+  NFR-G-11  Error messages shall not reveal sensitive system information.
+  NFR-G-12  Rate limiting shall be implemented on critical endpoints.
+  NFR-G-13  Session timeout shall be enforced after a period of
+            inactivity.
+
+A.6.3 COMPATIBILITY
+  NFR-G-14  All pages shall be fully functional on: Google Chrome (latest),
+            Mozilla Firefox (latest), Apple Safari (latest), Microsoft
+            Edge (latest).
+  NFR-G-15  All pages shall function on: Windows 10/11, macOS, Ubuntu
+            Linux, Android (mobile browser), iOS (Safari).
+
+A.6.4 RESPONSIVENESS
+  NFR-G-16  All pages shall be responsive across: Desktop (>=1024px),
+            Tablet (768px-1023px), Mobile (320px-767px).
+  NFR-G-17  No page shall require horizontal scrolling on any supported
+            viewport.
+
+A.6.5 ACCESSIBILITY
+  NFR-G-18  All pages shall conform to WCAG 2.1 Level AA.
+  NFR-G-19  All interactive elements shall be keyboard navigable.
+  NFR-G-20  All images shall have meaningful alt text.
+  NFR-G-21  All form fields shall have associated <label> elements.
+  NFR-G-22  Color contrast ratios: minimum 4.5:1 for normal text, 3:1
+            for large text.
+  NFR-G-23  ARIA attributes shall be used where appropriate.
+  NFR-G-24  Screen readers shall navigate all pages in meaningful order.
+  NFR-G-25  All interactive elements shall have minimum touch target
+            size of 44x44px.
+
+A.6.6 RELIABILITY & AVAILABILITY
+  NFR-G-26  The application shall have 99.9% uptime (excluding scheduled
+            maintenance).
+  NFR-G-27  In case of backend unavailability, pages shall display
+            user-friendly error messages.
+
+
+================================================================================
+================================================================================
+        PART B — LOGIN PAGE SRS
+================================================================================
+================================================================================
+
+URL: https://practice.qabrains.com/ecommerce/login
+Authentication Required: No (this IS the authentication page)
+
+B.1 PAGE OVERVIEW
+================================================================================
+
+The Login Page is the authentication gateway of the QA Brains E-Commerce
+application. It is the first page users encounter and is responsible for
+collecting and validating user credentials (email and password) before
+granting access to the application.
+
+Elements on this page:
+  1. Logo / Home Button
+  2. "Login" Heading Text
+  3. "Email" Label Text
+  4. Email Input Field
+  5. "Password" Label Text
+  6. Password Input Field
+  7. Password Hide/Show Toggle Button
+  8. Login Button
+
+Page Layout (Wireframe):
+
+  ┌─────────────────────────────────────────────────────────┐
+  │  ┌──────────┐                                           │
+  │  │  LOGO    │  <-- Clickable, navigates to home         │
+  │  └──────────┘                                           │
+  │                                                         │
+  │            ┌───────────────────────────┐                │
+  │            │                           │                │
+  │            │         Login             │  <-- Heading   │
+  │            │                           │                │
+  │            │  Email                    │  <-- Label     │
+  │            │  ┌───────────────────┐    │                │
+  │            │  │                   │    │  <-- Input     │
+  │            │  └───────────────────┘    │                │
+  │            │                           │                │
+  │            │  Password                 │  <-- Label     │
+  │            │  ┌───────────────────┬──┐ │                │
+  │            │  │                   │EYE│ │  <-- Input    │
+  │            │  └───────────────────┴──┘ │    + Toggle    │
+  │            │                           │                │
+  │            │  ┌───────────────────┐    │                │
+  │            │  │      Login        │    │  <-- Button    │
+  │            │  └───────────────────┘    │                │
+  │            │                           │                │
+  │            └───────────────────────────┘                │
+  │                                                         │
+  └─────────────────────────────────────────────────────────┘
+
+
+B.2 FUNCTIONAL REQUIREMENTS
+================================================================================
+
+FR-LGN-01: Logo / Home Button
+--------------------------------------------------------------------------------
+  FR-LGN-01.1   The logo shall be displayed at a prominent position on
+                 the login page (top-left or top-center of the header).
+  FR-LGN-01.2   The logo shall be rendered as a visible image (PNG, SVG,
+                 or equivalent).
+  FR-LGN-01.3   The logo shall be clickable (wrapped in an <a> tag or
+                 equivalent).
+  FR-LGN-01.4   When clicked, the logo shall navigate to the application
+                 home page.
+  FR-LGN-01.5   The logo shall have an alt attribute with meaningful text
+                 (e.g., "QA Brains E-Commerce Home").
+  FR-LGN-01.6   On hover, cursor shall change to pointer.
+  FR-LGN-01.7   The logo shall maintain aspect ratio across all screen
+                 sizes.
+
+FR-LGN-02: "Login" Heading Text
+--------------------------------------------------------------------------------
+  FR-LGN-02.1   The page shall display the text "Login" as a heading.
+  FR-LGN-02.2   The heading shall use an appropriate HTML heading tag
+                 (e.g., <h1>, <h2>).
+  FR-LGN-02.3   The heading shall be visually prominent (larger font,
+                 bold weight).
+  FR-LGN-02.4   The heading text shall be static and non-editable.
+  FR-LGN-02.5   The heading shall be positioned above the login form
+                 fields.
+
+FR-LGN-03: "Email" Label Text
+--------------------------------------------------------------------------------
+  FR-LGN-03.1   The label "Email" shall be displayed adjacent to the
+                 email input field.
+  FR-LGN-03.2   The label shall use a <label> HTML element.
+  FR-LGN-03.3   The <label> shall be associated with the email input
+                 via the "for" attribute.
+  FR-LGN-03.4   Clicking the label shall focus the email input field.
+  FR-LGN-03.5   The label shall be static, non-editable, and legible.
+
+FR-LGN-04: Email Input Field
+--------------------------------------------------------------------------------
+  FR-LGN-04.1   The email field shall be an <input> with type="email"
+                 or type="text".
+  FR-LGN-04.2   The field shall accept alphanumeric and email-valid
+                 special characters (@, ., _, -, +).
+  FR-LGN-04.3   The field shall have placeholder text (e.g., "Enter
+                 your email").
+  FR-LGN-04.4   The field shall be initially empty on page load.
+  FR-LGN-04.5   The field shall allow type, paste, cut, select all,
+                 and delete operations.
+  FR-LGN-04.6   The field shall be single-line.
+  FR-LGN-04.7   The field shall have a visible border/outline.
+  FR-LGN-04.8   When focused, a visual focus indicator shall appear.
+  FR-LGN-04.9   The field shall support Tab / Shift+Tab navigation.
+  FR-LGN-04.10  Maximum length: 254 characters (RFC 5321).
+  FR-LGN-04.11  The field shall be required.
+
+FR-LGN-05: "Password" Label Text
+--------------------------------------------------------------------------------
+  FR-LGN-05.1   The label "Password" shall be displayed adjacent to the
+                 password input field.
+  FR-LGN-05.2   The label shall use a <label> HTML element.
+  FR-LGN-05.3   The <label> shall be associated with the password input
+                 via the "for" attribute.
+  FR-LGN-05.4   Clicking the label shall focus the password input field.
+  FR-LGN-05.5   The label shall be static, non-editable, and legible.
+
+FR-LGN-06: Password Input Field
+--------------------------------------------------------------------------------
+  FR-LGN-06.1   The password field shall be an <input> with
+                 type="password" by default.
+  FR-LGN-06.2   Characters shall be masked by default (dots or
+                 asterisks).
+  FR-LGN-06.3   The field shall accept alphanumeric, special characters,
+                 and spaces.
+  FR-LGN-06.4   The field shall have placeholder text (e.g., "Enter
+                 your password").
+  FR-LGN-06.5   The field shall be initially empty on page load.
+  FR-LGN-06.6   The field shall allow type, paste, cut, select all,
+                 and delete operations.
+  FR-LGN-06.7   The field shall be single-line.
+  FR-LGN-06.8   The field shall have a visible border/outline.
+  FR-LGN-06.9   When focused, a visual focus indicator shall appear.
+  FR-LGN-06.10  The field shall support Tab navigation.
+  FR-LGN-06.11  The field shall be required.
+  FR-LGN-06.12  Maximum length: 128 characters.
+
+FR-LGN-07: Password Hide/Show Toggle Button
+--------------------------------------------------------------------------------
+  FR-LGN-07.1   A toggle button shall be positioned inside or adjacent
+                 to the password field (right side).
+  FR-LGN-07.2   Default State (Hidden): type="password", icon shows
+                 "eye with slash" or "closed eye".
+  FR-LGN-07.3   Toggled State (Visible): type="text", password shown
+                 in plain text, icon shows "open eye".
+  FR-LGN-07.4   Clicking again reverts to hidden state.
+  FR-LGN-07.5   Toggle shall NOT clear, alter, or reset password
+                 content.
+  FR-LGN-07.6   Cursor: pointer on hover.
+  FR-LGN-07.7   Keyboard accessible (focusable, Enter/Space to
+                 activate).
+  FR-LGN-07.8   aria-label shall update dynamically ("Show password" /
+                 "Hide password").
+  FR-LGN-07.9   Toggle shall work correctly regardless of click count.
+  FR-LGN-07.10  Default on page load: always hidden (password masked).
+
+FR-LGN-08: Login Button
+--------------------------------------------------------------------------------
+  FR-LGN-08.1   The button shall display the text "Login".
+  FR-LGN-08.2   The button shall be a <button> with type="submit" or
+                 equivalent.
+  FR-LGN-08.3   Positioned below the password field as primary CTA.
+  FR-LGN-08.4   Visually distinct (solid background, contrasting text).
+  FR-LGN-08.5   Hover: visual feedback (color change, shadow).
+  FR-LGN-08.6   Click (valid inputs): triggers form submission / API
+                 call.
+  FR-LGN-08.7   Clickable via mouse, Enter key, and touch.
+  FR-LGN-08.8   Loading state during API call (spinner, disabled).
+  FR-LGN-08.9   Re-enabled after server response.
+  FR-LGN-08.10  Keyboard-focusable and accessible.
+
+FR-LGN-09: Login Form Submission & Authentication
+--------------------------------------------------------------------------------
+  FR-LGN-09.1   Client-side validation on both fields before API call.
+  FR-LGN-09.2   POST request to authentication API with email and
+                 password.
+  FR-LGN-09.3   Password transmitted over HTTPS, never in URL.
+  FR-LGN-09.4   On success: redirect to Home Page.
+  FR-LGN-09.5   On success: store auth token securely.
+  FR-LGN-09.6   On failure (invalid credentials): display error on page.
+  FR-LGN-09.7   On server error (5xx): display generic error message.
+  FR-LGN-09.8   Error shall NOT indicate whether email or password was
+                 wrong (prevent credential enumeration).
+  FR-LGN-09.9   Pressing Enter in any field triggers form submission.
+
+
+B.3 VALIDATION & ERROR HANDLING
+================================================================================
+
+B.3.1 Client-Side Validation
+--------------------------------------------------------------------------------
+
+  VAL-LGN-01  Email: Field must not be empty.
+              Error: "Email is required."
+
+  VAL-LGN-02  Email: Must be valid format (user@domain.com, contains @).
+              Error: "Please enter a valid email address."
+
+  VAL-LGN-03  Email: Must not exceed 254 characters.
+              Error: "Email is too long."
+
+  VAL-LGN-04  Email: No leading/trailing spaces (auto-trim or reject).
+              Error: "Email should not contain leading/trailing spaces."
+
+  VAL-LGN-05  Password: Field must not be empty.
+              Error: "Password is required."
+
+  VAL-LGN-06  Password: Minimum length (1 or defined minimum, e.g., 6).
+              Error: "Password must be at least [X] characters."
+
+  VAL-LGN-07  Password: Must not exceed 128 characters.
+              Error: "Password is too long."
+
+B.3.2 Server-Side Error Responses
+--------------------------------------------------------------------------------
+
+  Scenario                    Error Message                    HTTP Status
+  --------------------------  -------------------------------  -----------
+  Invalid credentials         "Invalid email or password.      401
+                               Please try again."
+  Account locked              "Your account has been           429
+                               temporarily locked."
+  Server error                "Something went wrong.           500
+                               Please try again later."
+  Network error/timeout       "Unable to connect to server.    N/A
+                               Check internet connection."
+
+B.3.3 Error Display Rules
+--------------------------------------------------------------------------------
+  ERR-LGN-01  Errors displayed in red text.
+  ERR-LGN-02  Field-level errors below respective field.
+  ERR-LGN-03  Form-level errors at top or bottom of form.
+  ERR-LGN-04  Errors appear on submit (optionally on blur).
+  ERR-LGN-05  Errors disappear when user corrects input.
+  ERR-LGN-06  Errors announced to screen readers via
+              aria-live="assertive".
+
+
+B.4 UI/UX REQUIREMENTS
+================================================================================
+
+  UI-LGN-01   Login form centered on page.
+  UI-LGN-02   Elements vertically stacked: Heading > Email Label >
+               Email Field > Password Label > Password Field > Button.
+  UI-LGN-03   Consistent font family, size, and color scheme.
+  UI-LGN-04   Adequate spacing between elements.
+  UI-LGN-05   Form container with defined boundary (card/shadow/border).
+  UI-LGN-06   Input fields uniform width and height.
+  UI-LGN-07   Non-distracting background with sufficient contrast.
+  UI-LGN-08   Error messages in distinguishable color (red).
+  UI-LGN-09   Clean, minimalist design with no clutter.
+
+
+B.5 NON-FUNCTIONAL REQUIREMENTS
+================================================================================
+
+B.5.1 Performance
+  NFR-LGN-01  Page loads within 3 seconds on standard broadband.
+  NFR-LGN-02  Auth API response within 5 seconds under normal load.
+  NFR-LGN-03  UI interactions respond within 100 milliseconds.
+
+B.5.2 Security
+  NFR-LGN-04  All transmission over HTTPS/TLS.
+  NFR-LGN-05  Passwords never logged, cached insecurely, or in URL.
+  NFR-LGN-06  Rate limiting on login endpoint (e.g., max 5 failed
+              attempts per minute per IP/email).
+  NFR-LGN-07  Protected against XSS.
+  NFR-LGN-08  Protected against CSRF.
+  NFR-LGN-09  Protected against SQL Injection.
+  NFR-LGN-10  No sensitive info in error messages.
+  NFR-LGN-11  autocomplete="current-password" on password field.
+
+B.5.3 Usability
+  NFR-LGN-12  Intuitive, requires no training.
+  NFR-LGN-13  Tab order: Email > Password > Toggle > Login Button.
+  NFR-LGN-14  Clear feedback for every user action.
+
+B.5.4 Accessibility
+  NFR-LGN-15  WCAG 2.1 Level AA conformance.
+  NFR-LGN-16  All elements keyboard navigable.
+  NFR-LGN-17  Logo has meaningful alt text.
+  NFR-LGN-18  All fields have associated <label> elements.
+  NFR-LGN-19  Contrast: 4.5:1 normal text, 3:1 large text.
+  NFR-LGN-20  ARIA attributes used appropriately.
+
+
+================================================================================
+================================================================================
+        PART C — HOME PAGE SRS
+================================================================================
+================================================================================
+
+URL: https://practice.qabrains.com/ecommerce
+Authentication Required: Yes
+
+C.1 PAGE OVERVIEW
+================================================================================
+
+The Home Page is the primary landing page after login. It serves as the
+central hub for product browsing, sorting, favouriting, and adding items
+to the cart.
+
+Page Structure:
+  - HEADER: Logo, Cart Button, Profile Dropdown (Favourites, Logout)
+  - MAIN: "Products" heading, Sorting Dropdown, Product Cards Grid
+  - FOOTER: Navigation Links
+
+Page Layout (Wireframe):
+
+  ┌───────────────────────────────────────────────────────────────────┐
+  │ HEADER                                                           │
+  │ ┌──────────┐                          ┌──────┐ ┌──────────────┐ │
+  │ │  LOGO    │                          │ CART │ │   PROFILE ▼  │ │
+  │ └──────────┘                          └──────┘ │ - Favourites │ │
+  │                                                │ - Logout     │ │
+  │                                                └──────────────┘ │
+  ├───────────────────────────────────────────────────────────────────┤
+  │ MAIN                                                             │
+  │                                                                   │
+  │  Products                              ┌─────────────────────┐   │
+  │                                        │ Sort: [Dropdown ▼]  │   │
+  │                                        └─────────────────────┘   │
+  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐              │
+  │  │  [Image]    │  │  [Image]    │  │  [Image]    │              │
+  │  │  ♡          │  │  ♡          │  │  ♡          │              │
+  │  │  Name       │  │  Name       │  │  Name       │              │
+  │  │  $Price     │  │  $Price     │  │  $Price     │              │
+  │  │ [Add Cart]  │  │ [Add Cart]  │  │ [Add Cart]  │              │
+  │  └─────────────┘  └─────────────┘  └─────────────┘              │
+  │                                                                   │
+  ├───────────────────────────────────────────────────────────────────┤
+  │ FOOTER                                                           │
+  │  Link 1 | Link 2 | Link 3 | Link 4 | ...                       │
+  └───────────────────────────────────────────────────────────────────┘
+
+
+C.2 HEADER SECTION — FUNCTIONAL REQUIREMENTS
+================================================================================
+
+FR-HOME-HDR-01: Home Logo Button
+--------------------------------------------------------------------------------
+  FR-HOME-HDR-01.1   Logo displayed at left side of header.
+  FR-HOME-HDR-01.2   Rendered as visible image (PNG, SVG, WebP).
+  FR-HOME-HDR-01.3   Clickable (anchor tag or equivalent).
+  FR-HOME-HDR-01.4   Click navigates to home page or reloads if already
+                     on home.
+  FR-HOME-HDR-01.5   alt attribute: "QA Brains E-Commerce Home".
+  FR-HOME-HDR-01.6   Cursor: pointer on hover.
+  FR-HOME-HDR-01.7   Maintains aspect ratio, no distortion.
+  FR-HOME-HDR-01.8   Visible on all screen sizes.
+  FR-HOME-HDR-01.9   Loads without significant delay.
+
+FR-HOME-HDR-02: Cart Button
+--------------------------------------------------------------------------------
+  FR-HOME-HDR-02.1   Cart icon/button in header, right side.
+  FR-HOME-HDR-02.2   Recognizable shopping cart icon.
+  FR-HOME-HDR-02.3   Clickable.
+  FR-HOME-HDR-02.4   Click navigates to Cart Page (/ecommerce/cart).
+  FR-HOME-HDR-02.5   Cursor: pointer on hover.
+  FR-HOME-HDR-02.6   Hover: visual feedback (color, scale, tooltip).
+  FR-HOME-HDR-02.7   Optional badge/counter showing cart item count.
+  FR-HOME-HDR-02.8   Empty cart: badge shows "0" or hidden.
+  FR-HOME-HDR-02.9   Badge updates dynamically without page reload.
+  FR-HOME-HDR-02.10  aria-label: "Shopping Cart" or "Cart - N items".
+  FR-HOME-HDR-02.11  Keyboard accessible (Tab, Enter/Space).
+
+FR-HOME-HDR-03: Profile Dropdown Button
+--------------------------------------------------------------------------------
+  FR-HOME-HDR-03.1   Profile button/icon in header, right side.
+  FR-HOME-HDR-03.2   Recognizable user icon (avatar, silhouette).
+  FR-HOME-HDR-03.3   Clickable.
+  FR-HOME-HDR-03.4   Cursor: pointer on hover.
+  FR-HOME-HDR-03.5   Click toggles open dropdown menu.
+  FR-HOME-HDR-03.6   Second click closes dropdown.
+  FR-HOME-HDR-03.7   Dropdown contains: 1. Favourites, 2. Logout.
+  FR-HOME-HDR-03.8   Smooth transition/animation on open.
+  FR-HOME-HDR-03.9   Dropdown has defined boundary (shadow/border).
+  FR-HOME-HDR-03.10  Click outside closes dropdown.
+  FR-HOME-HDR-03.11  Escape key closes dropdown.
+  FR-HOME-HDR-03.12  Keyboard navigable (Arrow keys, Enter, Tab).
+  FR-HOME-HDR-03.13  aria-haspopup="true", aria-expanded updates.
+  FR-HOME-HDR-03.14  role="menu" on dropdown, role="menuitem" on items.
+  FR-HOME-HDR-03.15  Only one dropdown visible at a time.
+
+FR-HOME-HDR-04: Favourites Menu Item
+--------------------------------------------------------------------------------
+  FR-HOME-HDR-04.1   Text: "Favourites".
+  FR-HOME-HDR-04.2   Clickable.
+  FR-HOME-HDR-04.3   Click navigates to Favourites page.
+  FR-HOME-HDR-04.4   Hover: visual feedback (highlight, color change).
+  FR-HOME-HDR-04.5   Cursor: pointer on hover.
+  FR-HOME-HDR-04.6   Optional heart icon alongside text.
+  FR-HOME-HDR-04.7   Dropdown closes after click.
+
+FR-HOME-HDR-05: Logout Menu Item
+--------------------------------------------------------------------------------
+  FR-HOME-HDR-05.1   Text: "Logout".
+  FR-HOME-HDR-05.2   Clickable.
+  FR-HOME-HDR-05.3   Click: invalidate session, clear tokens, send
+                     logout API (if applicable), redirect to Login Page.
+  FR-HOME-HDR-05.4   After logout, browser Back button does not grant
+                     access to authenticated pages.
+  FR-HOME-HDR-05.5   Hover: visual feedback.
+  FR-HOME-HDR-05.6   Cursor: pointer on hover.
+  FR-HOME-HDR-05.7   Optional logout icon alongside text.
+  FR-HOME-HDR-05.8   Dropdown closes after click.
+  FR-HOME-HDR-05.9   Clears all sensitive user data from browser.
+  FR-HOME-HDR-05.10  If logout API fails, still log out client-side.
+
+FR-HOME-HDR-06: Header General Requirements
+--------------------------------------------------------------------------------
+  FR-HOME-HDR-06.1   Horizontal bar, full width, top of page.
+  FR-HOME-HDR-06.2   Optionally sticky/fixed during scroll.
+  FR-HOME-HDR-06.3   Layout: Logo (left), Cart + Profile (right).
+  FR-HOME-HDR-06.4   Consistent background color and height.
+  FR-HOME-HDR-06.5   Responsive for mobile viewports.
+  FR-HOME-HDR-06.6   All elements vertically centered in header.
+
+
+C.3 MAIN SECTION — FUNCTIONAL REQUIREMENTS
+================================================================================
+
+FR-HOME-MAIN-01: "Products" Heading Text
+--------------------------------------------------------------------------------
+  FR-HOME-MAIN-01.1   Text: "Products" as heading element.
+  FR-HOME-MAIN-01.2   HTML heading tag (e.g., <h1>, <h2>).
+  FR-HOME-MAIN-01.3   Visually prominent, above product listing and
+                      sorting controls.
+  FR-HOME-MAIN-01.4   Static, non-editable.
+  FR-HOME-MAIN-01.5   Left or center aligned per design.
+  FR-HOME-MAIN-01.6   Visible without scrolling (above the fold).
+
+FR-HOME-MAIN-02: Sorting Dropdown
+--------------------------------------------------------------------------------
+  FR-HOME-MAIN-02.1   Sorting dropdown near "Products" heading.
+  FR-HOME-MAIN-02.2   Clickable, expands to reveal options.
+  FR-HOME-MAIN-02.3   Contains 5 sorting options:
+
+  Option #  Label                  Behavior
+  --------  ---------------------  ----------------------------------------
+  1         Search                 Activates search/filter by keyword
+  2         A to Z (Ascending)     Sorts by name alphabetically A->Z
+  3         Z to A (Descending)    Sorts by name alphabetically Z->A
+  4         Low to High Price      Sorts by price ascending (cheapest first)
+  5         High to Low Price      Sorts by price descending (expensive first)
+
+  FR-HOME-MAIN-02.4   Default sort on page load per design spec.
+  FR-HOME-MAIN-02.5   Selection re-sorts products without full page
+                      reload.
+  FR-HOME-MAIN-02.6   Selected option visually indicated.
+  FR-HOME-MAIN-02.7   Hover feedback on options.
+  FR-HOME-MAIN-02.8   Keyboard accessible (Tab, Enter/Space, Arrows).
+  FR-HOME-MAIN-02.9   aria-label: "Sort products by".
+  FR-HOME-MAIN-02.10  Closes on selection or outside click.
+  FR-HOME-MAIN-02.11  Escape closes without changing selection.
+
+FR-HOME-MAIN-02-A: Search Option Details
+--------------------------------------------------------------------------------
+  FR-HOME-MAIN-02-A.1   "Search" option activates search mechanism.
+  FR-HOME-MAIN-02-A.2   Search input field becomes visible.
+  FR-HOME-MAIN-02-A.3   Filters products by name (partial match).
+  FR-HOME-MAIN-02-A.4   Case-insensitive.
+  FR-HOME-MAIN-02-A.5   Dynamic update as user types (live search /
+                        debounced).
+  FR-HOME-MAIN-02-A.6   No results: "No products found" message.
+  FR-HOME-MAIN-02-A.7   Clear search restores full listing.
+  FR-HOME-MAIN-02-A.8   Placeholder: "Search products...".
+  FR-HOME-MAIN-02-A.9   Max length: 100 characters.
+  FR-HOME-MAIN-02-A.10  Protected against XSS.
+
+FR-HOME-MAIN-02-B: A to Z Sort
+--------------------------------------------------------------------------------
+  FR-HOME-MAIN-02-B.1   Sorts alphabetically by name ascending.
+  FR-HOME-MAIN-02-B.2   Case-insensitive.
+  FR-HOME-MAIN-02-B.3   Numbers before alphabetical (standard
+                        lexicographic).
+  FR-HOME-MAIN-02-B.4   Applies to all products.
+
+FR-HOME-MAIN-02-C: Z to A Sort
+--------------------------------------------------------------------------------
+  FR-HOME-MAIN-02-C.1   Sorts alphabetically by name descending.
+  FR-HOME-MAIN-02-C.2   Case-insensitive.
+  FR-HOME-MAIN-02-C.3   Exact reverse of A to Z.
+  FR-HOME-MAIN-02-C.4   Applies to all products.
+
+FR-HOME-MAIN-02-D: Low to High Price Sort
+--------------------------------------------------------------------------------
+  FR-HOME-MAIN-02-D.1   Sorts by price ascending (cheapest first).
+  FR-HOME-MAIN-02-D.2   Based on numeric value (not string).
+  FR-HOME-MAIN-02-D.3   Same price: stable sort or sub-sort by name.
+  FR-HOME-MAIN-02-D.4   Applies to all products.
+
+FR-HOME-MAIN-02-E: High to Low Price Sort
+--------------------------------------------------------------------------------
+  FR-HOME-MAIN-02-E.1   Sorts by price descending (expensive first).
+  FR-HOME-MAIN-02-E.2   Based on numeric value.
+  FR-HOME-MAIN-02-E.3   Same price: stable sort or sub-sort by name.
+  FR-HOME-MAIN-02-E.4   Exact reverse of Low to High.
+  FR-HOME-MAIN-02-E.5   Applies to all products.
+
+FR-HOME-MAIN-03: Product Listing Grid
+--------------------------------------------------------------------------------
+  FR-HOME-MAIN-03.1   Product listing below heading and sort dropdown.
+  FR-HOME-MAIN-03.2   Grid layout (multiple products per row).
+  FR-HOME-MAIN-03.3   Each product as a product card.
+  FR-HOME-MAIN-03.4   Responsive grid:
+                      Desktop (>=1024px): 3-4 per row
+                      Tablet (768-1023px): 2-3 per row
+                      Mobile (320-767px): 1-2 per row
+  FR-HOME-MAIN-03.5   Uniform card dimensions.
+  FR-HOME-MAIN-03.6   Equal spacing between cards.
+  FR-HOME-MAIN-03.7   Loading state while products fetch.
+  FR-HOME-MAIN-03.8   Error state if API fails.
+  FR-HOME-MAIN-03.9   Empty state if no products available.
+
+FR-HOME-MAIN-04: Product Image (Per Card)
+--------------------------------------------------------------------------------
+  FR-HOME-MAIN-04.1   Product image displayed at top of card.
+  FR-HOME-MAIN-04.2   Rendered as <img> element.
+  FR-HOME-MAIN-04.3   Dynamically populated from API.
+  FR-HOME-MAIN-04.4   Maintains aspect ratio, no distortion.
+  FR-HOME-MAIN-04.5   Meaningful alt attribute (product name).
+  FR-HOME-MAIN-04.6   Placeholder while loading.
+  FR-HOME-MAIN-04.7   Fallback image if load fails.
+  FR-HOME-MAIN-04.8   Defined dimensions to prevent CLS.
+  FR-HOME-MAIN-04.9   Optionally clickable (navigates to PDP).
+
+FR-HOME-MAIN-05: Favourite Button (Per Card)
+--------------------------------------------------------------------------------
+  FR-HOME-MAIN-05.1   Heart icon (outlined/filled) on each card.
+  FR-HOME-MAIN-05.2   Toggle: outlined = not favourited, filled = fav.
+  FR-HOME-MAIN-05.3   Initial state from API (check if favourited).
+  FR-HOME-MAIN-05.4   Click (not fav): POST to add, icon fills.
+  FR-HOME-MAIN-05.5   Click (fav): DELETE to remove, icon outlines.
+  FR-HOME-MAIN-05.6   Optimistic UI update, revert on API failure.
+  FR-HOME-MAIN-05.7   Cursor: pointer on hover.
+  FR-HOME-MAIN-05.8   Keyboard accessible.
+  FR-HOME-MAIN-05.9   aria-label updates: "Add/Remove from favourites".
+  FR-HOME-MAIN-05.10  Debounce to prevent duplicate API calls.
+  FR-HOME-MAIN-05.11  Min touch target: 44x44px.
+
+FR-HOME-MAIN-06: Product Name (Per Card)
+--------------------------------------------------------------------------------
+  FR-HOME-MAIN-06.1   Product name displayed below image.
+  FR-HOME-MAIN-06.2   Dynamically populated from API.
+  FR-HOME-MAIN-06.3   Legible font, appropriate size/weight.
+  FR-HOME-MAIN-06.4   Static, non-editable.
+  FR-HOME-MAIN-06.5   Long names: truncate with ellipsis or wrap.
+  FR-HOME-MAIN-06.6   Handles special characters correctly.
+  FR-HOME-MAIN-06.7   Optionally clickable (navigates to PDP).
+
+FR-HOME-MAIN-07: Product Price (Per Card)
+--------------------------------------------------------------------------------
+  FR-HOME-MAIN-07.1   Price displayed below product name.
+  FR-HOME-MAIN-07.2   Currency symbol + two decimal places
+                      (e.g., \$29.99).
+  FR-HOME-MAIN-07.3   Dynamically populated from API.
+  FR-HOME-MAIN-07.4   Static, non-editable.
+  FR-HOME-MAIN-07.5   Legible, distinct styling.
+  FR-HOME-MAIN-07.6   Consistent currency format across all cards.
+
+FR-HOME-MAIN-08: Add to Cart Button (Per Card)
+--------------------------------------------------------------------------------
+  FR-HOME-MAIN-08.1   "Add to Cart" button on each product card.
+  FR-HOME-MAIN-08.2   <button> element or equivalent.
+  FR-HOME-MAIN-08.3   Positioned at bottom of card.
+  FR-HOME-MAIN-08.4   Visually distinct CTA (solid color, contrast).
+  FR-HOME-MAIN-08.5   Click: POST API to add product to cart (qty=1).
+  FR-HOME-MAIN-08.6   On success: feedback (toast, animation, button
+                      text change "Added!").
+  FR-HOME-MAIN-08.7   On success: header cart badge updates.
+  FR-HOME-MAIN-08.8   On failure: error message displayed.
+  FR-HOME-MAIN-08.9   Loading state during API call.
+  FR-HOME-MAIN-08.10  Prevents duplicate submissions (debounce).
+  FR-HOME-MAIN-08.11  Hover: visual feedback.
+  FR-HOME-MAIN-08.12  Cursor: pointer on hover.
+  FR-HOME-MAIN-08.13  Keyboard accessible (Tab, Enter/Space).
+  FR-HOME-MAIN-08.14  aria-label: "Add [Product Name] to cart".
+  FR-HOME-MAIN-08.15  Min touch target: 44x44px.
+
+
+C.4 FOOTER SECTION — FUNCTIONAL REQUIREMENTS
+================================================================================
+
+FR-HOME-FTR-01: Footer Container
+--------------------------------------------------------------------------------
+  FR-HOME-FTR-01.1   Footer displayed at bottom of page, full width.
+  FR-HOME-FTR-01.2   Visually distinct from main content (different
+                     background, border-top, or color scheme).
+  FR-HOME-FTR-01.3   Contains navigation links.
+  FR-HOME-FTR-01.4   Footer appears after all main content (below
+                     product grid).
+  FR-HOME-FTR-01.5   Footer is responsive across all viewports.
+
+FR-HOME-FTR-02: Footer Links
+--------------------------------------------------------------------------------
+  FR-HOME-FTR-02.1   Footer contains multiple navigation links.
+  FR-HOME-FTR-02.2   Each link is an <a> tag or equivalent.
+  FR-HOME-FTR-02.3   Each link is clickable.
+  FR-HOME-FTR-02.4   Click navigates to the respective destination.
+  FR-HOME-FTR-02.5   Cursor: pointer on hover.
+  FR-HOME-FTR-02.6   Hover: visual feedback (underline, color change).
+  FR-HOME-FTR-02.7   Links are keyboard accessible.
+  FR-HOME-FTR-02.8   Links have meaningful text (no "click here").
+  FR-HOME-FTR-02.9   External links open in new tab (target="_blank")
+                     with rel="noopener noreferrer".
+  FR-HOME-FTR-02.10  Links arranged in logical grouping/order.
+
+
+C.5 UI/UX REQUIREMENTS
+================================================================================
+
+  UI-HOME-01  Three-section layout: Header, Main, Footer.
+  UI-HOME-02  Product grid centered within main content area.
+  UI-HOME-03  Consistent card design across all product cards.
+  UI-HOME-04  Adequate spacing between cards and sections.
+  UI-HOME-05  Color scheme consistent with application design system.
+  UI-HOME-06  Typography hierarchy: headings > names > prices > body.
+  UI-HOME-07  Loading skeletons match final content layout.
+  UI-HOME-08  Smooth transitions for sort changes and favourites.
+  UI-HOME-09  Clean, uncluttered layout.
+  UI-HOME-10  Visual feedback on all interactive elements.
+
+
+C.6 NON-FUNCTIONAL REQUIREMENTS
+================================================================================
+
+  (See Global NFRs in Section A.6 — all apply to Home Page)
+  Additional:
+  NFR-HOME-01  Product listing renders within 2 seconds after API
+               response.
+  NFR-HOME-02  Sort operation completes and re-renders within 500ms.
+  NFR-HOME-03  Search results update within 300ms of user stopping
+               typing (debounce).
+  NFR-HOME-04  Product images lazy-loaded for off-screen cards.
+  NFR-HOME-05  Page handles 100+ products without significant
+               performance degradation.
+
+
+================================================================================
+================================================================================
+        PART D — PRODUCT DETAILS PAGE SRS
+================================================================================
+================================================================================
+
+URL: https://practice.qabrains.com/ecommerce/product-details?id={product_id}
+Example: https://practice.qabrains.com/ecommerce/product-details?id=1
+Authentication Required: Yes
+
+D.1 PAGE OVERVIEW
+================================================================================
+
+The Product Details Page provides a focused view of a single product,
+allowing users to see the product image, name, and price, toggle favourite
+status, select quantity, and add the product to their cart.
+
+Elements on this page:
+  1. Back Button with Text
+  2. Product Image
+  3. Favourite Button
+  4. Product Name
+  5. Quantity Selector (Minus button, Quantity display, Plus button)
+  6. Product Price
+  7. Add to Cart Button
+
+Page Layout (Wireframe):
+
+  ┌───────────────────────────────────────────────────────────────────┐
+  │                                                                   │
+  │  <-- Back                                                        │
+  │                                                                   │
+  │  ┌─────────────────────┐   ┌──────────────────────────────────┐  │
+  │  │                     │   │                                  │  │
+  │  │                     │   │  Product Name              ♡    │  │
+  │  │                     │   │                                  │  │
+  │  │    [Product Image]  │   │  Quantity:                       │  │
+  │  │                     │   │  [ - ]  [ 1 ]  [ + ]            │  │
+  │  │                     │   │                                  │  │
+  │  │                     │   │  $XX.XX                         │  │
+  │  │                     │   │                                  │  │
+  │  └─────────────────────┘   │  ┌────────────────────────────┐ │  │
+  │                            │  │      Add to Cart           │ │  │
+  │                            │  └────────────────────────────┘ │  │
+  │                            └──────────────────────────────────┘  │
+  │                                                                   │
+  └───────────────────────────────────────────────────────────────────┘
+
+
+D.2 FUNCTIONAL REQUIREMENTS
+================================================================================
+
+FR-PDP-01: Back Button with Text
+--------------------------------------------------------------------------------
+  FR-PDP-01.1   Displayed at top-left of main content area.
+  FR-PDP-01.2   Includes text (e.g., "Back", "<-- Back", "Back to
+                Products").
+  FR-PDP-01.3   Optional left-pointing arrow icon.
+  FR-PDP-01.4   Clickable (<button> or <a> tag).
+  FR-PDP-01.5   Click navigates to previous page (history.back()) OR
+                directly to Home Page.
+  FR-PDP-01.6   If no history: fallback navigates to Home Page.
+  FR-PDP-01.7   Cursor: pointer on hover.
+  FR-PDP-01.8   Hover: visual feedback (color, underline, opacity).
+  FR-PDP-01.9   Text clearly legible, sufficient contrast.
+  FR-PDP-01.10  Keyboard accessible (Tab, Enter/Space).
+  FR-PDP-01.11  aria-label if text not sufficiently descriptive.
+  FR-PDP-01.12  Visible focus indicator when keyboard-focused.
+  FR-PDP-01.13  Visible and functional on all viewport sizes.
+  FR-PDP-01.14  Does not trigger data loss.
+
+FR-PDP-02: Product Image
+--------------------------------------------------------------------------------
+  FR-PDP-02.1   Prominent image, significant portion of visible area.
+  FR-PDP-02.2   Rendered as <img> element.
+  FR-PDP-02.3   Source URL from API based on product ID.
+  FR-PDP-02.4   Maintains original aspect ratio.
+  FR-PDP-02.5   High-quality resolution.
+  FR-PDP-02.6   Defined dimensions to prevent CLS.
+  FR-PDP-02.7   Meaningful alt attribute (product name).
+  FR-PDP-02.8   Placeholder while loading.
+  FR-PDP-02.9   Fallback placeholder if load fails.
+  FR-PDP-02.10  Non-interactive by default.
+  FR-PDP-02.11  Appropriate padding/margin from other elements.
+  FR-PDP-02.12  Responsive, scales appropriately.
+  FR-PDP-02.13  Lazy loading if below fold, eager if above.
+  FR-PDP-02.14  Right-click follows default browser behavior.
+
+FR-PDP-03: Favourite Button
+--------------------------------------------------------------------------------
+  FR-PDP-03.1   Heart icon positioned near image or name area.
+  FR-PDP-03.2   Two states: Outlined (not fav), Filled (fav).
+  FR-PDP-03.3   Initial state from API on page load.
+  FR-PDP-03.4   Click (not fav): POST API, fill icon, optional toast.
+  FR-PDP-03.5   Click (fav): DELETE API, outline icon, optional toast.
+  FR-PDP-03.6   Optimistic UI update, revert on API failure.
+  FR-PDP-03.7   Cursor: pointer on hover.
+  FR-PDP-03.8   Hover: visual feedback (scale, tint, shadow).
+  FR-PDP-03.9   Keyboard accessible (Tab, Enter/Space).
+  FR-PDP-03.10  aria-label updates dynamically.
+  FR-PDP-03.11  aria-pressed updates ("true"/"false").
+  FR-PDP-03.12  Visible focus indicator.
+  FR-PDP-03.13  Debounce — prevent duplicate API calls.
+  FR-PDP-03.14  On API failure: revert icon, show error message.
+  FR-PDP-03.15  Visible and functional on all viewports.
+  FR-PDP-03.16  Min touch target: 44x44px.
+
+FR-PDP-04: Product Name
+--------------------------------------------------------------------------------
+  FR-PDP-04.1   Displayed near product image.
+  FR-PDP-04.2   Appropriate heading tag (<h1>, <h2>).
+  FR-PDP-04.3   Dynamically populated from API.
+  FR-PDP-04.4   Legible font, larger size, bold, high contrast.
+  FR-PDP-04.5   Static, non-editable (read-only).
+  FR-PDP-04.6   Long names: wrap or truncate with ellipsis + title.
+  FR-PDP-04.7   Selectable (highlight and copy).
+  FR-PDP-04.8   Matches name on home page (data consistency).
+  FR-PDP-04.9   Handles special characters and unicode.
+  FR-PDP-04.10  Responsive and readable on all viewports.
+  FR-PDP-04.11  First text read by screen readers in details section.
+
+FR-PDP-05: Quantity Selector
+--------------------------------------------------------------------------------
+
+  General:
+  FR-PDP-05.1   Displayed near product name and price.
+  FR-PDP-05.2   Three elements: [ - ] [ Qty ] [ + ]
+  FR-PDP-05.3   Default quantity on page load: 1.
+  FR-PDP-05.4   Minimum quantity: 1.
+  FR-PDP-05.5   Maximum quantity: defined by business rules (default 99).
+  FR-PDP-05.6   Always positive whole integer.
+  FR-PDP-05.7   Components visually grouped as one unit.
+  FR-PDP-05.8   Responsive and functional on all viewports.
+
+  Minus (-) Button:
+  FR-PDP-05-A.1   Positioned left of quantity display.
+  FR-PDP-05-A.2   Displays "-" character or minus icon.
+  FR-PDP-05-A.3   <button> element.
+  FR-PDP-05-A.4   Click: decrease quantity by 1.
+  FR-PDP-05-A.5   At minimum (qty=1): disabled state.
+                   - Greyed out / reduced opacity
+				   - Click has no effect
+                   - Cursor: not-allowed
+                   - disabled attribute or aria-disabled="true"
+  FR-PDP-05-A.6   Above minimum: enabled, pointer, hover feedback.
+  FR-PDP-05-A.7   Quantity updates immediately (no delay/reload).
+  FR-PDP-05-A.8   Keyboard accessible (Tab, Enter/Space).
+  FR-PDP-05-A.9   aria-label: "Decrease quantity".
+  FR-PDP-05-A.10  Visible focus indicator.
+  FR-PDP-05-A.11  Min touch target: 44x44px.
+  FR-PDP-05-A.12  Rapid clicks: each decrements by exactly 1.
+  FR-PDP-05-A.13  Dynamic enable/disable transitions instantly.
+
+  Quantity Display:
+  FR-PDP-05-B.1   Positioned between - and + buttons.
+  FR-PDP-05-B.2   Shows current numeric quantity.
+  FR-PDP-05-B.3   Default value: "1".
+  FR-PDP-05-B.4   Read-only / non-editable (qty controlled by buttons).
+  FR-PDP-05-B.5   Center-aligned within container.
+  FR-PDP-05-B.6   Legible font size and weight.
+  FR-PDP-05-B.7   Updates instantly on + or - click.
+
+  Plus (+) Button:
+  FR-PDP-05-C.1   Positioned right of quantity display.
+  FR-PDP-05-C.2   Displays "+" character or plus icon.
+  FR-PDP-05-C.3   <button> element.
+  FR-PDP-05-C.4   Click: increase quantity by 1.
+  FR-PDP-05-C.5   At maximum: disabled state.
+                   - Greyed out / reduced opacity
+                   - Click has no effect
+                   - Cursor: not-allowed
+                   - disabled attribute or aria-disabled="true"
+  FR-PDP-05-C.6   Below maximum: enabled, pointer, hover feedback.
+  FR-PDP-05-C.7   Quantity updates immediately.
+  FR-PDP-05-C.8   Keyboard accessible (Tab, Enter/Space).
+  FR-PDP-05-C.9   aria-label: "Increase quantity".
+  FR-PDP-05-C.10  Visible focus indicator.
+  FR-PDP-05-C.11  Min touch target: 44x44px.
+  FR-PDP-05-C.12  Rapid clicks: each increments by exactly 1.
+  FR-PDP-05-C.13  Dynamic enable/disable transitions instantly.
+
+FR-PDP-06: Product Price
+--------------------------------------------------------------------------------
+  FR-PDP-06.1   Price displayed near product name and quantity.
+  FR-PDP-06.2   Currency symbol + two decimal places (e.g., \$29.99).
+  FR-PDP-06.3   Dynamically populated from API.
+  FR-PDP-06.4   Static, non-editable (read-only).
+  FR-PDP-06.5   Legible font, prominent styling.
+  FR-PDP-06.6   Positive numeric value.
+  FR-PDP-06.7   Consistent with price on home page.
+  FR-PDP-06.8   Thousand separators where applicable (\$1,299.99).
+  FR-PDP-06.9   Single, consistent currency across app.
+  FR-PDP-06.10  Responsive across all viewports.
+  FR-PDP-06.11  Selectable text (user can copy).
+  FR-PDP-06.12  Price may be unit price (does not change with qty)
+                OR line total (unit price x qty). Behavior as per design.
+
+FR-PDP-07: Add to Cart Button
+--------------------------------------------------------------------------------
+  FR-PDP-07.1   Text: "Add to Cart".
+  FR-PDP-07.2   <button> element or equivalent.
+  FR-PDP-07.3   Positioned below price, primary CTA.
+  FR-PDP-07.4   Visually distinct (solid color, contrasting text).
+  FR-PDP-07.5   Click: POST API to add product with selected quantity.
+  FR-PDP-07.6   On success: feedback (toast "Added to cart!", button
+                text change, animation).
+  FR-PDP-07.7   On success: header cart badge updates.
+  FR-PDP-07.8   On failure: error message displayed.
+  FR-PDP-07.9   Loading state during API call (spinner, disabled).
+  FR-PDP-07.10  Prevents duplicate submissions (debounce/disable).
+  FR-PDP-07.11  Re-enabled after API response.
+  FR-PDP-07.12  Hover: visual feedback (color, shadow, scale).
+  FR-PDP-07.13  Cursor: pointer on hover.
+  FR-PDP-07.14  Keyboard accessible (Tab, Enter/Space).
+  FR-PDP-07.15  aria-label: "Add [Product Name] to cart".
+  FR-PDP-07.16  Visible focus indicator.
+  FR-PDP-07.17  Min touch target: 44x44px.
+  FR-PDP-07.18  Full width or appropriately sized per design.
+  FR-PDP-07.19  Functional on all viewport sizes.
+
+FR-PDP-08: Page Load & Data Fetching
+--------------------------------------------------------------------------------
+  FR-PDP-08.1   On page load, send GET API request for product data
+                using id from URL query parameter.
+  FR-PDP-08.2   Loading state while API call in progress.
+  FR-PDP-08.3   On success: render all product details.
+  FR-PDP-08.4   On failure: display error message with retry option.
+  FR-PDP-08.5   Invalid product ID: display "Product not found"
+                message or redirect to home page.
+  FR-PDP-08.6   Missing product ID parameter: redirect to home page.
+  FR-PDP-08.7   Auth token included in API headers.
+  FR-PDP-08.8   Invalid/expired token: redirect to login page.
+
+
+D.3 VALIDATION & ERROR HANDLING
+================================================================================
+
+  VAL-PDP-01  Product ID must be a valid positive integer.
+  VAL-PDP-02  Quantity must be >= 1 and <= maximum.
+  VAL-PDP-03  Quantity must be a whole number.
+  VAL-PDP-04  Product must exist in database.
+  VAL-PDP-05  Product must be available/in stock (if applicable).
+
+  Error Scenarios:
+  ERR-PDP-01  Invalid product ID -> "Product not found" or redirect.
+  ERR-PDP-02  Product API failure -> "Failed to load product details."
+  ERR-PDP-03  Add to cart failure -> "Failed to add item. Try again."
+  ERR-PDP-04  Favourite toggle failure -> "Failed to update favourites."
+  ERR-PDP-05  Network error -> "Check your internet connection."
+
+
+D.4 UI/UX REQUIREMENTS
+================================================================================
+
+  UI-PDP-01   Two-column layout on desktop (image left, details right).
+  UI-PDP-02   Single-column on mobile (image top, details below).
+  UI-PDP-03   Clear visual hierarchy: Name > Price > Qty > Button.
+  UI-PDP-04   Adequate spacing between all elements.
+  UI-PDP-05   Back button easily accessible, top of page.
+  UI-PDP-06   Add to Cart is the primary CTA (most prominent button).
+  UI-PDP-07   Quantity selector compact and intuitive.
+  UI-PDP-08   Consistent styling with home page product cards.
+  UI-PDP-09   Loading skeleton matches final layout.
+  UI-PDP-10   Smooth transitions for all interactions.
+
+
+D.5 NON-FUNCTIONAL REQUIREMENTS
+================================================================================
+
+  (See Global NFRs in Section A.6 — all apply)
+  Additional:
+  NFR-PDP-01  Product data loads within 2 seconds.
+  NFR-PDP-02  Product image optimized for fast loading.
+  NFR-PDP-03  Add to cart API completes within 3 seconds.
+  NFR-PDP-04  Quantity changes render within 50ms.
+  NFR-PDP-05  Page functions correctly with product IDs of any valid
+              integer value.
+
+
+================================================================================
+================================================================================
+        PART E — CART PAGE SRS
+================================================================================
+================================================================================
+
+URL: https://practice.qabrains.com/ecommerce/cart
+Authentication Required: Yes
+
+E.1 PAGE OVERVIEW
+================================================================================
+
+The Cart Page provides users with a consolidated view of all products
+they intend to purchase. Users can modify quantities, remove items,
+review the total cost, and either continue shopping or proceed to
+checkout.
+
+Elements on this page:
+  1. "Your Cart" Heading Text
+  2. Cart Item(s), each containing:
+     a. Product Image
+     b. Product Name
+     c. Remove Button
+     d. Quantity Selector (-, qty, +)
+     e. Price
+  3. Total Price
+  4. Continue Shopping Button
+  5. Checkout Button
+
+Page Layout (Wireframe):
+
+  ┌───────────────────────────────────────────────────────────────────┐
+  │                                                                   │
+  │  Your Cart                                                       │
+  │                                                                   │
+  │  ┌───────────────────────────────────────────────────────────┐   │
+  │  │ [IMG]  Product Name            [X Remove]                │   │
+  │  │        [ - ] [ 2 ] [ + ]                    $XX.XX       │   │
+  │  ├───────────────────────────────────────────────────────────┤   │
+  │  │ [IMG]  Product Name            [X Remove]                │   │
+  │  │        [ - ] [ 1 ] [ + ]                    $XX.XX       │   │
+  │  ├───────────────────────────────────────────────────────────┤   │
+  │  │ [IMG]  Product Name            [X Remove]                │   │
+  │  │        [ - ] [ 3 ] [ + ]                    $XX.XX       │   │
+  │  └───────────────────────────────────────────────────────────┘   │
+  │                                                                   │
+  │                                    Total Price: $XXX.XX          │
+  │                                                                   │
+  │  [Continue Shopping]                            [Checkout]       │
+  │                                                                   │
+  └───────────────────────────────────────────────────────────────────┘
+
+
+E.2 PAGE-LEVEL FUNCTIONAL REQUIREMENTS
+================================================================================
+
+FR-CART-01: "Your Cart" Heading Text
+--------------------------------------------------------------------------------
+  FR-CART-01.1   Text: "Your Cart" as heading at top of content.
+  FR-CART-01.2   HTML heading tag (<h1> or <h2>).
+  FR-CART-01.3   Visually prominent: larger font, bold, high contrast.
+  FR-CART-01.4   Static, non-editable.
+  FR-CART-01.5   Positioned above all cart items and actions.
+  FR-CART-01.6   Visible without scrolling (above the fold).
+  FR-CART-01.7   Aligned per design (left or center).
+  FR-CART-01.8   First content element for screen readers.
+  FR-CART-01.9   Visible on all viewport sizes.
+  FR-CART-01.10  Optionally includes item count (e.g., "Your Cart (3
+                 items)") — updates dynamically.
+
+FR-CART-02: Page Load & Data Fetching
+--------------------------------------------------------------------------------
+  FR-CART-02.1   On load: authenticated GET request to Cart API.
+  FR-CART-02.2   Loading state during fetch (skeleton, spinner).
+  FR-CART-02.3   On success: render all cart items with details.
+  FR-CART-02.4   On API failure: error message + optional retry button.
+  FR-CART-02.5   Empty cart: display empty cart state (Section E.5).
+  FR-CART-02.6   Invalid/expired auth token: redirect to login page.
+  FR-CART-02.7   Items rendered in consistent order.
+
+
+E.3 CART ITEM — FUNCTIONAL REQUIREMENTS
+================================================================================
+
+The following requirements apply to EACH cart item. Multiple items each
+independently satisfy all requirements below.
+
+FR-CART-03: Cart Item Container
+--------------------------------------------------------------------------------
+  FR-CART-03.1   Each item displayed as distinct row/card.
+  FR-CART-03.2   Visually separated (borders, dividers, spacing).
+  FR-CART-03.3   Contains: Image, Name, Remove, Qty Selector, Price.
+  FR-CART-03.4   Consistent layout across all items.
+  FR-CART-03.5   Multiple items: vertically scrollable list.
+  FR-CART-03.6   Responsive layout for all viewports.
+  FR-CART-03.7   Each item clearly identifiable as one product.
+
+FR-CART-04: Product Image (Per Item)
+--------------------------------------------------------------------------------
+  FR-CART-04.1   Image at left side of cart item row.
+  FR-CART-04.2   Rendered as <img> element.
+  FR-CART-04.3   Source URL from Cart API response.
+  FR-CART-04.4   Maintains aspect ratio, no distortion.
+  FR-CART-04.5   Thumbnail size (smaller than PDP, but identifiable).
+  FR-CART-04.6   Meaningful alt attribute (product name).
+  FR-CART-04.7   Placeholder while loading.
+  FR-CART-04.8   Fallback image if load fails.
+  FR-CART-04.9   Defined dimensions to prevent CLS.
+  FR-CART-04.10  Optionally clickable (navigates to PDP).
+  FR-CART-04.11  Responsive scaling on all viewports.
+  FR-CART-04.12  Consistent with images on other pages.
+
+FR-CART-05: Product Name (Per Item)
+--------------------------------------------------------------------------------
+  FR-CART-05.1   Name displayed adjacent to image.
+  FR-CART-05.2   Dynamically populated from Cart API.
+  FR-CART-05.3   Legible font, appropriate size/weight, high contrast.
+  FR-CART-05.4   Static, non-editable (read-only).
+  FR-CART-05.5   Long names: wrap or truncate with ellipsis + title.
+  FR-CART-05.6   Selectable (highlight and copy).
+  FR-CART-05.7   Matches name on home/PDP pages.
+  FR-CART-05.8   Handles special characters.
+  FR-CART-05.9   Optionally clickable (navigates to PDP).
+  FR-CART-05.10  Readable on all viewport sizes.
+
+FR-CART-06: Product Remove Button (Per Item)
+--------------------------------------------------------------------------------
+  FR-CART-06.1   Remove button (X icon, trash icon, "Remove" text).
+  FR-CART-06.2   Positioned in accessible location within cart item.
+  FR-CART-06.3   <button> element or equivalent.
+  FR-CART-06.4   Click Behavior — Removal Sequence:
+                 Step 1: User clicks remove.
+                 Step 2: (Optional) Confirmation dialog.
+                 Step 3: DELETE API request to remove item.
+                 Step 4a (Success): Item removed from DOM,
+                         total recalculated,
+                         if last item -> empty cart state,
+                         header cart badge updated.
+                 Step 4b (Failure): Item remains, error displayed.
+  FR-CART-06.5   Cursor: pointer on hover.
+  FR-CART-06.6   Hover: visual feedback (color red, highlight).
+  FR-CART-06.7   Keyboard accessible (Tab, Enter/Space).
+  FR-CART-06.8   Visible focus indicator.
+  FR-CART-06.9   aria-label: "Remove [Product Name] from cart".
+  FR-CART-06.10  Debounce — prevent duplicate API calls.
+  FR-CART-06.11  Loading/disabled state during API call.
+  FR-CART-06.12  Smooth removal transition (fade-out, slide-out).
+  FR-CART-06.13  Remaining items reflow correctly after removal.
+  FR-CART-06.14  Min touch target: 44x44px.
+  FR-CART-06.15  Optional success toast: "Item removed from cart".
+
+FR-CART-07: Quantity Selector (Per Item)
+--------------------------------------------------------------------------------
+
+  General:
+  FR-CART-07.1   Quantity selector within each cart item row.
+  FR-CART-07.2   Three elements: [ - ] [ Qty ] [ + ]
+  FR-CART-07.3   Initial quantity from Cart API (current cart qty).
+  FR-CART-07.4   Minimum: 1 (use Remove button to delete entirely).
+  FR-CART-07.5   Maximum: defined by business rules (default 99).
+  FR-CART-07.6   Always positive whole integer.
+  FR-CART-07.7   On quantity change:
+                 a. Update quantity display immediately (optimistic UI).
+                 b. PUT/PATCH API to update cart quantity.
+                 c. Recalculate item price (if line total).
+                 d. Recalculate cart total price.
+  FR-CART-07.8   On API failure:
+                 a. Revert quantity to previous value.
+                 b. Revert prices to previous values.
+                 c. Display error message.
+  FR-CART-07.9   Components visually grouped.
+  FR-CART-07.10  Responsive on all viewports.
+
+  Minus (-) Button:
+  FR-CART-07-A.1   Positioned left of quantity display.
+  FR-CART-07-A.2   Displays "-" or minus icon.
+  FR-CART-07-A.3   <button> element.
+  FR-CART-07-A.4   Click: decrease quantity by 1.
+  FR-CART-07-A.5   At minimum (qty=1): disabled.
+                   - Greyed out / reduced opacity
+                   - No effect on click
+                   - Cursor: not-allowed
+                   - disabled or aria-disabled="true"
+  FR-CART-07-A.6   Above minimum: enabled, pointer, hover feedback.
+  FR-CART-07-A.7   Immediate update on click.
+  FR-CART-07-A.8   Keyboard accessible.
+  FR-CART-07-A.9   aria-label: "Decrease quantity".
+  FR-CART-07-A.10  Focus indicator.
+  FR-CART-07-A.11  Min touch target: 44x44px.
+  FR-CART-07-A.12  Rapid clicks: exact decrement, no skip.
+  FR-CART-07-A.13  Dynamic enable/disable transitions.
+
+  Quantity Display:
+  FR-CART-07-B.1   Between - and + buttons.
+  FR-CART-07-B.2   Shows current numeric quantity.
+  FR-CART-07-B.3   Value from API on page load.
+  FR-CART-07-B.4   Read-only (controlled by buttons only).
+  FR-CART-07-B.5   Center-aligned.
+  FR-CART-07-B.6   Legible font.
+  FR-CART-07-B.7   Updates instantly on button click.
+
+  Plus (+) Button:
+  FR-CART-07-C.1   Positioned right of quantity display.
+  FR-CART-07-C.2   Displays "+" or plus icon.
+  FR-CART-07-C.3   <button> element.
+  FR-CART-07-C.4   Click: increase quantity by 1.
+  FR-CART-07-C.5   At maximum: disabled.
+                   - Greyed out / reduced opacity
+                   - No effect on click
+                   - Cursor: not-allowed
+                   - disabled or aria-disabled="true"
+  FR-CART-07-C.6   Below maximum: enabled, pointer, hover feedback.
+  FR-CART-07-C.7   Immediate update on click.
+  FR-CART-07-C.8   Keyboard accessible.
+  FR-CART-07-C.9   aria-label: "Increase quantity".
+  FR-CART-07-C.10  Focus indicator.
+  FR-CART-07-C.11  Min touch target: 44x44px.
+  FR-CART-07-C.12  Rapid clicks: exact increment, no skip.
+  FR-CART-07-C.13  Dynamic enable/disable transitions.
+
+FR-CART-08: Item Price (Per Item)
+--------------------------------------------------------------------------------
+  FR-CART-08.1   Price displayed within each cart item row.
+  FR-CART-08.2   Currency symbol + two decimals (e.g., \$29.99).
+  FR-CART-08.3   Dynamically populated from Cart API.
+  FR-CART-08.4   Read-only, non-editable.
+  FR-CART-08.5   Legible font, appropriate styling.
+  FR-CART-08.6   May be unit price OR line total (unit x qty).
+  FR-CART-08.7   If line total: updates dynamically when qty changes.
+  FR-CART-08.8   Consistent currency format.
+  FR-CART-08.9   Thousand separators where applicable.
+  FR-CART-08.10  Consistent with prices on other pages.
+  FR-CART-08.11  Visible on all viewport sizes.
+
+
+E.4 CART SUMMARY & ACTION BUTTONS
+================================================================================
+
+FR-CART-09: Total Price
+--------------------------------------------------------------------------------
+  FR-CART-09.1   Total price displayed below/after all cart items.
+  FR-CART-09.2   Labeled clearly (e.g., "Total:", "Total Price:",
+                 "Cart Total:").
+  FR-CART-09.3   Calculation: SUM of (unit price x quantity) for all
+                 items.
+  FR-CART-09.4   Currency symbol + two decimals (e.g., \$149.97).
+  FR-CART-09.5   Updates DYNAMICALLY when:
+                 a. Item quantity changes.
+                 b. Item is removed.
+  FR-CART-09.6   Updates without full page reload.
+  FR-CART-09.7   Visually prominent (larger font, bold).
+  FR-CART-09.8   Mathematically accurate — no rounding errors.
+  FR-CART-09.9   Right-aligned or per design.
+  FR-CART-09.10  Read-only, non-editable.
+  FR-CART-09.11  Consistent currency format.
+  FR-CART-09.12  Visible on all viewport sizes.
+  FR-CART-09.13  Thousand separators where applicable.
+  FR-CART-09.14  Accessible to screen readers (meaningful text).
+  FR-CART-09.15  If cart empty: total shows \$0.00 or is hidden.
+
+FR-CART-10: Continue Shopping Button
+--------------------------------------------------------------------------------
+  FR-CART-10.1   Text: "Continue Shopping".
+  FR-CART-10.2   <button> or <a> element.
+  FR-CART-10.3   Positioned below total price, secondary CTA.
+  FR-CART-10.4   Styled as secondary button (outline, lighter color).
+  FR-CART-10.5   Click: navigates to Home Page (/ecommerce).
+  FR-CART-10.6   Does NOT clear the cart (items preserved).
+  FR-CART-10.7   Cursor: pointer on hover.
+  FR-CART-10.8   Hover: visual feedback.
+  FR-CART-10.9   Keyboard accessible (Tab, Enter/Space).
+  FR-CART-10.10  Visible focus indicator.
+  FR-CART-10.11  Min touch target: 44x44px.
+  FR-CART-10.12  Visible on all viewport sizes.
+  FR-CART-10.13  aria-label if needed.
+
+FR-CART-11: Checkout Button
+--------------------------------------------------------------------------------
+  FR-CART-11.1   Text: "Checkout".
+  FR-CART-11.2   <button> or <a> element.
+  FR-CART-11.3   Positioned below total price, PRIMARY CTA.
+  FR-CART-11.4   Styled as primary button (solid, prominent color).
+  FR-CART-11.5   Click: navigates to Checkout: Your Information page
+                 (/ecommerce/checkout-info).
+  FR-CART-11.6   Click with empty cart: button disabled OR displays
+                 error "Your cart is empty".
+  FR-CART-11.7   Cursor: pointer on hover (when enabled).
+  FR-CART-11.8   Hover: visual feedback.
+  FR-CART-11.9   Keyboard accessible (Tab, Enter/Space).
+  FR-CART-11.10  Visible focus indicator.
+  FR-CART-11.11  Min touch target: 44x44px.
+  FR-CART-11.12  Visually more prominent than Continue Shopping button.
+  FR-CART-11.13  Visible on all viewport sizes.
+  FR-CART-11.14  aria-label if needed.
+
+
+E.5 EMPTY CART STATE
+================================================================================
+
+FR-CART-12: Empty Cart Display
+--------------------------------------------------------------------------------
+  FR-CART-12.1   When cart has zero items, display empty cart state.
+  FR-CART-12.2   "Your Cart" heading still visible.
+  FR-CART-12.3   Empty state message displayed (e.g., "Your cart is
+                 empty", "No items in your cart").
+  FR-CART-12.4   Optional empty cart icon/illustration.
+  FR-CART-12.5   Product item rows NOT displayed.
+  FR-CART-12.6   Total price either hidden or shows \$0.00.
+  FR-CART-12.7   Checkout button disabled or hidden.
+  FR-CART-12.8   Continue Shopping button visible and functional.
+  FR-CART-12.9   Optionally: prominent CTA "Start Shopping" or
+                 "Browse Products" linking to Home Page.
+  FR-CART-12.10  Empty state centered on page, clean design.
+  FR-CART-12.11  Transition from items to empty (when last item
+                 removed): smooth, no layout break.
+  FR-CART-12.12  Screen readers announce empty state clearly.
+
+
+E.6 VALIDATION & ERROR HANDLING
+================================================================================
+
+  VAL-CART-01  Quantity must be >= 1 and <= maximum.
+  VAL-CART-02  Quantity must be a whole number.
+  VAL-CART-03  Cart must not be empty to proceed to checkout.
+
+  Error Scenarios:
+  ERR-CART-01  Cart API failure -> "Failed to load cart. Try again."
+  ERR-CART-02  Remove API failure -> "Failed to remove item."
+  ERR-CART-03  Quantity update failure -> "Failed to update quantity."
+  ERR-CART-04  Network error -> "Check internet connection."
+  ERR-CART-05  Auth error -> Redirect to login page.
+
+
+E.7 UI/UX REQUIREMENTS
+================================================================================
+
+  UI-CART-01  Clean list layout with clear item separation.
+  UI-CART-02  Consistent item row layout across all items.
+  UI-CART-03  Total price visually prominent and distinct.
+  UI-CART-04  Two buttons clearly differentiated (primary/secondary).
+  UI-CART-05  Adequate spacing between items, summary, and buttons.
+  UI-CART-06  Loading skeletons match final layout.
+  UI-CART-07  Smooth animations for add/remove/quantity changes.
+  UI-CART-08  Empty state is friendly and guides user to shop.
+  UI-CART-09  Responsive: items stack vertically on mobile.
+  UI-CART-10  Prices right-aligned for easy scanning.
+
+
+E.8 NON-FUNCTIONAL REQUIREMENTS
+================================================================================
+
+  (See Global NFRs in Section A.6 — all apply)
+  Additional:
+  NFR-CART-01  Cart data loads within 2 seconds.
+  NFR-CART-02  Total price recalculates within 100ms of change.
+  NFR-CART-03  Remove animation completes within 300ms.
+  NFR-CART-04  Page handles up to 50 cart items without degradation.
+  NFR-CART-05  Quantity API updates complete within 3 seconds.
+
+
+================================================================================
+================================================================================
+        PART F — CHECKOUT: YOUR INFORMATION PAGE SRS
+================================================================================
+================================================================================
+
+URL: https://practice.qabrains.com/ecommerce/checkout-info
+Authentication Required: Yes
+Prerequisite: Cart must have items
+
+F.1 PAGE OVERVIEW
+================================================================================
+
+The Checkout: Your Information Page is the first step of the checkout
+flow. It collects essential user information: email address, first name,
+last name, and zip code.
+
+Elements on this page:
+  1. Page Heading (e.g., "Checkout: Your Information")
+  2. Email Label + Input Field
+  3. First Name Label + Input Field
+  4. Last Name Label + Input Field
+  5. Zip Code Label + Input Field
+  6. Cancel Button
+  7. Continue Button
+
+Page Layout (Wireframe):
+
+  ┌───────────────────────────────────────────────────────────────────┐
+  │                                                                   │
+  │  Checkout: Your Information                                      │
+  │                                                                   │
+  │  ┌───────────────────────────────────────────────────────────┐   │
+  │  │                                                           │   │
+  │  │  Email                                                    │   │
+  │  │  ┌─────────────────────────────────────────────────────┐  │   │
+  │  │  │                                                     │  │   │
+  │  │  └─────────────────────────────────────────────────────┘  │   │
+  │  │                                                           │   │
+  │  │  First Name                                               │   │
+  │  │  ┌─────────────────────────────────────────────────────┐  │   │
+  │  │  │                                                     │  │   │
+  │  │  └─────────────────────────────────────────────────────┘  │   │
+  │  │                                                           │   │
+  │  │  Last Name                                                │   │
+  │  │  ┌─────────────────────────────────────────────────────┐  │   │
+  │  │  │                                                     │  │   │
+  │  │  └─────────────────────────────────────────────────────┘  │   │
+  │  │                                                           │   │
+  │  │  Zip Code                                                 │   │
+  │  │  ┌─────────────────────────────────────────────────────┐  │   │
+  │  │  │                                                     │  │   │
+  │  │  └─────────────────────────────────────────────────────┘  │   │
+  │  │                                                           │   │
+  │  │  [Cancel]                                   [Continue]    │   │
+  │  │                                                           │   │
+  │  └───────────────────────────────────────────────────────────┘   │
+  │                                                                   │
+  └───────────────────────────────────────────────────────────────────┘
+
+
+F.2 PAGE-LEVEL FUNCTIONAL REQUIREMENTS
+================================================================================
+
+FR-CI-01: Page Heading
+--------------------------------------------------------------------------------
+  FR-CI-01.1   Text: "Checkout: Your Information" or equivalent.
+  FR-CI-01.2   HTML heading tag (<h1> or <h2>).
+  FR-CI-01.3   Visually prominent: larger font, bold, high contrast.
+  FR-CI-01.4   Static, non-editable.
+  FR-CI-01.5   Positioned above all form fields and buttons.
+  FR-CI-01.6   Visible without scrolling (above the fold).
+  FR-CI-01.7   Aligned per design (left or center).
+  FR-CI-01.8   First content element for screen readers.
+  FR-CI-01.9   Visible on all viewport sizes.
+  FR-CI-01.10  Optional step indicator (e.g., "Step 1 of 3").
+
+FR-CI-02: Page Access & Authentication Guard
+--------------------------------------------------------------------------------
+  FR-CI-02.1   Verify valid auth token on page load. Invalid/expired
+               -> redirect to login page.
+  FR-CI-02.2   Verify cart is not empty. Empty cart -> redirect to
+               cart page or home page with optional message.
+  FR-CI-02.3   Page URL shall not contain sensitive data.
+  FR-CI-02.4   Direct URL access still enforces auth + cart checks.
+
+
+F.3 FORM FIELDS — FUNCTIONAL REQUIREMENTS
+================================================================================
+
+--- EMAIL FIELD ---
+
+FR-CI-03: Email Label Text
+--------------------------------------------------------------------------------
+  FR-CI-03.1   Label text "Email" adjacent to email input.
+  FR-CI-03.2   <label> HTML element.
+  FR-CI-03.3   Associated via "for" attribute matching input "id".
+  FR-CI-03.4   Click on label focuses email input.
+  FR-CI-03.5   Static, non-editable, legible.
+  FR-CI-03.6   Consistent styling with all other labels.
+  FR-CI-03.7   Optional required indicator (*).
+
+FR-CI-04: Email Input Field
+--------------------------------------------------------------------------------
+  FR-CI-04.1   <input> with type="email" (preferred) or type="text".
+  FR-CI-04.2   Accepts alphanumeric and email chars (@, ., _, -, +).
+  FR-CI-04.3   Placeholder text (e.g., "Enter your email").
+  FR-CI-04.4   Initially empty OR pre-populated with login email.
+  FR-CI-04.5   Allows type, paste, cut, select all, undo, delete.
+  FR-CI-04.6   Single-line input.
+  FR-CI-04.7   Visible border/outline.
+  FR-CI-04.8   Visual focus indicator when focused.
+  FR-CI-04.9   Tab / Shift+Tab navigation.
+  FR-CI-04.10  Max length: 254 characters (RFC 5321).
+  FR-CI-04.11  Required field.
+  FR-CI-04.12  autocomplete="email".
+  FR-CI-04.13  name attribute (e.g., name="email").
+  FR-CI-04.14  id matches label's "for" attribute.
+  FR-CI-04.15  Mobile: email-optimized keyboard (@ and . visible).
+  FR-CI-04.16  Responsive layout on all viewports.
+  FR-CI-04.17  aria-required="true".
+  FR-CI-04.18  aria-describedby for error messages.
+  FR-CI-04.19  Leading/trailing whitespace auto-trimmed.
+
+--- FIRST NAME FIELD ---
+
+FR-CI-05: First Name Label Text
+--------------------------------------------------------------------------------
+  FR-CI-05.1   Label text "First Name" adjacent to first name input.
+  FR-CI-05.2   <label> HTML element.
+  FR-CI-05.3   Associated via "for" attribute.
+  FR-CI-05.4   Click on label focuses first name input.
+  FR-CI-05.5   Static, non-editable, legible.
+  FR-CI-05.6   Consistent styling with all other labels.
+  FR-CI-05.7   Optional required indicator (*).
+
+FR-CI-06: First Name Input Field
+--------------------------------------------------------------------------------
+  FR-CI-06.1   <input> with type="text".
+  FR-CI-06.2   Accepts alphabetic (a-z, A-Z), hyphens (-),
+               apostrophes ('), spaces, accented/unicode chars.
+  FR-CI-06.3   Placeholder text (e.g., "Enter your first name").
+  FR-CI-06.4   Initially empty OR pre-populated if returning.
+  FR-CI-06.5   Allows type, paste, cut, select all, undo, delete.
+  FR-CI-06.6   Single-line input.
+  FR-CI-06.7   Visible border/outline.
+  FR-CI-06.8   Visual focus indicator when focused.
+  FR-CI-06.9   Tab navigation.
+  FR-CI-06.10  Min length: 1 character (after trimming).
+  FR-CI-06.11  Max length: 50 characters.
+  FR-CI-06.12  Required field.
+  FR-CI-06.13  autocomplete="given-name".
+  FR-CI-06.14  name attribute (e.g., name="firstName").
+  FR-CI-06.15  id matches label's "for" attribute.
+  FR-CI-06.16  Responsive layout on all viewports.
+  FR-CI-06.17  aria-required="true".
+  FR-CI-06.18  aria-describedby for error messages.
+  FR-CI-06.19  Leading/trailing whitespace auto-trimmed.
+  FR-CI-06.20  Numeric characters (0-9) NOT accepted or trigger error.
+  FR-CI-06.21  Special chars beyond spec (@, #, $, %, !) NOT accepted.
+
+--- LAST NAME FIELD ---
+
+FR-CI-07: Last Name Label Text
+--------------------------------------------------------------------------------
+  FR-CI-07.1   Label text "Last Name" adjacent to last name input.
+  FR-CI-07.2   <label> HTML element.
+  FR-CI-07.3   Associated via "for" attribute.
+  FR-CI-07.4   Click on label focuses last name input.
+  FR-CI-07.5   Static, non-editable, legible.
+  FR-CI-07.6   Consistent styling with all other labels.
+  FR-CI-07.7   Optional required indicator (*).
+
+FR-CI-08: Last Name Input Field
+--------------------------------------------------------------------------------
+  FR-CI-08.1   <input> with type="text".
+  FR-CI-08.2   Accepts alphabetic (a-z, A-Z), hyphens (-),
+               apostrophes ('), spaces, accented/unicode chars.
+  FR-CI-08.3   Placeholder text (e.g., "Enter your last name").
+  FR-CI-08.4   Initially empty OR pre-populated if returning.
+  FR-CI-08.5   Allows type, paste, cut, select all, undo, delete.
+  FR-CI-08.6   Single-line input.
+  FR-CI-08.7   Visible border/outline.
+  FR-CI-08.8   Visual focus indicator when focused.
+  FR-CI-08.9   Tab navigation.
+  FR-CI-08.10  Min length: 1 character (after trimming).
+  FR-CI-08.11  Max length: 50 characters.
+  FR-CI-08.12  Required field.
+  FR-CI-08.13  autocomplete="family-name".
+  FR-CI-08.14  name attribute (e.g., name="lastName").
+  FR-CI-08.15  id matches label's "for" attribute.
+  FR-CI-08.16  Responsive layout on all viewports.
+  FR-CI-08.17  aria-required="true".
+  FR-CI-08.18  aria-describedby for error messages.
+  FR-CI-08.19  Leading/trailing whitespace auto-trimmed.
+  FR-CI-08.20  Numeric characters (0-9) NOT accepted or trigger error.
+  FR-CI-08.21  Special chars beyond spec NOT accepted.
+
+--- ZIP CODE FIELD ---
+
+FR-CI-09: Zip Code Label Text
+--------------------------------------------------------------------------------
+  FR-CI-09.1   Label text "Zip Code" adjacent to zip code input.
+  FR-CI-09.2   <label> HTML element.
+  FR-CI-09.3   Associated via "for" attribute.
+  FR-CI-09.4   Click on label focuses zip code input.
+  FR-CI-09.5   Static, non-editable, legible.
+  FR-CI-09.6   Consistent styling with all other labels.
+  FR-CI-09.7   Optional required indicator (*).
+
+FR-CI-10: Zip Code Input Field
+--------------------------------------------------------------------------------
+  FR-CI-10.1   <input> with type="text" (preferred over type="number"
+               for leading zeros and ZIP+4 format).
+  FR-CI-10.2   Accepts numeric characters (0-9).
+  FR-CI-10.3   Optionally accepts hyphen (-) for ZIP+4 format
+               (e.g., 12345-6789).
+  FR-CI-10.4   Placeholder text (e.g., "Enter zip code", "12345").
+  FR-CI-10.5   Initially empty OR pre-populated if returning.
+  FR-CI-10.6   Allows type, paste, cut, select all, undo, delete.
+  FR-CI-10.7   Single-line input.
+  FR-CI-10.8   Visible border/outline.
+  FR-CI-10.9   Visual focus indicator when focused.
+  FR-CI-10.10  Tab navigation.
+  FR-CI-10.11  Valid formats: 5-digit (12345) or 5+4 (12345-6789).
+  FR-CI-10.12  Min length: 5 characters.
+  FR-CI-10.13  Max length: 10 characters (for ZIP+4 with hyphen).
+  FR-CI-10.14  Required field.
+  FR-CI-10.15  autocomplete="postal-code".
+  FR-CI-10.16  name attribute (e.g., name="zipCode").
+  FR-CI-10.17  id matches label's "for" attribute.
+  FR-CI-10.18  Mobile: numeric keyboard triggered.
+  FR-CI-10.19  Responsive layout on all viewports.
+  FR-CI-10.20  aria-required="true".
+  FR-CI-10.21  aria-describedby for error messages.
+  FR-CI-10.22  Leading/trailing whitespace auto-trimmed.
+  FR-CI-10.23  Alphabetic characters NOT accepted or trigger error.
+  FR-CI-10.24  Special chars (except hyphen for ZIP+4) NOT accepted.
+
+
+F.4 ACTION BUTTONS — FUNCTIONAL REQUIREMENTS
+================================================================================
+
+FR-CI-11: Cancel Button
+--------------------------------------------------------------------------------
+  FR-CI-11.1   Text: "Cancel".
+  FR-CI-11.2   <button> or <a> element.
+  FR-CI-11.3   Positioned below form fields, secondary CTA.
+  FR-CI-11.4   Styled as secondary button (outline, lighter color).
+  FR-CI-11.5   Click: navigates back to Cart Page (/ecommerce/cart)
+               or previous page.
+  FR-CI-11.6   Does NOT save/submit any form data.
+  FR-CI-11.7   Does NOT clear the user's cart.
+  FR-CI-11.8   Optionally: confirmation dialog "Are you sure you
+               want to cancel?" (if significant data entered).
+  FR-CI-11.9   Cursor: pointer on hover.
+  FR-CI-11.10  Hover: visual feedback.
+  FR-CI-11.11  Keyboard accessible (Tab, Enter/Space).
+  FR-CI-11.12  Visible focus indicator.
+  FR-CI-11.13  Min touch target: 44x44px.
+  FR-CI-11.14  Visible on all viewport sizes.
+  FR-CI-11.15  aria-label if needed.
+
+FR-CI-12: Continue Button
+--------------------------------------------------------------------------------
+  FR-CI-12.1   Text: "Continue".
+  FR-CI-12.2   <button> with type="submit" or equivalent.
+  FR-CI-12.3   Positioned below form fields, PRIMARY CTA.
+  FR-CI-12.4   Styled as primary button (solid, prominent color).
+  FR-CI-12.5   Click: triggers client-side validation of ALL fields.
+  FR-CI-12.6   If validation passes: submit data and navigate to
+               Checkout: Overview (/ecommerce/checkout-overview).
+  FR-CI-12.7   If validation fails: display errors, remain on page.
+  FR-CI-12.8   Loading state during submission (spinner, disabled).
+  FR-CI-12.9   Prevents duplicate submissions (debounce/disable).
+  FR-CI-12.10  Re-enabled after server response.
+  FR-CI-12.11  Cursor: pointer on hover.
+  FR-CI-12.12  Hover: visual feedback.
+  FR-CI-12.13  Keyboard accessible (Tab, Enter/Space).
+  FR-CI-12.14  Pressing Enter in any field triggers form submission.
+  FR-CI-12.15  Visible focus indicator.
+  FR-CI-12.16  Min touch target: 44x44px.
+  FR-CI-12.17  Visually more prominent than Cancel button.
+  FR-CI-12.18  Visible on all viewport sizes.
+  FR-CI-12.19  aria-label if needed.
+
+
+F.5 FORM SUBMISSION LOGIC
+================================================================================
+
+FR-CI-13: Form Submission & Data Handling
+--------------------------------------------------------------------------------
+  FR-CI-13.1   On Continue click: run client-side validation first.
+  FR-CI-13.2   If all fields valid: POST request to checkout API
+               with email, firstName, lastName, zipCode.
+  FR-CI-13.3   Data submitted over HTTPS (encrypted in transit).
+  FR-CI-13.4   Data NOT in URL parameters (POST body only).
+  FR-CI-13.5   Auth token included in request headers.
+  FR-CI-13.6   On success (200/201): redirect to Checkout: Overview.
+  FR-CI-13.7   On validation error (422): display server errors.
+  FR-CI-13.8   On auth error (401/403): redirect to login page.
+  FR-CI-13.9   On server error (500): display generic error message.
+  FR-CI-13.10  On network error: display connectivity error.
+  FR-CI-13.11  Form data may be stored in session for back navigation.
+  FR-CI-13.12  No sensitive data cached in browser insecurely.
+
+
+F.6 VALIDATION & ERROR HANDLING
+================================================================================
+
+F.6.1 Client-Side Validation
+--------------------------------------------------------------------------------
+
+  VAL-CI-01  Email: Must not be empty.
+             Error: "Email is required."
+
+  VAL-CI-02  Email: Must be valid format (user@domain.com).
+             Error: "Please enter a valid email address."
+
+  VAL-CI-03  Email: Max 254 characters.
+             Error: "Email is too long."
+
+  VAL-CI-04  Email: No leading/trailing spaces (auto-trim).
+             Error: "Email should not contain leading/trailing spaces."
+
+  VAL-CI-05  First Name: Must not be empty.
+             Error: "First name is required."
+
+  VAL-CI-06  First Name: Min 1 character (after trim).
+             Error: "First name is required."
+
+  VAL-CI-07  First Name: Max 50 characters.
+             Error: "First name is too long."
+
+  VAL-CI-08  First Name: Only alphabetic, hyphens, apostrophes,
+             spaces, accented chars.
+             Error: "First name contains invalid characters."
+
+  VAL-CI-09  First Name: No numeric characters.
+             Error: "First name must not contain numbers."
+
+  VAL-CI-10  Last Name: Must not be empty.
+             Error: "Last name is required."
+
+  VAL-CI-11  Last Name: Min 1 character (after trim).
+             Error: "Last name is required."
+
+  VAL-CI-12  Last Name: Max 50 characters.
+             Error: "Last name is too long."
+
+  VAL-CI-13  Last Name: Only alphabetic, hyphens, apostrophes,
+             spaces, accented chars.
+             Error: "Last name contains invalid characters."
+
+  VAL-CI-14  Last Name: No numeric characters.
+             Error: "Last name must not contain numbers."
+
+  VAL-CI-15  Zip Code: Must not be empty.
+             Error: "Zip code is required."
+
+  VAL-CI-16  Zip Code: Must be valid format (5-digit or ZIP+4).
+             Error: "Please enter a valid zip code."
+
+  VAL-CI-17  Zip Code: Only numeric chars and optional hyphen.
+             Error: "Zip code contains invalid characters."
+
+  VAL-CI-18  Zip Code: Min 5 characters.
+             Error: "Zip code must be at least 5 digits."
+
+  VAL-CI-19  Zip Code: Max 10 characters (ZIP+4 with hyphen).
+             Error: "Zip code is too long."
+
+F.6.2 Server-Side Error Responses
+--------------------------------------------------------------------------------
+
+  Scenario                    Error Message                    HTTP Status
+  --------------------------  -------------------------------  -----------
+  Validation errors           Field-specific error messages    422
+  Auth error                  Redirect to login                401/403
+  Cart empty (server check)   "Cart is empty"                  400
+  Server error                "Something went wrong."          500
+  Network error               "Check your connection."         N/A
+
+F.6.3 Error Display Rules
+--------------------------------------------------------------------------------
+  ERR-CI-01   Errors displayed in red text.
+  ERR-CI-02   Field-level errors below respective input field.
+  ERR-CI-03   Form-level errors at top or bottom of form.
+  ERR-CI-04   Errors appear on submit; optionally on blur/field exit.
+  ERR-CI-05   Errors disappear when user corrects input and re-validates.
+  ERR-CI-06   Errors announced to screen readers (aria-live).
+  ERR-CI-07   Invalid fields visually highlighted (red border).
+  ERR-CI-08   First invalid field receives focus on validation failure.
+
+
+F.7 UI/UX REQUIREMENTS
+================================================================================
+
+  UI-CI-01   Form centered on page.
+  UI-CI-02   Fields vertically stacked: Email > First Name >
+             Last Name > Zip Code > Buttons.
+  UI-CI-03   Consistent font family, size, color scheme.
+  UI-CI-04   Adequate spacing between fields.
+  UI-CI-05   Form container with defined boundary (card/shadow).
+  UI-CI-06   Input fields uniform width.
+  UI-CI-07   Labels aligned consistently (above or left of fields).
+  UI-CI-08   Two buttons clearly differentiated (primary/secondary).
+  UI-CI-09   Cancel on left, Continue on right (or per design).
+  UI-CI-10   Error states clearly visible without scrolling.
+  UI-CI-11   Clean, minimalist design consistent with checkout flow.
+  UI-CI-12   Tab order follows visual order.
+
+
+F.8 NON-FUNCTIONAL REQUIREMENTS
+================================================================================
+
+  (See Global NFRs in Section A.6 — all apply)
+  Additional:
+  NFR-CI-01  Form submission API completes within 3 seconds.
+  NFR-CI-02  Client-side validation executes within 100ms.
+  NFR-CI-03  All PII handled per GDPR/CCPA requirements.
+  NFR-CI-04  Form data not logged or cached insecurely.
+  NFR-CI-05  Input sanitized against XSS.
+  NFR-CI-06  Protected against CSRF.
+  NFR-CI-07  autocomplete attributes for browser autofill.
+
+
+================================================================================
+================================================================================
+        PART G — CHECKOUT: OVERVIEW PAGE SRS
+================================================================================
+================================================================================
+
+URL: https://practice.qabrains.com/ecommerce/checkout-overview
+Authentication Required: Yes
+Prerequisite: Cart with items + Checkout Info completed
+
+G.1 PAGE OVERVIEW
+================================================================================
+
+The Checkout: Overview Page is the final review step before order
+placement. It presents a read-only summary of the entire order:
+products, payment info, shipping info, and price breakdown. The user
+can cancel or finish (place the order).
+
+All information on this page is READ-ONLY.
+
+Elements on this page:
+  1. "Checkout: Overview" Heading Text
+  2. Product Details (per product):
+     a. Product Image
+     b. Product Name
+     c. Product Quantity
+     d. Price
+     e. Total Price (per product)
+  3. Payment Information
+  4. Shipping Information
+  5. Price Total Section:
+     a. Item Total Price
+     b. Tax
+     c. Total (Grand Total)
+  6. Cancel Button
+  7. Finish Button
+
+Page Layout (Wireframe):
+
+  ┌───────────────────────────────────────────────────────────────────┐
+  │                                                                   │
+  │  Checkout: Overview                                              │
+  │                                                                   │
+  │  ┌───────────────────────────────────────────────────────────┐   │
+  │  │ PRODUCT DETAILS                                           │   │
+  │  │ [IMG]  Product Name         Qty: 2    $XX.XX    $XX.XX   │   │
+  │  │ [IMG]  Product Name         Qty: 1    $XX.XX    $XX.XX   │   │
+  │  ├───────────────────────────────────────────────────────────┤   │
+  │  │ PAYMENT INFORMATION                                       │   │
+  │  │ Payment Method: XXXXX                                     │   │
+  │  ├───────────────────────────────────────────────────────────┤   │
+  │  │ SHIPPING INFORMATION                                      │   │
+  │  │ Name: John Doe                                            │   │
+  │  │ Zip: 12345                                                │   │
+  │  ├───────────────────────────────────────────────────────────┤   │
+  │  │ PRICE TOTAL                                               │   │
+  │  │ Item Total:                                    $XXX.XX    │   │
+  │  │ Tax:                                           $XX.XX     │   │
+  │  │ Total:                                         $XXX.XX    │   │
+  │  ├───────────────────────────────────────────────────────────┤   │
+  │  │ [Cancel]                                      [Finish]    │   │
+  │  └───────────────────────────────────────────────────────────┘   │
+  │                                                                   │
+  └───────────────────────────────────────────────────────────────────┘
+
+
+G.2 PAGE-LEVEL FUNCTIONAL REQUIREMENTS
+================================================================================
+
+FR-CO-01: "Checkout: Overview" Heading Text
+--------------------------------------------------------------------------------
+  FR-CO-01.1   Text: "Checkout: Overview" as heading.
+  FR-CO-01.2   HTML heading tag (<h1> or <h2>).
+  FR-CO-01.3   Visually prominent: larger font, bold, high contrast.
+  FR-CO-01.4   Static, non-editable.
+  FR-CO-01.5   Above all other content sections.
+  FR-CO-01.6   Visible without scrolling.
+  FR-CO-01.7   Aligned per design.
+  FR-CO-01.8   First content element for screen readers.
+  FR-CO-01.9   Visible on all viewport sizes.
+  FR-CO-01.10  Optional step indicator (e.g., "Step 2 of 3").
+
+FR-CO-02: Page Access, Authentication & Flow Guard
+--------------------------------------------------------------------------------
+  FR-CO-02.1   Verify valid auth token. Invalid -> login page.
+  FR-CO-02.2   Verify cart not empty. Empty -> cart or home page.
+  FR-CO-02.3   Verify checkout info completed. Not completed ->
+               checkout-info page.
+  FR-CO-02.4   Direct URL access enforces all checks.
+  FR-CO-02.5   No sensitive data in URL.
+
+FR-CO-03: Page Load & Data Fetching
+--------------------------------------------------------------------------------
+  FR-CO-03.1   On load: authenticated GET request for overview data.
+  FR-CO-03.2   Loading state during fetch.
+  FR-CO-03.3   On success: render all sections.
+  FR-CO-03.4   On API failure: error message + retry button.
+  FR-CO-03.5   Auth token in headers.
+  FR-CO-03.6   All data from API — no client-only financial
+               calculations.
+
+
+G.3 PRODUCT DETAILS SECTION
+================================================================================
+
+FR-CO-04: Product Details Container
+--------------------------------------------------------------------------------
+  FR-CO-04.1   Below page heading.
+  FR-CO-04.2   Optional sub-heading (e.g., "Order Items").
+  FR-CO-04.3   All products listed.
+  FR-CO-04.4   Multiple products: separate rows/cards.
+  FR-CO-04.5   Visually separated (borders, dividers).
+  FR-CO-04.6   Consistent layout across product rows.
+  FR-CO-04.7   All info read-only.
+  FR-CO-04.8   Scrollable if exceeds viewport height.
+  FR-CO-04.9   Responsive for all viewports.
+
+FR-CO-05: Product Image (Per Product)
+--------------------------------------------------------------------------------
+  FR-CO-05.1   Image at left side of product row.
+  FR-CO-05.2   <img> element.
+  FR-CO-05.3   Source URL from API.
+  FR-CO-05.4   Maintains aspect ratio.
+  FR-CO-05.5   Thumbnail size appropriate for summary context.
+  FR-CO-05.6   Meaningful alt attribute.
+  FR-CO-05.7   Placeholder while loading.
+  FR-CO-05.8   Fallback image if load fails.
+  FR-CO-05.9   Defined dimensions (prevent CLS).
+  FR-CO-05.10  Non-clickable (read-only page).
+  FR-CO-05.11  Responsive scaling.
+  FR-CO-05.12  Consistent with images on all other pages.
+
+FR-CO-06: Product Name (Per Product)
+--------------------------------------------------------------------------------
+  FR-CO-06.1   Name displayed adjacent to image.
+  FR-CO-06.2   Dynamically populated from API.
+  FR-CO-06.3   Legible font, appropriate size/weight, high contrast.
+  FR-CO-06.4   Static, non-editable, read-only.
+  FR-CO-06.5   Long names: wrap or truncate + title attribute.
+  FR-CO-06.6   Selectable (copy).
+  FR-CO-06.7   Matches name on all other pages.
+  FR-CO-06.8   Handles special characters/unicode.
+  FR-CO-06.9   Non-clickable.
+  FR-CO-06.10  Readable on all viewports.
+
+FR-CO-07: Product Quantity (Per Product)
+--------------------------------------------------------------------------------
+  FR-CO-07.1   Quantity displayed in product row.
+  FR-CO-07.2   Numeric value (e.g., "1", "2", "5").
+  FR-CO-07.3   May have label/prefix (e.g., "Qty: 2", "x2").
+  FR-CO-07.4   From API response.
+  FR-CO-07.5   Read-only, non-editable (no +/- buttons).
+  FR-CO-07.6   Always positive whole integer (>= 1).
+  FR-CO-07.7   Matches quantity from cart/PDP.
+  FR-CO-07.8   Legible font, appropriate positioning.
+  FR-CO-07.9   Visible on all viewports.
+
+FR-CO-08: Product Price (Per Product — Unit Price)
+--------------------------------------------------------------------------------
+  FR-CO-08.1   Unit price displayed in product row.
+  FR-CO-08.2   Currency symbol + two decimals (\$29.99).
+  FR-CO-08.3   From API response.
+  FR-CO-08.4   Read-only, non-editable.
+  FR-CO-08.5   Positive numeric value.
+  FR-CO-08.6   Legible, appropriately styled.
+  FR-CO-08.7   May be labeled ("Price: \$29.99" or just "\$29.99").
+  FR-CO-08.8   Consistent with prices on all other pages.
+  FR-CO-08.9   Thousand separators where applicable.
+  FR-CO-08.10  Visible on all viewports.
+
+FR-CO-09: Product Total Price (Per Product — Line Total)
+--------------------------------------------------------------------------------
+  FR-CO-09.1   Line total displayed in product row.
+  FR-CO-09.2   Calculation: unit price x quantity.
+  FR-CO-09.3   Currency symbol + two decimals.
+  FR-CO-09.4   From API response (server-calculated).
+  FR-CO-09.5   Read-only, non-editable.
+  FR-CO-09.6   Mathematically accurate.
+  FR-CO-09.7   May be labeled ("Total: \$59.98" or just "\$59.98").
+  FR-CO-09.8   Visually distinct from unit price (bolder or
+               different position).
+  FR-CO-09.9   Thousand separators where applicable.
+  FR-CO-09.10  Visible on all viewports.
+
+
+G.4 PAYMENT INFORMATION SECTION
+================================================================================
+
+FR-CO-10: Payment Information Display
+--------------------------------------------------------------------------------
+  FR-CO-10.1   Separate section below product details.
+  FR-CO-10.2   Section heading: "Payment Information" or equivalent.
+  FR-CO-10.3   Displays payment method details (e.g., "Cash on
+               Delivery", "Credit Card ending in ****1234",
+               "PayPal", or as returned by API).
+  FR-CO-10.4   All information from API response.
+  FR-CO-10.5   Read-only, non-editable.
+  FR-CO-10.6   Visually separated from other sections (borders,
+               spacing, background).
+  FR-CO-10.7   Legible text with clear labeling.
+  FR-CO-10.8   Sensitive payment data partially masked (if showing
+               card numbers: ****1234).
+  FR-CO-10.9   No full credit card numbers displayed.
+  FR-CO-10.10  Visible on all viewport sizes.
+  FR-CO-10.11  Screen readers can identify and read the section.
+  FR-CO-10.12  Section heading uses appropriate HTML tag (<h2>,
+               <h3>, or <h4>) maintaining heading hierarchy.
+
+
+G.5 SHIPPING INFORMATION SECTION
+================================================================================
+
+FR-CO-11: Shipping Information Display
+--------------------------------------------------------------------------------
+  FR-CO-11.1   Separate section below payment information.
+  FR-CO-11.2   Section heading: "Shipping Information" or equivalent.
+  FR-CO-11.3   Displays shipping details derived from checkout info:
+               - Name (First Name + Last Name from checkout-info)
+               - Zip Code (from checkout-info)
+               - Email (from checkout-info)
+               - Any additional shipping details from API.
+  FR-CO-11.4   All information from API response.
+  FR-CO-11.5   Read-only, non-editable.
+  FR-CO-11.6   Visually separated from other sections.
+  FR-CO-11.7   Legible text with clear labeling (e.g.,
+               "Name: John Doe", "Zip Code: 12345").
+  FR-CO-11.8   Data matches exactly what user entered on
+               checkout-info page.
+  FR-CO-11.9   Visible on all viewport sizes.
+  FR-CO-11.10  Screen readers can identify and read the section.
+  FR-CO-11.11  Section heading uses appropriate HTML tag.
+  FR-CO-11.12  PII displayed only to the authenticated owner.
+
+
+G.6 PRICE TOTAL SECTION
+================================================================================
+
+FR-CO-12: Item Total Price
+--------------------------------------------------------------------------------
+  FR-CO-12.1   Labeled "Item Total" or equivalent.
+  FR-CO-12.2   Calculation: SUM of (unit price x quantity) for ALL
+               products.
+  FR-CO-12.3   Currency symbol + two decimals (e.g., \$149.97).
+  FR-CO-12.4   From API response (server-calculated).
+  FR-CO-12.5   Read-only, non-editable.
+  FR-CO-12.6   Mathematically accurate.
+  FR-CO-12.7   Legible font, appropriately styled.
+  FR-CO-12.8   Consistent currency format with rest of page.
+  FR-CO-12.9   Thousand separators where applicable.
+  FR-CO-12.10  Visible on all viewports.
+  FR-CO-12.11  Right-aligned or per design.
+
+FR-CO-13: Tax Amount
+--------------------------------------------------------------------------------
+  FR-CO-13.1   Labeled "Tax" or equivalent.
+  FR-CO-13.2   Tax amount calculated server-side based on business
+               rules (e.g., percentage of item total, zip-based rate).
+  FR-CO-13.3   Currency symbol + two decimals (e.g., \$12.00).
+  FR-CO-13.4   From API response (server-calculated).
+  FR-CO-13.5   Read-only, non-editable.
+  FR-CO-13.6   Mathematically accurate.
+  FR-CO-13.7   May be \$0.00 if no tax applies.
+  FR-CO-13.8   Optionally shows tax rate percentage (e.g.,
+               "Tax (8%): \$12.00").
+  FR-CO-13.9   Legible font, appropriately styled.
+  FR-CO-13.10  Consistent currency format.
+  FR-CO-13.11  Thousand separators where applicable.
+  FR-CO-13.12  Visible on all viewports.
+  FR-CO-13.13  Right-aligned or per design.
+
+FR-CO-14: Grand Total
+--------------------------------------------------------------------------------
+  FR-CO-14.1   Labeled "Total" or "Grand Total" or equivalent.
+  FR-CO-14.2   Calculation: Item Total Price + Tax.
+  FR-CO-14.3   Currency symbol + two decimals (e.g., \$161.97).
+  FR-CO-14.4   From API response (server-calculated).
+  FR-CO-14.5   Read-only, non-editable.
+  FR-CO-14.6   Mathematically accurate: Grand Total = Item Total + Tax.
+  FR-CO-14.7   MOST visually prominent price on the page (largest
+               font, boldest weight, possibly different color).
+  FR-CO-14.8   Consistent currency format.
+  FR-CO-14.9   Thousand separators where applicable.
+  FR-CO-14.10  Visible on all viewports.
+  FR-CO-14.11  Right-aligned or per design.
+  FR-CO-14.12  This is the final amount the customer will pay.
+  FR-CO-14.13  Accessible to screen readers with meaningful label.
+  FR-CO-14.14  Visually separated from item total and tax (e.g.,
+               divider line above, larger font, different styling).
+
+FR-CO-15: Price Total Section Container
+--------------------------------------------------------------------------------
+  FR-CO-15.1   Separate section below shipping information.
+  FR-CO-15.2   Section heading: "Price Total" or equivalent (optional).
+  FR-CO-15.3   Contains three line items vertically stacked:
+               1. Item Total
+               2. Tax
+               3. Grand Total
+  FR-CO-15.4   Visually separated from other sections.
+  FR-CO-15.5   Labels left-aligned, amounts right-aligned (or per
+               design) for easy scanning.
+  FR-CO-15.6   Clear visual hierarchy:
+               Item Total (normal) > Tax (normal) > Total (prominent).
+  FR-CO-15.7   Divider line between Tax and Grand Total (optional).
+  FR-CO-15.8   All values from API (server-calculated).
+  FR-CO-15.9   Verification: Grand Total = Item Total + Tax.
+  FR-CO-15.10  Visible on all viewport sizes.
+  FR-CO-15.11  Screen readers announce in logical order.
+
+
+G.7 ACTION BUTTONS
+================================================================================
+
+FR-CO-16: Cancel Button
+--------------------------------------------------------------------------------
+  FR-CO-16.1   Text: "Cancel".
+  FR-CO-16.2   <button> or <a> element.
+  FR-CO-16.3   Positioned at bottom of page, secondary CTA.
+  FR-CO-16.4   Styled as secondary button (outline, lighter color).
+  FR-CO-16.5   Click: navigates back to Cart Page or previous step.
+               Does NOT place the order.
+  FR-CO-16.6   Does NOT clear the cart.
+  FR-CO-16.7   Checkout session data preserved (user can re-enter
+               checkout flow without re-entering info).
+  FR-CO-16.8   Optionally: confirmation dialog "Are you sure you
+               want to cancel your order?"
+  FR-CO-16.9   Cursor: pointer on hover.
+  FR-CO-16.10  Hover: visual feedback.
+  FR-CO-16.11  Keyboard accessible (Tab, Enter/Space).
+  FR-CO-16.12  Visible focus indicator.
+  FR-CO-16.13  Min touch target: 44x44px.
+  FR-CO-16.14  Visible on all viewport sizes.
+  FR-CO-16.15  aria-label if needed.
+
+FR-CO-17: Finish Button
+--------------------------------------------------------------------------------
+  FR-CO-17.1   Text: "Finish".
+  FR-CO-17.2   <button> with type="submit" or equivalent.
+  FR-CO-17.3   Positioned at bottom of page, PRIMARY CTA.
+  FR-CO-17.4   Styled as primary button (solid, prominent color).
+  FR-CO-17.5   Click: places the order. Sequence:
+               Step 1: User clicks "Finish".
+               Step 2: Button enters loading/disabled state.
+               Step 3: Authenticated POST API to place order.
+               Step 4a (Success): Redirect to Checkout: Complete page.
+                        Cart is cleared.
+                        Order recorded in database.
+               Step 4b (Failure): Error message displayed.
+                        Button re-enabled.
+                        User remains on overview page.
+  FR-CO-17.6   Loading state during API call (spinner, "Processing...",
+               disabled).
+  FR-CO-17.7   PREVENTS duplicate submissions — multiple clicks do
+               NOT create duplicate orders (debounce + disable +
+               server-side idempotency).
+  FR-CO-17.8   Re-enabled only on failure (success redirects away).
+  FR-CO-17.9   Cursor: pointer on hover (when enabled).
+  FR-CO-17.10  Hover: visual feedback.
+  FR-CO-17.11  Keyboard accessible (Tab, Enter/Space).
+  FR-CO-17.12  Visible focus indicator.
+  FR-CO-17.13  Min touch target: 44x44px.
+  FR-CO-17.14  Visually more prominent than Cancel button.
+  FR-CO-17.15  Visible on all viewport sizes.
+  FR-CO-17.16  aria-label: "Place order" or "Finish checkout".
+  FR-CO-17.17  No confirmation dialog required (this page IS the
+               confirmation/review step). Optional per business rules.
+
+
+G.8 VALIDATION & ERROR HANDLING
+================================================================================
+
+  Note: This page is primarily read-only, so validation is minimal
+  compared to input pages. Focus is on data integrity and API errors.
+
+  VAL-CO-01  All displayed data must match API response exactly.
+  VAL-CO-02  Grand Total must equal Item Total + Tax.
+  VAL-CO-03  All product quantities must be positive integers.
+  VAL-CO-04  All prices must be positive values with 2 decimals.
+  VAL-CO-05  Auth token must be valid.
+  VAL-CO-06  Cart must not be empty.
+  VAL-CO-07  Checkout info must be completed.
+
+  Error Scenarios:
+  ERR-CO-01  Overview API failure -> "Failed to load order summary.
+             Please try again." + Retry button.
+  ERR-CO-02  Place order API failure -> "Failed to place order.
+             Please try again."
+  ERR-CO-03  Auth error -> Redirect to login page.
+  ERR-CO-04  Cart empty -> Redirect to cart/home page.
+  ERR-CO-05  Checkout info missing -> Redirect to checkout-info.
+  ERR-CO-06  Network error -> "Check your internet connection."
+  ERR-CO-07  Duplicate order attempt -> "Order already placed." or
+             redirect to complete page.
+  ERR-CO-08  Price mismatch (client vs server) -> Server data takes
+             precedence. Optional warning to user.
+  ERR-CO-09  Product unavailable (out of stock since cart) ->
+             "Some items are no longer available." with guidance.
+
+
+G.9 UI/UX REQUIREMENTS
+================================================================================
+
+  UI-CO-01   Clear section separation (product, payment, shipping,
+             price total, buttons).
+  UI-CO-02   Consistent styling across all sections.
+  UI-CO-03   Read-only appearance (no input fields, no edit icons).
+  UI-CO-04   Visual hierarchy: Heading > Sections > Grand Total >
+             Buttons.
+  UI-CO-05   Grand Total is most prominent financial figure.
+  UI-CO-06   Product rows consistent with cart page layout.
+  UI-CO-07   Price alignment (right-aligned for easy scanning).
+  UI-CO-08   Two buttons clearly differentiated (primary/secondary).
+  UI-CO-09   Adequate spacing between all sections.
+  UI-CO-10   Loading skeleton matches final layout.
+  UI-CO-11   Page feels like a "receipt" or "summary" — professional.
+  UI-CO-12   Finish button conveys finality and importance.
+  UI-CO-13   Clean, uncluttered design builds purchase confidence.
+  UI-CO-14   Single-page layout — user sees everything without
+             extensive scrolling (where possible).
+
+
+G.10 NON-FUNCTIONAL REQUIREMENTS
+================================================================================
+
+  (See Global NFRs in Section A.6 — all apply)
+  Additional:
+  NFR-CO-01  Overview data loads within 2 seconds.
+  NFR-CO-02  Place order API completes within 5 seconds.
+  NFR-CO-03  All price calculations server-side, mathematically
+             accurate.
+  NFR-CO-04  Idempotent order placement (no duplicates).
+  NFR-CO-05  PII displayed securely (HTTPS, auth-only access).
+  NFR-CO-06  Payment data partially masked.
+  NFR-CO-07  Order data not cached insecurely on client.
+  NFR-CO-08  CSRF protection on order placement endpoint.
+
+
+================================================================================
+================================================================================
+        PART H — CHECKOUT: COMPLETE PAGE SRS
+================================================================================
+================================================================================
+
+URL: https://practice.qabrains.com/ecommerce/checkout-complete
+Authentication Required: Yes
+Prerequisite: Successful order placement
+
+H.1 PAGE OVERVIEW
+================================================================================
+
+The Checkout: Complete Page is the final page in the checkout flow,
+displayed after successful order placement. It serves as the order
+confirmation / thank you page, providing visual and textual
+confirmation that the order was successful.
+
+This page is ENTIRELY INFORMATIONAL — no user input, no forms,
+no transactional operations.
+
+Elements on this page:
+  1. "Checkout: Complete" Heading Text
+  2. Green Tick / Checkmark Icon
+  3. "Thank you for your order" Text (Primary Message)
+  4. "Your order has been dispatched, and will arrive just as fast
+      as the pony can get there!" Text (Secondary Message)
+  5. "Continue Shopping" Button
+
+Page Layout (Wireframe):
+
+  ┌───────────────────────────────────────────────────────────────────┐
+  │                                                                   │
+  │                    Checkout: Complete                             │
+  │                                                                   │
+  │                          ┌─────┐                                 │
+  │                          │  ✓  │                                 │
+  │                          └─────┘                                 │
+  │                    (Green Tick Icon)                              │
+  │                                                                   │
+  │               Thank you for your order                           │
+  │                                                                   │
+  │         Your order has been dispatched, and will                  │
+  │         arrive just as fast as the pony can get there!           │
+  │                                                                   │
+  │                  ┌─────────────────────┐                         │
+  │                  │  Continue Shopping  │                         │
+  │                  └─────────────────────┘                         │
+  │                                                                   │
+  └───────────────────────────────────────────────────────────────────┘
+
+
+H.2 PAGE-LEVEL FUNCTIONAL REQUIREMENTS
+================================================================================
+
+FR-CC-01: "Checkout: Complete" Heading Text
+--------------------------------------------------------------------------------
+  FR-CC-01.1   Text: "Checkout: Complete" as heading at top of content.
+  FR-CC-01.2   HTML heading tag (<h1> or <h2>).
+  FR-CC-01.3   Visually prominent: larger font, bold, high contrast.
+  FR-CC-01.4   Static, non-editable.
+  FR-CC-01.5   Positioned above all other content (icon, messages,
+               button).
+  FR-CC-01.6   Visible without scrolling on all viewports.
+  FR-CC-01.7   Center-aligned or left-aligned per design.
+  FR-CC-01.8   First content element for screen readers.
+  FR-CC-01.9   Visible on all viewport sizes.
+  FR-CC-01.10  Optional step indicator showing all steps completed.
+  FR-CC-01.11  Consistent with checkout flow heading style.
+  FR-CC-01.12  Same font family as other checkout page headings.
+
+FR-CC-02: Page Access, Authentication & Flow Guard
+--------------------------------------------------------------------------------
+  FR-CC-02.1   Verify valid auth token. Invalid/expired -> login page.
+  FR-CC-02.2   Verify checkout flow completed and order placed:
+               a. Cart empty + no order -> home page.
+               b. Cart has items, no checkout -> cart page.
+               c. Checkout info not completed -> checkout-info page.
+               d. Checkout overview not completed -> checkout-overview.
+  FR-CC-02.3   Direct URL access enforces all checks.
+  FR-CC-02.4   No sensitive data in URL.
+  FR-CC-02.5   Refreshing page does NOT create duplicate order.
+  FR-CC-02.6   Browser Back button does NOT allow re-submitting order.
+
+FR-CC-03: Cart Clearing / State Reset
+--------------------------------------------------------------------------------
+  FR-CC-03.1   Shopping cart completely cleared/emptied.
+  FR-CC-03.2   Header cart badge shows 0 items or hidden.
+  FR-CC-03.3   Checkout session data cleared/invalidated.
+  FR-CC-03.4   Navigating to cart page shows empty cart state.
+  FR-CC-03.5   If cart clearing API fails: retry silently, non-blocking
+               — confirmation page still displays.
+  FR-CC-03.6   Client-side cached cart data (localStorage, sessionStorage,
+               in-memory) cleared.
+
+
+H.3 ORDER CONFIRMATION CONTENT
+================================================================================
+
+FR-CC-04: Green Tick / Checkmark Icon
+--------------------------------------------------------------------------------
+  FR-CC-04.1   Green checkmark icon displayed prominently, below heading,
+               above "Thank you" text.
+  FR-CC-04.2   Rendered as SVG, PNG, icon font, CSS shape, or unicode.
+  FR-CC-04.3   Green color with sufficient contrast. Acceptable shades:
+               #4CAF50, #28A745, #00C853, #2E7D32, or per design system.
+  FR-CC-04.4   Prominently sized:
+               Mobile: min 48x48px
+               Tablet: min 64x64px
+               Desktop: 80x80px to 120x120px
+  FR-CC-04.5   Horizontally centered, aligned with text below.
+  FR-CC-04.6   Appropriate spacing above and below.
+  FR-CC-04.7   Optional circular background (green circle + white tick,
+               or white circle + green tick).
+  FR-CC-04.8   Optional entrance animation (fade-in, scale-up, bounce,
+               SVG draw-in):
+               a. Smooth and professional.
+               b. Completes within 1-2 seconds.
+               c. Runs only once (no loop).
+               d. Respects prefers-reduced-motion (static for users
+                  who prefer reduced motion).
+  FR-CC-04.9   If <img>: alt="Order successful" or equivalent.
+  FR-CC-04.10  If decorative (text conveys success): aria-hidden="true",
+               role="presentation". If primary indicator:
+               aria-label="Order placed successfully".
+  FR-CC-04.11  Non-interactive (not clickable, not focusable).
+  FR-CC-04.12  Maintains aspect ratio, no pixelation/distortion.
+               SVG preferred for resolution independence.
+  FR-CC-04.13  Visible and properly sized on all viewports.
+  FR-CC-04.14  Green color consistent with app's success color.
+  FR-CC-04.15  Loads quickly, optimized asset. No perceptible delay.
+
+FR-CC-05: "Thank you for your order" Text (Primary Message)
+--------------------------------------------------------------------------------
+  FR-CC-05.1   Exact text: "Thank you for your order".
+  FR-CC-05.2   Rendered as heading (<h2>, <h3>) or styled <p>.
+               Maintains proper heading hierarchy.
+  FR-CC-05.3   Visually prominent: larger than body text, bold/semi-bold,
+               high contrast. Most prominent text after page heading.
+  FR-CC-05.4   Horizontally centered (or aligned with icon and content).
+  FR-CC-05.5   Directly below green tick icon with appropriate spacing.
+  FR-CC-05.6   Static, non-editable.
+  FR-CC-05.7   Selectable (highlight and copy).
+  FR-CC-05.8   Single line on desktop/tablet. May wrap on narrow mobile.
+               Never truncated or clipped.
+  FR-CC-05.9   Visible on all viewport sizes.
+  FR-CC-05.10  Screen reader order: after heading and icon, before
+               secondary message.
+  FR-CC-05.11  Text color: dark/high contrast (not green — green for icon).
+  FR-CC-05.12  Same font family as rest of application.
+
+FR-CC-06: Dispatch Description Text (Secondary Message)
+--------------------------------------------------------------------------------
+  FR-CC-06.1   Exact text: "Your order has been dispatched, and will
+               arrive just as fast as the pony can get there!"
+  FR-CC-06.2   Rendered as <p> (paragraph) tag.
+  FR-CC-06.3   Smaller font than primary "Thank you" message.
+               Visual hierarchy: Heading > Primary > Secondary.
+  FR-CC-06.4   Font weight: normal/regular (not bold).
+  FR-CC-06.5   Text color: slightly lighter/muted than primary
+               (e.g., #666, #757575, #6c757d). Still minimum
+               4.5:1 contrast ratio (WCAG AA).
+  FR-CC-06.6   Horizontally centered.
+  FR-CC-06.7   Directly below "Thank you" text with spacing.
+  FR-CC-06.8   Static, non-editable.
+  FR-CC-06.9   Selectable (highlight and copy).
+  FR-CC-06.10  Desktop: single line or max-width constrained
+               (600-800px) for readability.
+  FR-CC-06.11  Mobile/tablet: wraps naturally to multiple lines.
+               Never truncated or clipped.
+  FR-CC-06.12  Line height 1.5-1.8 for readability when wrapped.
+  FR-CC-06.13  Visible on all viewport sizes.
+  FR-CC-06.14  Screen reader order: after primary message, before
+               Continue Shopping button.
+  FR-CC-06.15  Same font family as rest of application.
+  FR-CC-06.16  The text conveys a friendly, positive tone reinforcing
+               the successful order experience.
+
+
+H.4 ACTION BUTTON
+================================================================================
+
+FR-CC-07: Continue Shopping Button
+--------------------------------------------------------------------------------
+  FR-CC-07.1   Text: "Continue Shopping".
+  FR-CC-07.2   <button> or <a> element.
+  FR-CC-07.3   Positioned below the secondary message text, primary
+               CTA on this page (only actionable element).
+  FR-CC-07.4   Styled as a prominent button (solid background color,
+               contrasting text). As the only CTA, it should be
+               visually inviting.
+  FR-CC-07.5   Horizontally centered (aligned with icon and messages).
+  FR-CC-07.6   Click: navigates to Home Page (/ecommerce).
+  FR-CC-07.7   Does NOT re-trigger any order processing.
+  FR-CC-07.8   Does NOT restore cleared cart (cart remains empty).
+  FR-CC-07.9   Cursor: pointer on hover.
+  FR-CC-07.10  Hover: visual feedback (color change, shadow, scale,
+               brightness).
+  FR-CC-07.11  Keyboard accessible (Tab, Enter/Space).
+  FR-CC-07.12  Visible focus indicator when keyboard-focused.
+  FR-CC-07.13  Min touch target: 44x44px.
+  FR-CC-07.14  Appropriately sized (not too small, not full-width
+               unless mobile). Readable text at comfortable font size.
+  FR-CC-07.15  Visible on all viewport sizes.
+  FR-CC-07.16  aria-label: "Continue Shopping" or "Return to product
+               listing" if additional context needed.
+  FR-CC-07.17  Adequate spacing above (from secondary message) and
+               below (from page edge/footer).
+  FR-CC-07.18  Button text same font family as rest of application.
+  FR-CC-07.19  No loading state needed (simple navigation, no API).
+  FR-CC-07.20  If user is already on home page state somehow,
+               clicking still navigates/reloads home page cleanly.
+
+
+H.5 UI/UX REQUIREMENTS
+================================================================================
+
+  UI-CC-01   All content vertically centered on page (or top-centered
+             with generous top margin). The page should feel balanced.
+  UI-CC-02   All elements horizontally centered within content area.
+  UI-CC-03   Vertical stacking order: Heading > Green Tick > Primary
+             Message > Secondary Message > Continue Shopping Button.
+  UI-CC-04   Generous spacing between each element for clean look.
+  UI-CC-05   Page should evoke a positive, celebratory, or satisfying
+             emotional response (success colors, clean design).
+  UI-CC-06   Minimalist design — no unnecessary elements, no product
+             listings, no pricing on this page.
+  UI-CC-07   Green tick is the visual focal point.
+  UI-CC-08   Typography hierarchy is clear and visually pleasing.
+  UI-CC-09   The "Continue Shopping" button is the clear next action.
+  UI-CC-10   Page should load fully rendered immediately (no complex
+             loading states needed — minimal data to display).
+  UI-CC-11   Consistent design language with all other checkout pages.
+  UI-CC-12   Background color: clean, light, non-distracting.
+  UI-CC-13   No form fields, no input elements, no distracting links
+             beyond the Continue Shopping button.
+  UI-CC-14   The page communicates: "You're done. Everything is good.
+             Go shop more!"
+  UI-CC-15   Responsive: all content remains centered and readable
+             on desktop, tablet, and mobile without scrolling issues.
+  UI-CC-16   Page should be viewable WITHOUT scrolling on most
+             standard viewports (all content above the fold).
+
+
+H.6 NON-FUNCTIONAL REQUIREMENTS
+================================================================================
+
+  (See Global NFRs in Section A.6 — all apply)
+  Additional:
+
+  H.6.1 Performance
+  NFR-CC-01  Page loads within 1 second (minimal content to render).
+  NFR-CC-02  No heavy API calls required (only cart clearing, which
+             is non-blocking).
+  NFR-CC-03  Green tick icon/animation renders within 500ms.
+  NFR-CC-04  Continue Shopping button navigates within 200ms.
+
+  H.6.2 Security
+  NFR-CC-05  Page accessible only to authenticated users who
+             completed checkout.
+  NFR-CC-06  No order details (order ID, amounts) displayed that
+             could be exploited.
+  NFR-CC-07  Page does not expose any API endpoints.
+  NFR-CC-08  Refreshing does not duplicate orders.
+  NFR-CC-09  Session remains valid for navigation to home page.
+
+  H.6.3 Reliability
+  NFR-CC-10  Page renders even if cart-clearing API fails.
+  NFR-CC-11  Page renders even if optional animations fail.
+  NFR-CC-12  Continue Shopping button always functional — no
+             dependencies that could block navigation.
+  NFR-CC-13  No JavaScript errors that prevent page rendering.
+
+  H.6.4 Accessibility
+  NFR-CC-14  WCAG 2.1 Level AA compliance.
+  NFR-CC-15  All text readable by screen readers in logical order.
+  NFR-CC-16  Green tick accessible (alt text or aria-label).
+  NFR-CC-17  Continue Shopping button keyboard accessible.
+  NFR-CC-18  prefers-reduced-motion respected for animations.
+  NFR-CC-19  Color not sole indicator of success (text also confirms).
+  NFR-CC-20  Focus management: on page load, focus set to heading or
+             first meaningful element for screen readers.
+
+
+================================================================================
+================================================================================
+        PART I — GLOBAL TRACEABILITY MATRIX
+================================================================================
+================================================================================
+
+This matrix maps each requirement to its page, element, and primary
+test scenarios.
+
+I.1 LOGIN PAGE TRACEABILITY
+================================================================================
+
+  Req ID        Element              Test Scenarios
+  ------------  -------------------  -----------------------------------------
+  FR-LGN-01     Logo/Home Button     - Logo visible
+                                     - Logo clickable
+                                     - Navigate to home
+                                     - Alt text present
+                                     - Hover cursor pointer
+
+  FR-LGN-02     Login Heading        - "Login" text displayed
+                                     - Heading tag used
+                                     - Positioned above form
+
+  FR-LGN-03     Email Label          - "Email" label visible
+                                     - Click label focuses input
+                                     - for/id association
+
+  FR-LGN-04     Email Field          - Empty on load
+                                     - Accepts valid email chars
+                                     - Placeholder visible
+                                     - Focus indicator
+                                     - Max 254 chars
+                                     - Tab navigation
+
+  FR-LGN-05     Password Label       - "Password" label visible
+                                     - Click label focuses input
+
+  FR-LGN-06     Password Field       - Empty on load
+                                     - Masked by default
+                                     - Accepts all char types
+                                     - Focus indicator
+                                     - Max 128 chars
+
+  FR-LGN-07     Password Toggle      - Default: hidden (eye-slash)
+                                     - Click: reveals password
+                                     - Click again: hides
+                                     - Content not altered
+                                     - Keyboard accessible
+                                     - aria-label updates
+
+  FR-LGN-08     Login Button         - "Login" text displayed
+                                     - Click triggers submission
+                                     - Enter key triggers submit
+                                     - Loading state shown
+                                     - Re-enabled after response
+
+  FR-LGN-09     Form Submission      - Valid creds: redirect home
+                                     - Invalid creds: error shown
+                                     - Server error: generic msg
+                                     - No credential enumeration
+                                     - HTTPS transmission
+
+  VAL-LGN-*     Validations          - Empty email -> error
+                                     - Invalid email -> error
+                                     - Empty password -> error
+                                     - Long email -> error
+                                     - Valid inputs -> no error
+
+
+I.2 HOME PAGE TRACEABILITY
+================================================================================
+
+  Req ID             Element           Test Scenarios
+  -----------------  ----------------  ------------------------------------
+  FR-HOME-HDR-01     Logo              - Visible, clickable, navigates home
+  FR-HOME-HDR-02     Cart Button       - Visible, clickable, navigates cart
+                                       - Badge updates dynamically
+  FR-HOME-HDR-03     Profile Dropdown  - Opens on click, closes on click
+                                       - Contains Favourites & Logout
+                                       - Escape closes
+                                       - Click outside closes
+  FR-HOME-HDR-04     Favourites Item   - Clickable, navigates to favourites
+  FR-HOME-HDR-05     Logout Item       - Clickable, clears session
+                                       - Redirects to login
+                                       - Back button blocked
+  FR-HOME-MAIN-01    Products Heading  - "Products" text visible
+  FR-HOME-MAIN-02    Sort Dropdown     - 5 options present
+                                       - Each sorts correctly
+                                       - Search filters products
+                                       - Case-insensitive sort
+  FR-HOME-MAIN-03    Product Grid      - Products displayed in grid
+                                       - Responsive columns
+  FR-HOME-MAIN-04    Product Image     - Visible, alt text, fallback
+  FR-HOME-MAIN-05    Favourite Button  - Toggle works, API called
+                                       - Optimistic UI, revert on fail
+  FR-HOME-MAIN-06    Product Name      - Visible, matches API data
+  FR-HOME-MAIN-07    Product Price     - Visible, correct format
+  FR-HOME-MAIN-08    Add to Cart       - Click adds to cart
+                                       - Badge updates
+                                       - Success feedback
+  FR-HOME-FTR-*      Footer Links      - Visible, clickable, navigate
+
+
+I.3 PRODUCT DETAILS PAGE TRACEABILITY
+================================================================================
+
+  Req ID         Element            Test Scenarios
+  -------------  -----------------  ----------------------------------------
+  FR-PDP-01      Back Button        - Visible, clickable
+                                    - Navigates back/home
+                                    - Text displayed
+  FR-PDP-02      Product Image      - Visible, correct product
+                                    - Alt text, fallback on fail
+  FR-PDP-03      Favourite Button   - Toggle states work
+                                    - API called on click
+                                    - Revert on failure
+  FR-PDP-04      Product Name       - Matches API data
+                                    - Heading tag used
+  FR-PDP-05      Quantity Selector  - Default qty 1
+                                    - + increments by 1
+                                    - - decrements by 1
+                                    - Min 1 enforced (- disabled)
+                                    - Max enforced (+ disabled)
+                                    - Display updates instantly
+  FR-PDP-06      Product Price      - Correct format, matches API
+  FR-PDP-07      Add to Cart        - Adds with selected qty
+                                    - Cart badge updates
+                                    - Success/error feedback
+                                    - Prevents duplicates
+  FR-PDP-08      Page Load          - Valid ID: loads product
+                                    - Invalid ID: error/redirect
+                                    - Missing ID: redirect home
+
+
+I.4 CART PAGE TRACEABILITY
+================================================================================
+
+  Req ID         Element            Test Scenarios
+  -------------  -----------------  ----------------------------------------
+  FR-CART-01     Your Cart Heading  - "Your Cart" visible
+                                    - Optional item count
+  FR-CART-02     Page Load          - Cart data fetched
+                                    - Loading state shown
+                                    - Error state on failure
+  FR-CART-03     Cart Item          - Distinct rows per product
+  FR-CART-04     Product Image      - Visible per item, fallback
+  FR-CART-05     Product Name       - Visible, matches other pages
+  FR-CART-06     Remove Button      - Click removes item
+                                    - API called
+                                    - Total recalculated
+                                    - Last item -> empty state
+                                    - Error handling on failure
+  FR-CART-07     Quantity Selector  - Reflects current cart qty
+                                    - +/- work correctly
+                                    - Min/max enforced
+                                    - Total updates on change
+                                    - API called on change
+                                    - Revert on API failure
+  FR-CART-08     Item Price         - Correct format per item
+  FR-CART-09     Total Price        - Correct calculation
+                                    - Updates dynamically
+                                    - Accurate math
+  FR-CART-10     Continue Shopping  - Navigates to home
+                                    - Cart preserved
+  FR-CART-11     Checkout Button    - Navigates to checkout-info
+                                    - Disabled/error if cart empty
+  FR-CART-12     Empty Cart State   - Message displayed
+                                    - No product rows
+                                    - Checkout disabled/hidden
+                                    - Continue Shopping visible
+
+
+I.5 CHECKOUT: YOUR INFORMATION PAGE TRACEABILITY
+================================================================================
+
+  Req ID         Element            Test Scenarios
+  -------------  -----------------  ----------------------------------------
+  FR-CI-01       Page Heading       - Heading text visible
+                                    - Positioned above form
+  FR-CI-02       Access Guard       - No auth -> login redirect
+                                    - Empty cart -> redirect
+                                    - Direct URL enforces checks
+  FR-CI-03       Email Label        - "Email" visible, associated
+  FR-CI-04       Email Input        - Accepts valid emails
+                                    - Placeholder shown
+                                    - Focus indicator
+                                    - Max 254 chars
+                                    - Pre-populated (if applicable)
+                                    - Mobile email keyboard
+  FR-CI-05       First Name Label   - "First Name" visible
+  FR-CI-06       First Name Input   - Accepts alphabetic + valid chars
+                                    - Rejects numbers
+                                    - Rejects invalid specials
+                                    - Max 50 chars
+                                    - Min 1 char
+  FR-CI-07       Last Name Label    - "Last Name" visible
+  FR-CI-08       Last Name Input    - Accepts alphabetic + valid chars
+                                    - Rejects numbers
+                                    - Rejects invalid specials
+                                    - Max 50 chars
+                                    - Min 1 char
+  FR-CI-09       Zip Code Label     - "Zip Code" visible
+  FR-CI-10       Zip Code Input     - Accepts 5-digit and ZIP+4
+                                    - Rejects alphabetic
+                                    - Min 5 chars
+                                    - Max 10 chars
+                                    - Mobile numeric keyboard
+  FR-CI-11       Cancel Button      - Navigates to cart
+                                    - No data submitted
+                                    - Cart preserved
+  FR-CI-12       Continue Button    - Validates all fields
+                                    - Valid: navigates to overview
+                                    - Invalid: errors displayed
+                                    - Loading state
+                                    - Enter key triggers submit
+  FR-CI-13       Form Submission    - POST over HTTPS
+                                    - Auth token in headers
+                                    - Success -> overview page
+                                    - Validation error -> display
+                                    - Server error -> generic msg
+  VAL-CI-*       All Validations    - Empty fields -> required errors
+                                    - Invalid email format -> error
+                                    - Numbers in name -> error
+                                    - Invalid zip -> error
+                                    - Max length exceeded -> error
+                                    - Whitespace trimmed
+                                    - Error display below fields
+                                    - Errors clear on correction
+                                    - First invalid field focused
+
+
+I.6 CHECKOUT: OVERVIEW PAGE TRACEABILITY
+================================================================================
+
+  Req ID         Element            Test Scenarios
+  -------------  -----------------  ----------------------------------------
+  FR-CO-01       Overview Heading   - "Checkout: Overview" visible
+  FR-CO-02       Access/Flow Guard  - No auth -> login redirect
+                                    - Empty cart -> redirect
+                                    - Info not done -> redirect
+                                    - Direct URL enforces checks
+  FR-CO-03       Page Load          - Data fetched successfully
+                                    - Loading state shown
+                                    - Error state on failure
+  FR-CO-04       Product Container  - All products listed
+                                    - Visually separated
+                                    - Read-only
+  FR-CO-05       Product Image      - Visible per product
+                                    - Consistent with other pages
+                                    - Non-clickable
+  FR-CO-06       Product Name       - Visible, matches other pages
+                                    - Read-only
+  FR-CO-07       Product Quantity   - Correct qty displayed
+                                    - Read-only (no +/- buttons)
+                                    - Matches cart qty
+  FR-CO-08       Unit Price         - Correct format
+                                    - Matches other pages
+  FR-CO-09       Line Total         - Unit price x qty = correct
+                                    - Server-calculated
+  FR-CO-10       Payment Info       - Section visible
+                                    - Payment method displayed
+                                    - Sensitive data masked
+                                    - Read-only
+  FR-CO-11       Shipping Info      - Section visible
+                                    - Name, zip displayed
+                                    - Matches checkout-info entry
+                                    - Read-only
+  FR-CO-12       Item Total         - SUM of all line totals
+                                    - Accurate calculation
+  FR-CO-13       Tax                - Tax amount displayed
+                                    - Server-calculated
+                                    - May be $0.00
+  FR-CO-14       Grand Total        - Item Total + Tax
+                                    - Most prominent price
+                                    - Accurate calculation
+  FR-CO-15       Price Section      - Three lines stacked
+                                    - Clear hierarchy
+                                    - Right-aligned amounts
+  FR-CO-16       Cancel Button      - Navigates back
+                                    - Order NOT placed
+                                    - Cart preserved
+  FR-CO-17       Finish Button      - Places order on click
+                                    - Loading/disabled state
+                                    - No duplicate orders
+                                    - Success -> complete page
+                                    - Failure -> error, re-enable
+                                    - Cart cleared on success
+
+
+I.7 CHECKOUT: COMPLETE PAGE TRACEABILITY
+================================================================================
+
+  Req ID         Element            Test Scenarios
+  -------------  -----------------  ----------------------------------------
+  FR-CC-01       Complete Heading   - "Checkout: Complete" visible
+                                    - Heading tag used
+                                    - Above all content
+  FR-CC-02       Access/Flow Guard  - No auth -> login redirect
+                                    - No order placed -> redirect
+                                    - Direct URL enforces checks
+                                    - Refresh: no duplicate order
+                                    - Back button: no re-submit
+  FR-CC-03       Cart/State Reset   - Cart cleared (0 items)
+                                    - Cart badge: 0 or hidden
+                                    - Session data cleared
+                                    - Cart page shows empty state
+                                    - Client cache cleared
+  FR-CC-04       Green Tick Icon    - Visible, green color
+                                    - Prominent size
+                                    - Centered horizontally
+                                    - Alt text or aria-label
+                                    - Non-interactive
+                                    - Optional animation works
+                                    - Reduced motion respected
+                                    - Fallback if asset fails
+                                    - No distortion
+  FR-CC-05       Thank You Text     - Exact text displayed
+                                    - Visually prominent
+                                    - Below green tick
+                                    - Centered
+                                    - Single line desktop
+                                    - Wraps on mobile
+                                    - Selectable
+  FR-CC-06       Dispatch Text      - Exact text displayed
+                                    - Below thank you text
+                                    - Smaller font than primary
+                                    - Normal weight (not bold)
+                                    - Muted color, still accessible
+                                    - Centered
+                                    - Max-width on desktop
+                                    - Wraps on mobile
+                                    - Selectable
+                                    - Line height readable
+  FR-CC-07       Continue Shopping  - "Continue Shopping" text
+                                    - Clickable
+                                    - Navigates to home page
+                                    - No order re-processing
+                                    - Cart remains empty
+                                    - Cursor pointer on hover
+                                    - Hover feedback
+                                    - Keyboard accessible
+                                    - Focus indicator
+                                    - Touch target >= 44x44px
+                                    - Centered on page
+                                    - Visible all viewports
+                                    - No loading state needed
+
+
+I.8 CROSS-PAGE TRACEABILITY
+================================================================================
+
+These test scenarios verify behavior ACROSS multiple pages.
+
+  Test ID        Flow / Scenario         Pages Involved
+  -------------  ----------------------  ----------------------------
+  CROSS-01       Full Purchase Flow      Login -> Home -> PDP ->
+                                         Cart -> Info -> Overview ->
+                                         Complete -> Home
+
+  CROSS-02       Login to Logout         Login -> Home -> Logout ->
+                                         Login (back button blocked)
+
+  CROSS-03       Add to Cart from Home   Home -> Cart (item appears,
+                                         badge updates)
+
+  CROSS-04       Add to Cart from PDP    PDP -> Cart (item with qty
+                                         appears, badge updates)
+
+  CROSS-05       Multiple Items Cart     Home (add item A) ->
+                                         PDP (add item B with qty 3)
+                                         -> Cart (both items, correct
+                                         qtys, correct total)
+
+  CROSS-06       Modify Cart & Checkout  Cart (change qty, remove
+                                         item) -> Info -> Overview
+                                         (reflects changes)
+
+  CROSS-07       Cancel from Info        Info (Cancel) -> Cart (cart
+                                         preserved, data intact)
+
+  CROSS-08       Cancel from Overview    Overview (Cancel) -> Cart
+                                         (cart preserved)
+
+  CROSS-09       Continue Shopping       Complete -> Home (cart empty,
+                 After Order             can add new items)
+
+  CROSS-10       Favourite Persistence   Home (fav product) -> PDP
+                                         (same product shows fav) ->
+                                         Home (still fav)
+
+  CROSS-11       Price Consistency       Home price = PDP price =
+                                         Cart price = Overview price
+
+  CROSS-12       Product Name            Home name = PDP name =
+                 Consistency             Cart name = Overview name
+
+  CROSS-13       Product Image           Home img = PDP img =
+                 Consistency             Cart img = Overview img
+
+  CROSS-14       Auth Guard All Pages    Logout -> directly access
+                                         each protected page URL ->
+                                         all redirect to login
+
+  CROSS-15       Flow Guard Overview     Without completing info ->
+                                         access overview URL ->
+                                         redirected to info page
+
+  CROSS-16       Flow Guard Complete     Without placing order ->
+                                         access complete URL ->
+                                         redirected appropriately
+
+  CROSS-17       Cart Badge Accuracy     Add items -> badge count
+                                         matches. Remove items ->
+                                         badge decreases. Order
+                                         complete -> badge 0.
+
+  CROSS-18       Back Button Behavior    Complete -> Back -> should
+                                         NOT re-submit order.
+                                         Login -> Back -> should
+                                         NOT access protected pages.
+
+  CROSS-19       Sort Persistence        Home: sort by price ->
+                                         view PDP -> back ->
+                                         sort maintained (or reset
+                                         per design)
+
+  CROSS-20       Empty Cart Checkout     Cart (empty) -> Click
+                 Prevention              Checkout -> blocked/error
+
+
+================================================================================
+================================================================================
+        PART J — APPENDIX
+================================================================================
+================================================================================
+
+J.1 COMPLETE ELEMENT INVENTORY
+================================================================================
+
+  Page                     Total Elements   Element List
+  -----------------------  ---------------  ----------------------------
+  Login Page               8                Logo, Login Heading, Email
+                                            Label, Email Input, Password
+                                            Label, Password Input,
+                                            Password Toggle, Login Button
+
+  Home Page                14+              Logo, Cart Button, Profile
+                                            Dropdown, Favourites Item,
+                                            Logout Item, Products Heading,
+                                            Sort Dropdown (5 options),
+                                            Product Cards (Image, Fav
+                                            Button, Name, Price, Add to
+                                            Cart), Footer Links
+
+  Product Details Page     7                Back Button, Product Image,
+                                            Favourite Button, Product
+                                            Name, Quantity Selector
+                                            (-, display, +), Product
+                                            Price, Add to Cart Button
+
+  Cart Page                10+              Your Cart Heading, Cart Items
+                                            (Image, Name, Remove, Qty
+                                            Selector, Price), Total Price,
+                                            Continue Shopping, Checkout
+
+  Checkout: Info Page      10               Page Heading, Email Label,
+                                            Email Input, First Name Label,
+                                            First Name Input, Last Name
+                                            Label, Last Name Input, Zip
+                                            Code Label, Zip Code Input,
+                                            Cancel Button, Continue Button
+
+  Checkout: Overview Page  13+              Heading, Product Details
+                                            (Image, Name, Qty, Price,
+                                            Total), Payment Info,
+                                            Shipping Info, Item Total,
+                                            Tax, Grand Total, Cancel,
+                                            Finish
+
+  Checkout: Complete Page  5                Heading, Green Tick Icon,
+                                            Thank You Text, Dispatch
+                                            Text, Continue Shopping
+
+
+J.2 COMPLETE URL INVENTORY
+================================================================================
+
+  Page                     URL
+  -----------------------  -------------------------------------------------
+  Login                    https://practice.qabrains.com/ecommerce/login
+  Home                     https://practice.qabrains.com/ecommerce
+  Product Details          https://practice.qabrains.com/ecommerce/
+                           product-details?id={product_id}
+  Cart                     https://practice.qabrains.com/ecommerce/cart
+  Checkout: Info           https://practice.qabrains.com/ecommerce/
+                           checkout-info
+  Checkout: Overview       https://practice.qabrains.com/ecommerce/
+                           checkout-overview
+  Checkout: Complete       https://practice.qabrains.com/ecommerce/
+                           checkout-complete
+
+
+J.3 API ENDPOINT SUMMARY
+================================================================================
+
+  Method   Endpoint                    Used By            Purpose
+  ------   --------------------------  -----------------  ------------------
+  POST     /api/auth/login             Login Page         Authenticate user
+  POST     /api/auth/logout            Profile Dropdown   End session
+  GET      /api/products               Home Page          Fetch all products
+  GET      /api/products/{id}          Product Details    Fetch single product
+  POST     /api/cart                   Home, PDP          Add item to cart
+  GET      /api/cart                   Cart Page          Fetch cart items
+  PUT      /api/cart/{itemId}          Cart Page, PDP     Update cart item qty
+  PATCH    /api/cart/{itemId}          Cart Page          Partial update
+  DELETE   /api/cart/{itemId}          Cart Page          Remove cart item
+  DELETE   /api/cart                   Complete Page      Clear entire cart
+  POST     /api/favourites            Home, PDP          Add to favourites
+  DELETE   /api/favourites/{id}       Home, PDP          Remove favourite
+  GET      /api/favourites            Favourites Page     Fetch favourites
+  POST     /api/checkout/info         Checkout Info       Submit user info
+  GET      /api/checkout/overview     Checkout Overview   Fetch order summary
+  POST     /api/checkout/complete     Checkout Overview   Place order
+
+
+J.4 HTTP STATUS CODE REFERENCE
+================================================================================
+
+  Status   Meaning                    Usage Context
+  ------   -------------------------  ----------------------------------
+  200      OK                         Successful GET, PUT, PATCH, DELETE
+  201      Created                    Successful POST (new resource)
+  204      No Content                 Successful DELETE (no body)
+  400      Bad Request                Malformed request, empty cart
+  401      Unauthorized               Invalid/expired auth token,
+                                      invalid login credentials
+  403      Forbidden                  Insufficient permissions
+  404      Not Found                  Product not found, invalid ID
+  409      Conflict                   Duplicate order attempt
+  422      Unprocessable Entity       Validation errors (field-level)
+  429      Too Many Requests          Rate limit exceeded (login)
+  500      Internal Server Error      Server failure
+  502      Bad Gateway                Upstream service unavailable
+  503      Service Unavailable        Server maintenance/overload
+
+
+J.5 GLOSSARY OF VALIDATION RULES
+================================================================================
+
+  Field          Min Len  Max Len  Format / Allowed Chars
+  -------------  -------  -------  ----------------------------------
+  Email          1        254      RFC 5322 format, alphanumeric +
+                                   @, ., _, -, +, %
+  Password       1*       128      Alphanumeric + special + spaces
+                                   (* or min defined by business)
+  First Name     1        50       Alpha + hyphens + apostrophes +
+                                   spaces + accented chars. No numbers.
+  Last Name      1        50       Alpha + hyphens + apostrophes +
+                                   spaces + accented chars. No numbers.
+  Zip Code       5        10       Numeric (0-9) + optional hyphen
+                                   for ZIP+4. Formats: 12345,
+                                   12345-6789
+  Quantity       1        99*      Positive whole integer
+                                   (* or stock/business limit)
+  Product ID     1        N/A      Positive integer (URL parameter)
+  Search Query   0        100      Any characters (XSS-sanitized)
+
+
+J.6 REQUIREMENT ID NAMING CONVENTIONS
+================================================================================
+
+  Prefix          Page / Section
+  --------------  ------------------------------------------
+  FR-LGN-         Login Page Functional Requirements
+  VAL-LGN-        Login Page Validation Rules
+  ERR-LGN-        Login Page Error Display Rules
+  UI-LGN-         Login Page UI/UX Requirements
+  NFR-LGN-        Login Page Non-Functional Requirements
+
+  FR-HOME-HDR-    Home Page Header Functional Requirements
+  FR-HOME-MAIN-   Home Page Main Section Functional Requirements
+  FR-HOME-FTR-    Home Page Footer Functional Requirements
+  UI-HOME-        Home Page UI/UX Requirements
+  NFR-HOME-       Home Page Non-Functional Requirements
+
+  FR-PDP-         Product Details Page Functional Requirements
+  VAL-PDP-        Product Details Page Validation Rules
+  ERR-PDP-        Product Details Page Error Scenarios
+  UI-PDP-         Product Details Page UI/UX Requirements
+  NFR-PDP-        Product Details Page Non-Functional Requirements
+
+  FR-CART-        Cart Page Functional Requirements
+  VAL-CART-       Cart Page Validation Rules
+  ERR-CART-       Cart Page Error Scenarios
+  UI-CART-        Cart Page UI/UX Requirements
+  NFR-CART-       Cart Page Non-Functional Requirements
+
+  FR-CI-          Checkout Info Page Functional Requirements
+  VAL-CI-         Checkout Info Page Validation Rules
+  ERR-CI-         Checkout Info Page Error Display Rules
+  UI-CI-          Checkout Info Page UI/UX Requirements
+  NFR-CI-         Checkout Info Page Non-Functional Requirements
+
+  FR-CO-          Checkout Overview Page Functional Requirements
+  VAL-CO-         Checkout Overview Page Validation Rules
+  ERR-CO-         Checkout Overview Page Error Scenarios
+  UI-CO-          Checkout Overview Page UI/UX Requirements
+  NFR-CO-         Checkout Overview Page Non-Functional Requirements
+
+  FR-CC-          Checkout Complete Page Functional Requirements
+  UI-CC-          Checkout Complete Page UI/UX Requirements
+  NFR-CC-         Checkout Complete Page Non-Functional Requirements
+
+  NFR-G-          Global Non-Functional Requirements
+  CROSS-          Cross-Page Test Scenarios
+
+
+J.7 REVISION HISTORY
+================================================================================
+
+  Version  Date         Author       Changes
+  -------  -----------  -----------  -----------------------------------
+  1.0      July 2025    QA Engineer  Initial complete SRS document
+                                     covering all 7 pages with full
+                                     website flow analysis.
+
+
+================================================================================
+                    END OF DOCUMENT
+================================================================================
+
+This Software Requirements Specification covers the complete QA Brains
+E-Commerce Web Application across all 7 pages:
+
+  1. Login Page
+  2. Home Page
+  3. Product Details Page
+  4. Cart Page
+  5. Checkout: Your Information Page
+  6. Checkout: Overview Page
+  7. Checkout: Complete Page
+
+Total Functional Requirements:  150+
+Total Validation Rules:         30+
+Total UI/UX Requirements:       80+
+Total Non-Functional Reqs:      60+
+Total Cross-Page Test Scenarios: 20
+
+Document prepared for: https://practice.qabrains.com/ecommerce
+================================================================================

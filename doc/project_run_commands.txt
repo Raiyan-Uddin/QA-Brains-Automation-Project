@@ -1,0 +1,31 @@
+﻿Project command reference
+
+1) Open project root
+cd "c:\Other\Demo ecommerce project"
+
+2) Install dependencies
+npm install
+
+3) List all tests
+npx playwright test --list
+
+4) Run testcase suite only
+npm run test:testcases
+
+5) Run full master automation (tests + CSV + HTML report)
+npm run master:automation
+
+6) Generate CSV report only
+npm run report:testcases:csv
+
+7) Generate HTML report only
+npm run report:testcases:html
+
+8) Open Playwright HTML report
+npm run show-report:testcases
+
+9) Open generated master report file location
+cd "c:\Other\Demo ecommerce project\report\master"
+
+10) Open scripts folder
+cd "c:\Other\Demo ecommerce project\scripts"
