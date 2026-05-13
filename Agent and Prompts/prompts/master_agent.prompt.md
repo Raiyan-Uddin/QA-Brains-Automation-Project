@@ -12,8 +12,9 @@ Orchestrate the full automation lifecycle for this repository targeting https://
 
 2. **Execution phase** — Call `test-execute-agent`:
    - Run `npm run master:automation` for full suite + reports
-   - Alternatively run smoke only: `npx playwright test --config playwright.testcases.config.ts --grep @smoke`
+   - For quick feedback only (not a full run), use: `npx playwright test --config playwright.testcases.config.ts --grep @smoke`
    - Apply quality gate: pass rate must be ≥ 90%
+   - If pass rate < 90%, stop and report failures before proceeding to the reporting phase
    - Confirm `playwright-report-testcases/results.json` produced
 
 3. **Reporting phase** — Call `test-report-agent`:
@@ -26,12 +27,7 @@ Orchestrate the full automation lifecycle for this repository targeting https://
    - Quality gate result (PASS ≥ 90% / FAIL < 90%)
    - Total / passed / failed / skipped counts
    - Any P1 or P2 failures that need immediate attention
-   - Next actions
+   - Recommended next step: fix failing tests, re-run, or escalate to relevant agent
 
-Handoff checkpoints:
-- Writer handoff: all module spec files updated, shared helpers exist, ≥ 85 tests total
-- Execute handoff: `playwright-report-testcases/results.json` exists, quality gate evaluated
-- Report handoff: HTML + CSV reports in `report/master/`, failure table with severity ratings
-
-Do not skip delegation when a specialized agent applies.
+Delegation is mandatory. Always call the specialized agent for each phase; do not perform writer, execute, or report duties inline.
 Do not remove any existing files.

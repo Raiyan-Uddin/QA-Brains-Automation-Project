@@ -15,7 +15,7 @@ Report generation commands:
 Required report sections:
 1. **Executive summary**: total / passed / failed / skipped, pass rate %, quality gate result (PASS ≥ 90% / FAIL < 90%)
 2. **Module breakdown**: per-module pass/fail counts and pass rate
-3. **Smoke vs regression split**: smoke pass rate (must be 100%) and regression pass rate
+3. **Smoke vs regression split**: smoke pass rate and regression pass rate; flag any smoke failure as a P1 issue
 4. **Failure severity table** (sorted P1 first):
    | Severity | Test ID | Title | Category | Error Summary | Remediation |
    |----------|---------|-------|----------|---------------|-------------|
@@ -24,7 +24,7 @@ Required report sections:
    - P3 Medium: validation, boundary failure
    - P4 Low: cosmetic/accessibility failure
 5. **FR coverage map**: SRS FR-* requirements with at least one passing test (linked to test IDs)
-6. **Next actions**: prioritized list for the team
+6. **Next actions**: prioritized list for the team — each item must include the failure test ID, severity, recommended fix type (test fix / app bug / environment), and which agent to delegate to
 
 Project path constraints:
 - Read results from `playwright-report-testcases/results.json`

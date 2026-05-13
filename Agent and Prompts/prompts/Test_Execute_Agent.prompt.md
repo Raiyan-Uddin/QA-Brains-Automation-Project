@@ -4,11 +4,11 @@ description: "Prompt for execution-only workflow: run suite, triage failures, an
 
 Execute tests for this repository and triage the run results.
 
-Execution options (pick one based on context):
-- Full suite with reports: `npm run master:automation`
-- Smoke only (fast check): `npx playwright test --config playwright.testcases.config.ts --grep @smoke`
-- Regression only: `npx playwright test --config playwright.testcases.config.ts --grep @regression`
-- Single module: `npx playwright test --config playwright.testcases.config.ts "Test_cases/<module folder>"`
+Execution mode selection:
+- Use **full suite** (`npm run master:automation`) when running scheduled, pre-release, or master-agent-triggered runs
+- Use **smoke only** (`npx playwright test --config playwright.testcases.config.ts --grep @smoke`) when the user requests a fast sanity check only
+- Use **regression only** (`npx playwright test --config playwright.testcases.config.ts --grep @regression`) when smoke tests already passed and deeper coverage is needed
+- Use **single module** (`npx playwright test --config playwright.testcases.config.ts "Test_cases/<module folder>"`) when investigating a specific module failure
 
 Quality gate (mandatory):
 - Pass rate ≥ 90% = PASS (green)
@@ -29,3 +29,4 @@ Constraints:
 - Only execution and triage — do not edit test cases
 - Do not generate final HTML/CSV reports (that belongs to test-report-agent)
 - Preserve all artifacts for failed runs
+- If `playwright-report-testcases/results.json` is missing after a run, report the missing artifact and stop; do not proceed to triage

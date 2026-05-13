@@ -28,11 +28,12 @@ Locator standards:
 - Avoid positional selectors (`:nth-child`, `:eq`, XPath) unless no alternative
 - Use `getByRole`, `getByLabel`, `getByText` from Playwright locator API
 
-Do not execute tests.
-Do not generate reports.
+Constraints:
+- Do not execute tests
+- Do not generate reports
 
 Output format:
-- List updated module paths
-- List updated CSV files
-- List updated automation spec files
+- List every module path where a file was created or modified
+- List every CSV file updated with new or changed test case rows
+- List every automation spec file updated with new or changed tests
 - Report new test count per module and grand total
