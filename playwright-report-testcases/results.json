@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "C:\\Other\\Demo ecommerce project\\playwright.testcases.config.ts",
-    "rootDir": "C:/Other/Demo ecommerce project/Test_cases",
+    "configFile": "D:\\2. VScode\\Demo ecommerce project\\playwright.testcases.config.ts",
+    "rootDir": "D:/2. VScode/Demo ecommerce project/Test_cases",
     "forbidOnly": false,
     "fullyParallel": false,
     "globalSetup": null,
@@ -16,7 +16,7 @@
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "C:/Other/Demo ecommerce project/test-results",
+        "outputDir": "D:/2. VScode/Demo ecommerce project/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -24,7 +24,7 @@
         },
         "id": "chromium",
         "name": "chromium",
-        "testDir": "C:/Other/Demo ecommerce project/Test_cases",
+        "testDir": "D:/2. VScode/Demo ecommerce project/Test_cases",
         "testIgnore": [],
         "testMatch": [
           "**/*_automation.spec.ts"
@@ -62,20 +62,20 @@
   },
   "suites": [
     {
-      "title": "1. LOGIN PAGE\\login_automation.spec.ts",
-      "file": "1. LOGIN PAGE/login_automation.spec.ts",
+      "title": "3. PRODUCT DETAILS PAGE\\product_details_automation.spec.ts",
+      "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Login Module Automation - LGN",
-          "file": "1. LOGIN PAGE/login_automation.spec.ts",
-          "line": 41,
+          "title": "Product Details Module Automation - PDP",
+          "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+          "line": 6,
           "column": 6,
           "specs": [
             {
-              "title": "LGN-001: Login page UI elements are visible",
+              "title": "PDP-001/PDP-004: Product details page renders name and price",
               "ok": true,
               "tags": [],
               "tests": [
@@ -90,12 +90,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3270,
+                      "duration": 9925,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:12:05.063Z",
+                      "startTime": "2026-05-19T07:48:47.766Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -103,13 +103,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0def83f4ec072d3d9478-ea879a4453d56929b96e",
-              "file": "1. LOGIN PAGE/login_automation.spec.ts",
-              "line": 42,
+              "id": "649147ab1db928356764-994f27fa0144b88e5dd8",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 11,
               "column": 7
             },
             {
-              "title": "LGN-006: Password show/hide toggle works",
+              "title": "PDP-005/PDP-006/PDP-007: Quantity control plus/minus behavior",
               "ok": true,
               "tags": [],
               "tests": [
@@ -124,12 +124,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2270,
+                      "duration": 4310,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:12:08.635Z",
+                      "startTime": "2026-05-19T07:48:57.912Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -137,13 +137,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0def83f4ec072d3d9478-4fed64b206d7c92c1153",
-              "file": "1. LOGIN PAGE/login_automation.spec.ts",
-              "line": 51,
+              "id": "649147ab1db928356764-49916c435451b6096ae3",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 17,
               "column": 7
             },
             {
-              "title": "LGN-003/LGN-004/LGN-005: Basic validation errors appear for invalid input",
+              "title": "PDP-009: Add to cart from PDP",
               "ok": true,
               "tags": [],
               "tests": [
@@ -158,12 +158,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2499,
+                      "duration": 3736,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:12:10.942Z",
+                      "startTime": "2026-05-19T07:49:02.246Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -171,13 +171,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0def83f4ec072d3d9478-56eaefe77178a14304ef",
-              "file": "1. LOGIN PAGE/login_automation.spec.ts",
-              "line": 68,
+              "id": "649147ab1db928356764-9ab1b0f36961007902be",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 30,
               "column": 7
             },
             {
-              "title": "LGN-007: Invalid credentials show generic error",
+              "title": "PDP-010: Invalid product id shows guard behavior",
               "ok": true,
               "tags": [],
               "tests": [
@@ -192,12 +192,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3331,
+                      "duration": 4663,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:12:13.483Z",
+                      "startTime": "2026-05-19T07:49:06.007Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -205,13 +205,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0def83f4ec072d3d9478-4451b8ad86acefd533ce",
-              "file": "1. LOGIN PAGE/login_automation.spec.ts",
-              "line": 78,
+              "id": "649147ab1db928356764-b92e88dd67e4742fae5a",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 37,
               "column": 7
             },
             {
-              "title": "LGN-008: Successful login redirects to home",
+              "title": "PDP-002: Back button navigates away from PDP",
               "ok": true,
               "tags": [],
               "tests": [
@@ -226,12 +226,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4209,
+                      "duration": 11232,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:12:16.850Z",
+                      "startTime": "2026-05-19T07:49:10.693Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -239,13 +239,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0def83f4ec072d3d9478-35c4a96f3b5a52bd3931",
-              "file": "1. LOGIN PAGE/login_automation.spec.ts",
-              "line": 84,
+              "id": "649147ab1db928356764-70f7d077f1bd61c4377b",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 43,
               "column": 7
             },
             {
-              "title": "LGN-009: Enter key submits login form",
+              "title": "PDP-003: Product image renders with alt text",
               "ok": true,
               "tags": [],
               "tests": [
@@ -260,12 +260,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2309,
+                      "duration": 9572,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:12:21.099Z",
+                      "startTime": "2026-05-19T07:49:21.970Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -273,758 +273,15 @@
                   "status": "expected"
                 }
               ],
-              "id": "0def83f4ec072d3d9478-f4a725c5d17ca91967fb",
-              "file": "1. LOGIN PAGE/login_automation.spec.ts",
-              "line": 89,
+              "id": "649147ab1db928356764-5470e1a0c79d7f61ddb5",
+              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
+              "line": 50,
               "column": 7
             },
             {
-              "title": "LGN-002: Logo click navigates to app landing route",
+              "title": "PDP-008: Favourite toggle on product details is clickable",
               "ok": true,
               "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2879,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:12:23.465Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "0def83f4ec072d3d9478-3a0c376a14ab97e287f3",
-              "file": "1. LOGIN PAGE/login_automation.spec.ts",
-              "line": 105,
-              "column": 7
-            },
-            {
-              "title": "LGN-010: Keyboard tab order reaches interactive controls",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2928,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:12:26.383Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "0def83f4ec072d3d9478-2d04a771177724f700e4",
-              "file": "1. LOGIN PAGE/login_automation.spec.ts",
-              "line": 115,
-              "column": 7
-            },
-            {
-              "title": "LGN-011: Login API failure shows guarded behavior",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2592,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:12:29.345Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "0def83f4ec072d3d9478-55e5cb960592e0213984",
-              "file": "1. LOGIN PAGE/login_automation.spec.ts",
-              "line": 128,
-              "column": 7
-            },
-            {
-              "title": "LGN-012: Long email and password values are handled safely",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2308,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:12:31.968Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "0def83f4ec072d3d9478-302ec031af4bc097d9c7",
-              "file": "1. LOGIN PAGE/login_automation.spec.ts",
-              "line": 147,
-              "column": 7
-            },
-            {
-              "title": "LGN-001-S: @smoke Login page loads with all key elements",
-              "ok": true,
-              "tags": [
-                "smoke"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2063,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:12:34.305Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "0def83f4ec072d3d9478-a7e7aa030c7599fc534f",
-              "file": "1. LOGIN PAGE/login_automation.spec.ts",
-              "line": 168,
-              "column": 7
-            },
-            {
-              "title": "LGN-008-S: @smoke Successful login with valid credentials",
-              "ok": true,
-              "tags": [
-                "smoke"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 7055,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:12:36.401Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "0def83f4ec072d3d9478-680c50ea1ba905db7d62",
-              "file": "1. LOGIN PAGE/login_automation.spec.ts",
-              "line": 176,
-              "column": 7
-            },
-            {
-              "title": "LGN-013: @regression Empty email field shows validation error",
-              "ok": true,
-              "tags": [
-                "regression"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3226,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:12:43.485Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "0def83f4ec072d3d9478-7d86f1b47b2bad5bbd5b",
-              "file": "1. LOGIN PAGE/login_automation.spec.ts",
-              "line": 181,
-              "column": 7
-            },
-            {
-              "title": "LGN-014: @regression Empty password field shows validation error",
-              "ok": true,
-              "tags": [
-                "regression"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2354,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:12:46.741Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "0def83f4ec072d3d9478-2f85a669d055a1e9908c",
-              "file": "1. LOGIN PAGE/login_automation.spec.ts",
-              "line": 188,
-              "column": 7
-            },
-            {
-              "title": "LGN-015: @regression Whitespace-only credentials are rejected",
-              "ok": true,
-              "tags": [
-                "regression"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2325,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:12:49.132Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "0def83f4ec072d3d9478-89250f6ae031e80c3e50",
-              "file": "1. LOGIN PAGE/login_automation.spec.ts",
-              "line": 195,
-              "column": 7
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "2. HOME PAGE\\home_automation.spec.ts",
-      "file": "2. HOME PAGE/home_automation.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Home Module Automation - HOME",
-          "file": "2. HOME PAGE/home_automation.spec.ts",
-          "line": 44,
-          "column": 6,
-          "specs": [
-            {
-              "title": "HOME-001/HOME-002: Home loads and cart button navigates to cart",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 7696,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:12:51.515Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "41a50e028c785b807b2b-85e6e8da9eee44bf849d",
-              "file": "2. HOME PAGE/home_automation.spec.ts",
-              "line": 49,
-              "column": 7
-            },
-            {
-              "title": "HOME-003: Profile dropdown shows menu options",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 10537,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:12:59.240Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "41a50e028c785b807b2b-a6a073da7a59b2fed34b",
-              "file": "2. HOME PAGE/home_automation.spec.ts",
-              "line": 56,
-              "column": 7
-            },
-            {
-              "title": "HOME-005: Sorting dropdown contains expected options",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4483,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:13:09.810Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "41a50e028c785b807b2b-ce8b589547b52e312b32",
-              "file": "2. HOME PAGE/home_automation.spec.ts",
-              "line": 65,
-              "column": 7
-            },
-            {
-              "title": "HOME-008: Price sort low to high behaves correctly",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5604,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:13:14.321Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "41a50e028c785b807b2b-4fc5851ee3026a959aa5",
-              "file": "2. HOME PAGE/home_automation.spec.ts",
-              "line": 77,
-              "column": 7
-            },
-            {
-              "title": "HOME-010: Add to cart updates badge",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3866,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:13:19.955Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "41a50e028c785b807b2b-310795a19b397b81677e",
-              "file": "2. HOME PAGE/home_automation.spec.ts",
-              "line": 91,
-              "column": 7
-            },
-            {
-              "title": "HOME-004: Logout clears session and protects home route",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5359,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:13:23.852Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "41a50e028c785b807b2b-3ad357a655a482d2f443",
-              "file": "2. HOME PAGE/home_automation.spec.ts",
-              "line": 100,
-              "column": 7
-            },
-            {
-              "title": "HOME-006: A to Z sort orders product names ascending",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5470,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:13:29.247Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "41a50e028c785b807b2b-943e27e8483bb52685e1",
-              "file": "2. HOME PAGE/home_automation.spec.ts",
-              "line": 109,
-              "column": 7
-            },
-            {
-              "title": "HOME-007: Z to A sort orders product names descending",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4367,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:13:34.750Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "41a50e028c785b807b2b-b7bafee44f73ca92cad2",
-              "file": "2. HOME PAGE/home_automation.spec.ts",
-              "line": 116,
-              "column": 7
-            },
-            {
-              "title": "HOME-009: Search option is discoverable and usable when available",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5114,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:13:39.152Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "41a50e028c785b807b2b-4ef4548eb6d919401437",
-              "file": "2. HOME PAGE/home_automation.spec.ts",
-              "line": 123,
-              "column": 7
-            },
-            {
-              "title": "HOME-011: Favourite toggle control is clickable on product cards",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5911,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:13:44.299Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "41a50e028c785b807b2b-c2c9b98e5d62d9d2ff0e",
-              "file": "2. HOME PAGE/home_automation.spec.ts",
-              "line": 142,
-              "column": 7
-            },
-            {
-              "title": "HOME-012: Footer links are visible and at least one is navigable",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 10146,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:13:50.245Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "41a50e028c785b807b2b-8be2f702f3c580c53a9b",
-              "file": "2. HOME PAGE/home_automation.spec.ts",
-              "line": 151,
-              "column": 7
-            },
-            {
-              "title": "HOME-013: Product API failure keeps UI in guarded state",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5973,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:14:00.445Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "41a50e028c785b807b2b-ca221c44c001a47c6f20",
-              "file": "2. HOME PAGE/home_automation.spec.ts",
-              "line": 162,
-              "column": 7
-            },
-            {
-              "title": "HOME-001-S: @smoke Home page loads with product listing after login",
-              "ok": true,
-              "tags": [
-                "smoke"
-              ],
               "tests": [
                 {
                   "timeout": 30000,
@@ -1042,446 +299,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:14:06.477Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "41a50e028c785b807b2b-5f65c67857231ca9b710",
-              "file": "2. HOME PAGE/home_automation.spec.ts",
-              "line": 176,
-              "column": 7
-            },
-            {
-              "title": "HOME-010-S: @smoke Add to cart increments the cart badge",
-              "ok": false,
-              "tags": [
-                "smoke"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 2504,
-                      "error": {
-                        "message": "Error: page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at https://practice.qabrains.com/ecommerce/login\nCall log:\n\u001b[2m  - navigating to \"https://practice.qabrains.com/ecommerce/login\", waiting until \"load\"\u001b[22m\n",
-                        "stack": "Error: page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at https://practice.qabrains.com/ecommerce/login\nCall log:\n\u001b[2m  - navigating to \"https://practice.qabrains.com/ecommerce/login\", waiting until \"load\"\u001b[22m\n\n    at login (C:\\Other\\Demo ecommerce project\\Test_cases\\2. HOME PAGE\\home_automation.spec.ts:13:16)\n    at C:\\Other\\Demo ecommerce project\\Test_cases\\2. HOME PAGE\\home_automation.spec.ts:46:11",
-                        "location": {
-                          "file": "C:\\Other\\Demo ecommerce project\\Test_cases\\2. HOME PAGE\\home_automation.spec.ts",
-                          "column": 16,
-                          "line": 13
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m   \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m email \u001b[36mof\u001b[39m emails) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[33mLOGIN_URL\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#email'\u001b[39m)\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#email'\u001b[39m)\u001b[33m.\u001b[39mfill(email)\u001b[33m;\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#password'\u001b[39m)\u001b[33m.\u001b[39mfill(password)\u001b[33m;\u001b[39m\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "C:\\Other\\Demo ecommerce project\\Test_cases\\2. HOME PAGE\\home_automation.spec.ts",
-                            "column": 16,
-                            "line": 13
-                          },
-                          "message": "Error: page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at https://practice.qabrains.com/ecommerce/login\nCall log:\n\u001b[2m  - navigating to \"https://practice.qabrains.com/ecommerce/login\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m   \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m email \u001b[36mof\u001b[39m emails) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[33mLOGIN_URL\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#email'\u001b[39m)\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#email'\u001b[39m)\u001b[33m.\u001b[39mfill(email)\u001b[33m;\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'#password'\u001b[39m)\u001b[33m.\u001b[39mfill(password)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at login (C:\\Other\\Demo ecommerce project\\Test_cases\\2. HOME PAGE\\home_automation.spec.ts:13:16)\u001b[22m\n\u001b[2m    at C:\\Other\\Demo ecommerce project\\Test_cases\\2. HOME PAGE\\home_automation.spec.ts:46:11\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:14:11.201Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Other\\Demo ecommerce project\\test-results\\2. HOME PAGE-home_automati-33a2d-t-increments-the-cart-badge-chromium\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "C:\\Other\\Demo ecommerce project\\test-results\\2. HOME PAGE-home_automati-33a2d-t-increments-the-cart-badge-chromium\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "C:\\Other\\Demo ecommerce project\\test-results\\2. HOME PAGE-home_automati-33a2d-t-increments-the-cart-badge-chromium\\error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "C:\\Other\\Demo ecommerce project\\Test_cases\\2. HOME PAGE\\home_automation.spec.ts",
-                        "column": 16,
-                        "line": 13
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "41a50e028c785b807b2b-2706b35615d7606f7f32",
-              "file": "2. HOME PAGE/home_automation.spec.ts",
-              "line": 181,
-              "column": 7
-            },
-            {
-              "title": "HOME-014: @regression High-to-low sort mode is applied correctly",
-              "ok": true,
-              "tags": [
-                "regression"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5522,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:14:14.869Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "41a50e028c785b807b2b-0164247566a1f395fbd5",
-              "file": "2. HOME PAGE/home_automation.spec.ts",
-              "line": 187,
-              "column": 7
-            },
-            {
-              "title": "HOME-015: @regression Multiple add-to-cart updates badge count",
-              "ok": true,
-              "tags": [
-                "regression"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4435,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:14:20.725Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "41a50e028c785b807b2b-1f9bf7fae54857f3a2ff",
-              "file": "2. HOME PAGE/home_automation.spec.ts",
-              "line": 197,
-              "column": 7
-            },
-            {
-              "title": "HOME-016: @regression Unauthenticated access redirects to login",
-              "ok": true,
-              "tags": [
-                "regression"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 6511,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:14:25.225Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "41a50e028c785b807b2b-995e43ec7cfe8754d706",
-              "file": "2. HOME PAGE/home_automation.spec.ts",
-              "line": 213,
-              "column": 7
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "3. PRODUCT DETAILS PAGE\\product_details_automation.spec.ts",
-      "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Product Details Module Automation - PDP",
-          "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
-          "line": 37,
-          "column": 6,
-          "specs": [
-            {
-              "title": "PDP-001/PDP-004: Product details page renders name and price",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 7058,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:14:31.793Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "649147ab1db928356764-994f27fa0144b88e5dd8",
-              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
-              "line": 42,
-              "column": 7
-            },
-            {
-              "title": "PDP-005/PDP-006/PDP-007: Quantity control plus/minus behavior",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5068,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:14:38.893Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "649147ab1db928356764-49916c435451b6096ae3",
-              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
-              "line": 50,
-              "column": 7
-            },
-            {
-              "title": "PDP-009: Add to cart from PDP",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 13517,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:14:44.018Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "649147ab1db928356764-9ab1b0f36961007902be",
-              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
-              "line": 65,
-              "column": 7
-            },
-            {
-              "title": "PDP-010: Invalid product id shows guard behavior",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 8396,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:14:57.579Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "649147ab1db928356764-b92e88dd67e4742fae5a",
-              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
-              "line": 73,
-              "column": 7
-            },
-            {
-              "title": "PDP-002: Back button navigates away from PDP",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 6555,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:15:06.010Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "649147ab1db928356764-70f7d077f1bd61c4377b",
-              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
-              "line": 78,
-              "column": 7
-            },
-            {
-              "title": "PDP-003: Product image renders with alt text",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 7397,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:15:12.609Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "649147ab1db928356764-5470e1a0c79d7f61ddb5",
-              "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
-              "line": 86,
-              "column": 7
-            },
-            {
-              "title": "PDP-008: Favourite toggle on product details is clickable",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5798,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-05-12T10:15:20.043Z",
+                      "startTime": "2026-05-19T07:49:31.568Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1491,7 +309,7 @@
               ],
               "id": "649147ab1db928356764-3d2b3af92644bae5fc14",
               "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
-              "line": 94,
+              "line": 59,
               "column": 7
             },
             {
@@ -1507,15 +325,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12404,
+                      "duration": 3720,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:15:25.877Z",
+                      "startTime": "2026-05-19T07:49:36.263Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1525,7 +343,7 @@
               ],
               "id": "649147ab1db928356764-f039d6939e0a7f53e739",
               "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
-              "line": 107,
+              "line": 73,
               "column": 7
             },
             {
@@ -1543,15 +361,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11375,
+                      "duration": 8319,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:15:38.314Z",
+                      "startTime": "2026-05-19T07:49:40.003Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1561,7 +379,7 @@
               ],
               "id": "649147ab1db928356764-c95e8537c374e11f62f7",
               "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
-              "line": 124,
+              "line": 90,
               "column": 7
             },
             {
@@ -1579,15 +397,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7958,
+                      "duration": 8102,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:15:49.719Z",
+                      "startTime": "2026-05-19T07:49:48.339Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1597,7 +415,7 @@
               ],
               "id": "649147ab1db928356764-45ef9a1d92e489f64423",
               "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
-              "line": 131,
+              "line": 96,
               "column": 7
             },
             {
@@ -1615,15 +433,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8215,
+                      "duration": 6769,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:15:57.727Z",
+                      "startTime": "2026-05-19T07:49:56.457Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1633,7 +451,7 @@
               ],
               "id": "649147ab1db928356764-75000856f4e665e691c4",
               "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
-              "line": 138,
+              "line": 103,
               "column": 7
             },
             {
@@ -1651,15 +469,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6075,
+                      "duration": 8324,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:16:05.976Z",
+                      "startTime": "2026-05-19T07:50:03.242Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1669,7 +487,7 @@
               ],
               "id": "649147ab1db928356764-463f841fa4665c4d1b2b",
               "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
-              "line": 143,
+              "line": 109,
               "column": 7
             },
             {
@@ -1687,15 +505,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6550,
+                      "duration": 10090,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:16:12.083Z",
+                      "startTime": "2026-05-19T07:50:11.583Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1705,7 +523,7 @@
               ],
               "id": "649147ab1db928356764-3e34eb37daa22baed917",
               "file": "3. PRODUCT DETAILS PAGE/product_details_automation.spec.ts",
-              "line": 160,
+              "line": 125,
               "column": 7
             }
           ]
@@ -1722,7 +540,7 @@
         {
           "title": "Cart Module Automation - CART",
           "file": "4. CART PAGE/cart_automation.spec.ts",
-          "line": 37,
+          "line": 6,
           "column": 6,
           "specs": [
             {
@@ -1738,15 +556,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6231,
+                      "duration": 5364,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:16:18.672Z",
+                      "startTime": "2026-05-19T07:50:21.706Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1756,7 +574,7 @@
               ],
               "id": "a6835578aa2ced5748ea-4e4145d1461ee11345cd",
               "file": "4. CART PAGE/cart_automation.spec.ts",
-              "line": 44,
+              "line": 14,
               "column": 7
             },
             {
@@ -1772,15 +590,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6437,
+                      "duration": 7092,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:16:24.940Z",
+                      "startTime": "2026-05-19T07:50:27.092Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1790,7 +608,7 @@
               ],
               "id": "a6835578aa2ced5748ea-eadfac59737737a4d778",
               "file": "4. CART PAGE/cart_automation.spec.ts",
-              "line": 48,
+              "line": 19,
               "column": 7
             },
             {
@@ -1806,15 +624,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6657,
+                      "duration": 3885,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:16:31.407Z",
+                      "startTime": "2026-05-19T07:50:34.205Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1824,7 +642,7 @@
               ],
               "id": "a6835578aa2ced5748ea-aa1bbd8e9db36971ced1",
               "file": "4. CART PAGE/cart_automation.spec.ts",
-              "line": 64,
+              "line": 35,
               "column": 7
             },
             {
@@ -1840,15 +658,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6314,
+                      "duration": 8247,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:16:38.099Z",
+                      "startTime": "2026-05-19T07:50:38.103Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1858,7 +676,7 @@
               ],
               "id": "a6835578aa2ced5748ea-a28eda8311188914473b",
               "file": "4. CART PAGE/cart_automation.spec.ts",
-              "line": 72,
+              "line": 44,
               "column": 7
             },
             {
@@ -1874,15 +692,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8390,
+                      "duration": 7997,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:16:44.446Z",
+                      "startTime": "2026-05-19T07:50:46.363Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1892,7 +710,7 @@
               ],
               "id": "a6835578aa2ced5748ea-5d76d67f8e74866782c3",
               "file": "4. CART PAGE/cart_automation.spec.ts",
-              "line": 77,
+              "line": 50,
               "column": 7
             },
             {
@@ -1908,15 +726,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4756,
+                      "duration": 5321,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:16:52.867Z",
+                      "startTime": "2026-05-19T07:50:54.375Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1926,7 +744,7 @@
               ],
               "id": "a6835578aa2ced5748ea-fc533b330ae0174abceb",
               "file": "4. CART PAGE/cart_automation.spec.ts",
-              "line": 83,
+              "line": 57,
               "column": 7
             },
             {
@@ -1942,15 +760,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10555,
+                      "duration": 5771,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:16:57.656Z",
+                      "startTime": "2026-05-19T07:50:59.716Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1960,7 +778,7 @@
               ],
               "id": "a6835578aa2ced5748ea-f14cc1873b0b6ccbea84",
               "file": "4. CART PAGE/cart_automation.spec.ts",
-              "line": 94,
+              "line": 69,
               "column": 7
             },
             {
@@ -1976,15 +794,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4635,
+                      "duration": 5641,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:17:08.252Z",
+                      "startTime": "2026-05-19T07:51:05.505Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1994,7 +812,7 @@
               ],
               "id": "a6835578aa2ced5748ea-913d7f110b261c8dace1",
               "file": "4. CART PAGE/cart_automation.spec.ts",
-              "line": 107,
+              "line": 75,
               "column": 7
             },
             {
@@ -2010,15 +828,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11994,
+                      "duration": 7282,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:17:12.916Z",
+                      "startTime": "2026-05-19T07:51:11.167Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2028,7 +846,7 @@
               ],
               "id": "a6835578aa2ced5748ea-2f6f54128e29c489658a",
               "file": "4. CART PAGE/cart_automation.spec.ts",
-              "line": 125,
+              "line": 94,
               "column": 7
             },
             {
@@ -2044,15 +862,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12391,
+                      "duration": 4800,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:17:24.948Z",
+                      "startTime": "2026-05-19T07:51:18.464Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2062,7 +880,7 @@
               ],
               "id": "a6835578aa2ced5748ea-0bea8eb2b06fdf51b661",
               "file": "4. CART PAGE/cart_automation.spec.ts",
-              "line": 133,
+              "line": 103,
               "column": 7
             },
             {
@@ -2080,15 +898,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10781,
+                      "duration": 4128,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:17:37.392Z",
+                      "startTime": "2026-05-19T07:51:23.280Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2098,7 +916,7 @@
               ],
               "id": "a6835578aa2ced5748ea-14aa2596eaa401ad7f61",
               "file": "4. CART PAGE/cart_automation.spec.ts",
-              "line": 150,
+              "line": 120,
               "column": 7
             },
             {
@@ -2116,15 +934,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8269,
+                      "duration": 6582,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:17:48.211Z",
+                      "startTime": "2026-05-19T07:51:27.424Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2134,7 +952,7 @@
               ],
               "id": "a6835578aa2ced5748ea-0a9413c16abbca4591b7",
               "file": "4. CART PAGE/cart_automation.spec.ts",
-              "line": 155,
+              "line": 126,
               "column": 7
             },
             {
@@ -2152,15 +970,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 17241,
+                      "duration": 10820,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:17:56.513Z",
+                      "startTime": "2026-05-19T07:51:34.021Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2170,7 +988,7 @@
               ],
               "id": "a6835578aa2ced5748ea-046988eb3f79b233e458",
               "file": "4. CART PAGE/cart_automation.spec.ts",
-              "line": 161,
+              "line": 133,
               "column": 7
             },
             {
@@ -2188,15 +1006,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9311,
+                      "duration": 2985,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:18:13.782Z",
+                      "startTime": "2026-05-19T07:51:44.854Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2206,7 +1024,7 @@
               ],
               "id": "a6835578aa2ced5748ea-c7dc205bdf9f48287327",
               "file": "4. CART PAGE/cart_automation.spec.ts",
-              "line": 169,
+              "line": 142,
               "column": 7
             },
             {
@@ -2224,15 +1042,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9621,
+                      "duration": 4862,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:18:23.120Z",
+                      "startTime": "2026-05-19T07:51:47.853Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2242,7 +1060,7 @@
               ],
               "id": "a6835578aa2ced5748ea-4768f65e030015317e22",
               "file": "4. CART PAGE/cart_automation.spec.ts",
-              "line": 179,
+              "line": 153,
               "column": 7
             }
           ]
@@ -2259,7 +1077,7 @@
         {
           "title": "Checkout Info Module Automation - CI",
           "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
-          "line": 37,
+          "line": 12,
           "column": 6,
           "specs": [
             {
@@ -2275,15 +1093,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5885,
+                      "duration": 2523,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:18:32.791Z",
+                      "startTime": "2026-05-19T07:51:52.741Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2293,7 +1111,7 @@
               ],
               "id": "dd7cd07d186a5ea661a2-d7e5df70aaa67985ba5b",
               "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
-              "line": 44,
+              "line": 20,
               "column": 7
             },
             {
@@ -2309,15 +1127,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7475,
+                      "duration": 3093,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:18:38.715Z",
+                      "startTime": "2026-05-19T07:51:55.279Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2327,7 +1145,7 @@
               ],
               "id": "dd7cd07d186a5ea661a2-b97e5b860ddaf91e94aa",
               "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
-              "line": 54,
+              "line": 25,
               "column": 7
             },
             {
@@ -2343,15 +1161,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10106,
+                      "duration": 6140,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:18:46.230Z",
+                      "startTime": "2026-05-19T07:51:58.387Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2361,7 +1179,7 @@
               ],
               "id": "dd7cd07d186a5ea661a2-93e2df92622ba98019cc",
               "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
-              "line": 64,
+              "line": 33,
               "column": 7
             },
             {
@@ -2377,15 +1195,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9618,
+                      "duration": 8739,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:18:56.367Z",
+                      "startTime": "2026-05-19T07:52:04.544Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2395,7 +1213,7 @@
               ],
               "id": "dd7cd07d186a5ea661a2-a7ff78ab5196c2627a99",
               "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
-              "line": 74,
+              "line": 41,
               "column": 7
             },
             {
@@ -2411,15 +1229,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8526,
+                      "duration": 3766,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:19:06.013Z",
+                      "startTime": "2026-05-19T07:52:13.295Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2429,7 +1247,7 @@
               ],
               "id": "dd7cd07d186a5ea661a2-8b1167503d24b3b9e319",
               "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
-              "line": 80,
+              "line": 48,
               "column": 7
             },
             {
@@ -2445,15 +1263,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 16678,
+                      "duration": 3572,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:19:14.569Z",
+                      "startTime": "2026-05-19T07:52:17.078Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2463,7 +1281,7 @@
               ],
               "id": "dd7cd07d186a5ea661a2-e1d89bd5ba373ef15c13",
               "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
-              "line": 95,
+              "line": 63,
               "column": 7
             },
             {
@@ -2481,15 +1299,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6644,
+                      "duration": 3897,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:19:31.277Z",
+                      "startTime": "2026-05-19T07:52:20.667Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2499,7 +1317,7 @@
               ],
               "id": "dd7cd07d186a5ea661a2-2a648407eec1f9bb2040",
               "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
-              "line": 104,
+              "line": 71,
               "column": 7
             },
             {
@@ -2517,15 +1335,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4552,
+                      "duration": 8081,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:19:37.952Z",
+                      "startTime": "2026-05-19T07:52:24.576Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2535,7 +1353,7 @@
               ],
               "id": "dd7cd07d186a5ea661a2-e353b68fea59f12e53bc",
               "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
-              "line": 110,
+              "line": 76,
               "column": 7
             },
             {
@@ -2553,15 +1371,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11211,
+                      "duration": 4802,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:19:42.532Z",
+                      "startTime": "2026-05-19T07:52:32.674Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2571,7 +1389,7 @@
               ],
               "id": "dd7cd07d186a5ea661a2-aecea447a9edcf23b16b",
               "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
-              "line": 118,
+              "line": 83,
               "column": 7
             },
             {
@@ -2589,15 +1407,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8634,
+                      "duration": 6668,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:19:53.773Z",
+                      "startTime": "2026-05-19T07:52:37.492Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2607,7 +1425,7 @@
               ],
               "id": "dd7cd07d186a5ea661a2-538b62779649ee0d2a86",
               "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
-              "line": 126,
+              "line": 90,
               "column": 7
             },
             {
@@ -2625,15 +1443,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10244,
+                      "duration": 7574,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:20:02.445Z",
+                      "startTime": "2026-05-19T07:52:44.174Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2643,7 +1461,7 @@
               ],
               "id": "dd7cd07d186a5ea661a2-5687674a58791482d6b8",
               "file": "5. CHECKOUT YOUR INFO PAGE/checkout_info_automation.spec.ts",
-              "line": 135,
+              "line": 98,
               "column": 7
             }
           ]
@@ -2660,7 +1478,7 @@
         {
           "title": "Checkout Overview Module Automation - CO",
           "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
-          "line": 52,
+          "line": 17,
           "column": 6,
           "specs": [
             {
@@ -2676,15 +1494,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10525,
+                      "duration": 4481,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:20:12.740Z",
+                      "startTime": "2026-05-19T07:52:51.775Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2694,7 +1512,7 @@
               ],
               "id": "4b21ded7cb4656e4c6db-800a98a8c98a6d662bed",
               "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
-              "line": 58,
+              "line": 23,
               "column": 7
             },
             {
@@ -2710,15 +1528,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9342,
+                      "duration": 5765,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:20:23.303Z",
+                      "startTime": "2026-05-19T07:52:56.276Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2728,7 +1546,7 @@
               ],
               "id": "4b21ded7cb4656e4c6db-2b498a95255632d6a56e",
               "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
-              "line": 65,
+              "line": 29,
               "column": 7
             },
             {
@@ -2744,15 +1562,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10858,
+                      "duration": 5755,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:20:32.679Z",
+                      "startTime": "2026-05-19T07:53:02.054Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2762,7 +1580,7 @@
               ],
               "id": "4b21ded7cb4656e4c6db-b7ce5dc2a4e31204fa3b",
               "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
-              "line": 71,
+              "line": 35,
               "column": 7
             },
             {
@@ -2778,15 +1596,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10521,
+                      "duration": 7514,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:20:43.579Z",
+                      "startTime": "2026-05-19T07:53:07.821Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2796,7 +1614,7 @@
               ],
               "id": "4b21ded7cb4656e4c6db-f48d29c5baaa81296c04",
               "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
-              "line": 76,
+              "line": 41,
               "column": 7
             },
             {
@@ -2812,15 +1630,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7342,
+                      "duration": 4518,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:20:54.149Z",
+                      "startTime": "2026-05-19T07:53:15.349Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2830,7 +1648,7 @@
               ],
               "id": "4b21ded7cb4656e4c6db-6ac7589ca49333003876",
               "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
-              "line": 81,
+              "line": 47,
               "column": 7
             },
             {
@@ -2846,15 +1664,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10546,
+                      "duration": 9424,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:21:01.529Z",
+                      "startTime": "2026-05-19T07:53:19.882Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2864,7 +1682,7 @@
               ],
               "id": "4b21ded7cb4656e4c6db-f454f87afc6e106d1cc8",
               "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
-              "line": 99,
+              "line": 66,
               "column": 7
             },
             {
@@ -2880,15 +1698,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10817,
+                      "duration": 7008,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:21:12.108Z",
+                      "startTime": "2026-05-19T07:53:29.319Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2898,7 +1716,7 @@
               ],
               "id": "4b21ded7cb4656e4c6db-4b0be4ad8948c5c68623",
               "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
-              "line": 104,
+              "line": 71,
               "column": 7
             },
             {
@@ -2914,15 +1732,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10237,
+                      "duration": 6319,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:21:22.965Z",
+                      "startTime": "2026-05-19T07:53:36.345Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2932,7 +1750,7 @@
               ],
               "id": "4b21ded7cb4656e4c6db-288058bc6a00068296d1",
               "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
-              "line": 118,
+              "line": 86,
               "column": 7
             },
             {
@@ -2950,15 +1768,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11119,
+                      "duration": 5370,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:21:33.235Z",
+                      "startTime": "2026-05-19T07:53:42.679Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2968,7 +1786,7 @@
               ],
               "id": "4b21ded7cb4656e4c6db-b2fb987fea507ffc7084",
               "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
-              "line": 135,
+              "line": 103,
               "column": 7
             },
             {
@@ -2986,15 +1804,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11547,
+                      "duration": 11031,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:21:44.390Z",
+                      "startTime": "2026-05-19T07:53:48.066Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3004,7 +1822,7 @@
               ],
               "id": "4b21ded7cb4656e4c6db-8a0480537db14db3323a",
               "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
-              "line": 141,
+              "line": 109,
               "column": 7
             },
             {
@@ -3022,15 +1840,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 15886,
+                      "duration": 4909,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:21:55.976Z",
+                      "startTime": "2026-05-19T07:53:59.114Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3040,7 +1858,7 @@
               ],
               "id": "4b21ded7cb4656e4c6db-a532ba52585d06f0c2d9",
               "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
-              "line": 146,
+              "line": 115,
               "column": 7
             },
             {
@@ -3058,15 +1876,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8006,
+                      "duration": 4228,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:22:11.897Z",
+                      "startTime": "2026-05-19T07:54:04.036Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3076,7 +1894,7 @@
               ],
               "id": "4b21ded7cb4656e4c6db-bb100c5545ff7d37c149",
               "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
-              "line": 151,
+              "line": 120,
               "column": 7
             },
             {
@@ -3094,15 +1912,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 14711,
+                      "duration": 9512,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:22:19.945Z",
+                      "startTime": "2026-05-19T07:54:08.279Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3112,7 +1930,7 @@
               ],
               "id": "4b21ded7cb4656e4c6db-35491e083ce7b0c95ce2",
               "file": "6. CHECKOUT OVERVIEW PAGE/checkout_overview_automation.spec.ts",
-              "line": 162,
+              "line": 131,
               "column": 7
             }
           ]
@@ -3129,7 +1947,7 @@
         {
           "title": "Checkout Complete Module Automation - CC",
           "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
-          "line": 49,
+          "line": 23,
           "column": 6,
           "specs": [
             {
@@ -3145,15 +1963,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 17775,
+                      "duration": 9960,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:22:34.857Z",
+                      "startTime": "2026-05-19T07:54:17.814Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3163,7 +1981,7 @@
               ],
               "id": "607760572962719f88c8-5e2620dcd4e5dd1c6481",
               "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
-              "line": 55,
+              "line": 29,
               "column": 7
             },
             {
@@ -3179,15 +1997,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11194,
+                      "duration": 5280,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:22:52.718Z",
+                      "startTime": "2026-05-19T07:54:27.790Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3197,7 +2015,7 @@
               ],
               "id": "607760572962719f88c8-22d942c3263c3f7d905b",
               "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
-              "line": 62,
+              "line": 36,
               "column": 7
             },
             {
@@ -3213,15 +2031,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11522,
+                      "duration": 6627,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:23:03.957Z",
+                      "startTime": "2026-05-19T07:54:33.085Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3231,7 +2049,7 @@
               ],
               "id": "607760572962719f88c8-17dac23c6594f1afc454",
               "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
-              "line": 66,
+              "line": 40,
               "column": 7
             },
             {
@@ -3247,15 +2065,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9435,
+                      "duration": 5172,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:23:15.514Z",
+                      "startTime": "2026-05-19T07:54:39.726Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3265,7 +2083,7 @@
               ],
               "id": "607760572962719f88c8-fd8b0b7fdf1097417040",
               "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
-              "line": 71,
+              "line": 46,
               "column": 7
             },
             {
@@ -3281,15 +2099,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12728,
+                      "duration": 11827,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:23:24.984Z",
+                      "startTime": "2026-05-19T07:54:44.914Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3299,7 +2117,7 @@
               ],
               "id": "607760572962719f88c8-0f50e240b4d080ca8241",
               "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
-              "line": 76,
+              "line": 51,
               "column": 7
             },
             {
@@ -3315,15 +2133,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12244,
+                      "duration": 12170,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:23:37.739Z",
+                      "startTime": "2026-05-19T07:54:56.756Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3333,7 +2151,7 @@
               ],
               "id": "607760572962719f88c8-26701732b735b1f499ba",
               "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
-              "line": 93,
+              "line": 68,
               "column": 7
             },
             {
@@ -3349,15 +2167,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 13342,
+                      "duration": 10849,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:23:50.028Z",
+                      "startTime": "2026-05-19T07:55:08.942Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3367,7 +2185,7 @@
               ],
               "id": "607760572962719f88c8-7e82a2c6edd6a0e5dbfc",
               "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
-              "line": 98,
+              "line": 73,
               "column": 7
             },
             {
@@ -3383,15 +2201,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8715,
+                      "duration": 7221,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:24:03.416Z",
+                      "startTime": "2026-05-19T07:55:19.805Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3401,7 +2219,7 @@
               ],
               "id": "607760572962719f88c8-3191f61fbf13151fdb4f",
               "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
-              "line": 107,
+              "line": 82,
               "column": 7
             },
             {
@@ -3419,15 +2237,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10190,
+                      "duration": 8266,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:24:12.170Z",
+                      "startTime": "2026-05-19T07:55:27.040Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3437,7 +2255,7 @@
               ],
               "id": "607760572962719f88c8-c3d9758b1cff26051015",
               "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
-              "line": 117,
+              "line": 92,
               "column": 7
             },
             {
@@ -3455,15 +2273,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9315,
+                      "duration": 5804,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:24:22.398Z",
+                      "startTime": "2026-05-19T07:55:35.323Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3473,7 +2291,7 @@
               ],
               "id": "607760572962719f88c8-ecb10aad8c217a8baeaa",
               "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
-              "line": 122,
+              "line": 98,
               "column": 7
             },
             {
@@ -3491,15 +2309,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7472,
+                      "duration": 6148,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:24:31.752Z",
+                      "startTime": "2026-05-19T07:55:41.149Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3509,7 +2327,7 @@
               ],
               "id": "607760572962719f88c8-7fa51cfd5e3ae7b08c1a",
               "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
-              "line": 127,
+              "line": 104,
               "column": 7
             },
             {
@@ -3527,15 +2345,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8255,
+                      "duration": 5732,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:24:39.260Z",
+                      "startTime": "2026-05-19T07:55:47.313Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3545,7 +2363,7 @@
               ],
               "id": "607760572962719f88c8-74ee4438134af0135b33",
               "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
-              "line": 132,
+              "line": 110,
               "column": 7
             },
             {
@@ -3563,15 +2381,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8919,
+                      "duration": 8563,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-12T10:24:47.550Z",
+                      "startTime": "2026-05-19T07:55:53.059Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3581,7 +2399,7 @@
               ],
               "id": "607760572962719f88c8-e95d15d27e467c85cc9a",
               "file": "7. CHECKOUT COMPLETE PAGE/checkout_complete_automation.spec.ts",
-              "line": 137,
+              "line": 115,
               "column": 7
             }
           ]
@@ -3591,11 +2409,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-05-12T10:12:04.217Z",
-    "duration": 772625.559,
-    "expected": 96,
+    "startTime": "2026-05-19T07:48:46.727Z",
+    "duration": 435120.98500000004,
+    "expected": 65,
     "skipped": 0,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }

@@ -1,49 +1,23 @@
 import { test, expect, Page } from '@playwright/test';
-
-const BASE_URL = 'https://practice.qabrains.com/ecommerce';
-const LOGIN_URL = `${BASE_URL}/login`;
-
-async function login(page: Page) {
-  const password = process.env.TEST_PASSWORD ?? 'Password123';
-  const preferredEmail = process.env.TEST_EMAIL;
-  const fallbackEmails = ['test@qabrains.com', 'practice@qabrains.com', 'student@qabrains.com'];
-  const emails = preferredEmail ? [preferredEmail, ...fallbackEmails.filter((e) => e !== preferredEmail)] : fallbackEmails;
-
-  for (const email of emails) {
-    await page.goto(LOGIN_URL);
-    await page.locator('#email').waitFor({ state: 'visible' });
-    await page.locator('#email').fill(email);
-    await page.locator('#password').fill(password);
-    await page.locator('button[type="submit"]').click();
-    try {
-      await page.waitForURL(/\/ecommerce\/?$/, { timeout: 12000 });
-      return;
-    } catch {
-      // Try next accepted credential.
-    }
-  }
-
-  throw new Error('Unable to authenticate with available test credentials.');
-}
+import { login } from '../_shared/helpers';
+import { BASE_URL } from '../_pom/constants';
+import { CartPage } from '../_pom/pages/CartPage';
+import { CheckoutCompletePage } from '../_pom/pages/CheckoutCompletePage';
+import { CheckoutInfoPage } from '../_pom/pages/CheckoutInfoPage';
+import { CheckoutOverviewPage } from '../_pom/pages/CheckoutOverviewPage';
 
 async function completeOrder(page: Page) {
-  await page.goto(BASE_URL);
-  await page.waitForLoadState('networkidle');
-  const add = page.getByRole('button', { name: /add to cart/i }).first();
-  if (await add.isVisible()) {
-    await add.click();
-  }
+  const cartPage = new CartPage(page);
+  const checkoutInfoPage = new CheckoutInfoPage(page);
+  const checkoutOverviewPage = new CheckoutOverviewPage(page);
 
-  await page.goto(`${BASE_URL}/checkout-info`);
-  await page.waitForLoadState('networkidle');
-  // Email is pre-filled and disabled - only fill first name, last name, zip
-  await page.locator('input[placeholder="Ex. John"]').fill('John');
-  await page.locator('input[placeholder="Ex. Doe"]').fill('Doe');
-  await page.locator('input').nth(3).fill('1207');
-  await page.getByRole('button', { name: /continue/i }).click();
+  await cartPage.seedFromHome();
+  await checkoutInfoPage.open();
+  await checkoutInfoPage.fillInfo('John', 'Doe', '1207');
+  await checkoutInfoPage.continueButton().click();
 
   await page.waitForURL(/checkout-overview/, { timeout: 10000 });
-  await page.getByRole('button', { name: /finish/i }).click();
+  await checkoutOverviewPage.finishButton().click();
 }
 
 test.describe('Checkout Complete Module Automation - CC', () => {
@@ -53,10 +27,10 @@ test.describe('Checkout Complete Module Automation - CC', () => {
   });
 
   test('CC-001/CC-003/CC-004: Completion heading and confirmation texts are visible', async ({ page }) => {
-    await expect(page).toHaveURL(/checkout-complete/);
-    await expect(page.getByRole('heading', { name: /checkout|complete/i })).toBeVisible();
+    const checkoutCompletePage = new CheckoutCompletePage(page);
+    await checkoutCompletePage.expectLoaded();
     await expect(page.getByText(/thank you for your order/i)).toBeVisible();
-    await expect(page.getByText(/dispatch|delivered|shipping/i).first()).toBeVisible();
+    await expect(checkoutCompletePage.statusText()).toBeVisible();
   });
 
   test('CC-002: Success icon is displayed', async ({ page }) => {
@@ -64,7 +38,8 @@ test.describe('Checkout Complete Module Automation - CC', () => {
   });
 
   test('CC-006: Continue Shopping navigates to home page', async ({ page }) => {
-    await page.getByRole('button', { name: /continue shopping/i }).click();
+    const checkoutCompletePage = new CheckoutCompletePage(page);
+    await checkoutCompletePage.continueShoppingButton().click();
     await expect(page).toHaveURL(new RegExp(`${BASE_URL}$|${BASE_URL}/?$`));
   });
 
@@ -115,17 +90,20 @@ test.describe('Checkout Complete Module Automation - CC', () => {
   });
 
   test('CC-001-S: @smoke Completion page shows thank-you confirmation', async ({ page }) => {
-    await expect(page).toHaveURL(/checkout-complete/);
+    const checkoutCompletePage = new CheckoutCompletePage(page);
+    await checkoutCompletePage.expectLoaded();
     await expect(page.getByText(/thank you for your order/i)).toBeVisible();
   });
 
   test('CC-006-S: @smoke Continue Shopping from completion goes to home', async ({ page }) => {
-    await page.getByRole('button', { name: /continue shopping/i }).click();
+    const checkoutCompletePage = new CheckoutCompletePage(page);
+    await checkoutCompletePage.continueShoppingButton().click();
     await expect(page).toHaveURL(new RegExp(`${BASE_URL}$|${BASE_URL}/?$`));
   });
 
   test('CC-011: @regression Order confirmation details are visible', async ({ page }) => {
-    await expect(page.getByText(/dispatch|delivered|shipping/i).first()).toBeVisible();
+    const checkoutCompletePage = new CheckoutCompletePage(page);
+    await expect(checkoutCompletePage.statusText()).toBeVisible();
     await expect(page.locator('img, svg').first()).toBeVisible();
   });
 

@@ -4,6 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const workspaceRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const nodeExecutable = process.execPath;
 const resultsPath = path.join(workspaceRoot, 'playwright-report-testcases', 'results.json');
 
 // Quality gate threshold: minimum pass rate required for a green run.
@@ -19,7 +20,7 @@ function ensureExists(filePath, label) {
 function run(command, args) {
   const result = spawnSync(command, args, {
     stdio: 'inherit',
-    shell: true,
+    shell: false,
     cwd: workspaceRoot,
   });
 
@@ -28,6 +29,10 @@ function run(command, args) {
   }
 
   return 1;
+}
+
+function runNode(args) {
+  return run(nodeExecutable, args);
 }
 
 function evaluateQualityGate() {
@@ -71,10 +76,14 @@ if (fs.existsSync(resultsPath)) {
 }
 
 console.log('Step 1/3: Running all automation test cases from Test_cases...');
-const testExitCode = run('npm', ['run', 'test:testcases']);
+const testExitCode = runNode([
+  'node_modules/@playwright/test/cli.js',
+  'test',
+  '--config=playwright.testcases.config.ts',
+]);
 
 console.log('Step 2/3: Generating CSV execution reports in report/...');
-const csvExitCode = run('npm', ['run', 'report:testcases:csv']);
+const csvExitCode = runNode(['scripts/generate-execution-csv-report.mjs']);
 
 if (csvExitCode !== 0) {
   console.error(`CSV report generation failed with exit code ${csvExitCode}.`);
@@ -82,7 +91,7 @@ if (csvExitCode !== 0) {
 }
 
 console.log('Step 3/3: Generating overall HTML report in report/master/...');
-const htmlExitCode = run('npm', ['run', 'report:testcases:html']);
+const htmlExitCode = runNode(['scripts/generate-html-report.mjs']);
 
 if (htmlExitCode !== 0) {
   console.error(`HTML report generation failed with exit code ${htmlExitCode}.`);

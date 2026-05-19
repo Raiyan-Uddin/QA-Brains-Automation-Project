@@ -13,7 +13,7 @@ npx playwright test --list
 npm run test:testcases
 
 5) Run full master automation (tests + CSV + HTML report)
-npm run master:automation
+cd "d:\2. VScode\Demo ecommerce project" npm run master:automation
 
 6) Generate CSV report only
 npm run report:testcases:csv

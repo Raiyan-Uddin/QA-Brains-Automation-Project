@@ -1,4 +1,5 @@
 import { Page } from '@playwright/test';
+import { LoginPage } from '../_pom/pages/LoginPage';
 
 export const BASE_URL = 'https://practice.qabrains.com/ecommerce';
 export const LOGIN_URL = `${BASE_URL}/login`;
@@ -8,36 +9,8 @@ export const LOGIN_URL = `${BASE_URL}/login`;
  * Tries TEST_EMAIL first, then well-known practice credentials.
  */
 export async function login(page: Page): Promise<void> {
-  const password = process.env.TEST_PASSWORD ?? 'Password123';
-  const preferredEmail = process.env.TEST_EMAIL;
-  const fallbackEmails = ['test@qabrains.com', 'practice@qabrains.com', 'student@qabrains.com'];
-  const emails = preferredEmail
-    ? [preferredEmail, ...fallbackEmails.filter((e) => e !== preferredEmail)]
-    : fallbackEmails;
-
-  for (const email of emails) {
-    await page.goto(LOGIN_URL, { waitUntil: 'domcontentloaded' });
-
-    const emailField = page.locator('#email');
-    const visible = await emailField.isVisible({ timeout: 12000 }).catch(() => false);
-    if (!visible) {
-      await page.goto(LOGIN_URL, { waitUntil: 'domcontentloaded' });
-      await emailField.waitFor({ state: 'visible', timeout: 12000 });
-    }
-
-    await emailField.fill(email);
-    await page.locator('#password').fill(password);
-    await page.locator('button[type="submit"]').click();
-
-    try {
-      await page.waitForURL(/\/ecommerce\/?$/, { timeout: 15000 });
-      return;
-    } catch {
-      // Try next credential.
-    }
-  }
-
-  throw new Error('Unable to authenticate with available test credentials.');
+  const loginPage = new LoginPage(page);
+  await loginPage.loginWithFallback();
 }
 
 /**
